@@ -17,10 +17,15 @@
 //0为法人信用查询, 1为重点人群信用查询, 2为个人身份核实
 @property (nonatomic, assign) NSInteger searchType;
 @property (nonatomic, weak) UISegmentedControl *searchCategory;
+@property (nonatomic, weak) UIButton *filterBtn;
 @property (nonatomic, strong) UITextField *searchField;
 @property (nonatomic, weak) WLTableView *tableView;
 @property (nonatomic, strong) NSArray *rowsData;
 @property (nonatomic, strong) NSString *searchURL;
+
+//不同种类时, 条件tableview的高度
+@property (nonatomic, assign) NSInteger legalPersonFilterHeight;
+@property (nonatomic, assign) NSInteger focusPeopleFilterHeight;
 
 @end
 
@@ -35,10 +40,12 @@
 - (void)decorateUI
 {
     self.title = @"信用信息查询";
-    [self decorateNavigationBarSearchBar];
-    [self decorateTopView];
     [self decorateBigCategoryView];
+    
+    [self decorateNavigationBarSearchBar];
     [self decorateFilterView];
+    [self decorateTopView];
+    
     
 }
 
@@ -66,19 +73,22 @@
 
 - (void)decorateTopView
 {
-    int width = self.view.frame.size.width - 30;
-    int height = 30;
-    int x = self.view.frame.size.width * 0.5 - width * 0.5;
-    int y = 5;
-    NSArray *categoryTitles = @[@"法人信用查询",@"重点人群信用查询",@"个人身份核实"];
+    NSArray *categoryTitles = @[@"法人信用查询",@"重点人群查询",@"个人身份核实"];
     UISegmentedControl *searchCategory = [[UISegmentedControl alloc]initWithItems:categoryTitles];
     searchCategory.alpha = 0;
     self.searchCategory = searchCategory;
     searchCategory.tintColor = [UIColor redColor];
-    searchCategory.frame = CGRectMake(x, y, width, height);
+    searchCategory.frame = CGRectMake(10, 5, self.view.frame.size.width - 50, 30);
     searchCategory.selectedSegmentIndex = 0;
     [searchCategory addTarget:self action:@selector(searchCategorySegmentDidClicking:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:searchCategory];
+    
+    UIButton *filterBtn = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.searchCategory.frame) + 5, 5, 30, 30)];
+    self.filterBtn = filterBtn;
+    filterBtn.alpha = 0;
+    [self.view addSubview:filterBtn];
+    filterBtn.backgroundColor = [UIColor redColor];
+    [filterBtn addTarget:self action:@selector(filterBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
@@ -93,7 +103,7 @@
     int y = self.view.frame.size.height * 0.5 - height * 0.6;
     bigCategoryBackView.frame = CGRectMake(x, y, width, height);
     
-    NSArray *buttonTitles = @[@"法人信用查询",@"重点人群信用查询",@"个人身份核实"];
+    NSArray *buttonTitles = @[@"法人信用查询",@"重点人群查询",@"个人身份核实"];
     for (int i = 0; i < 3; i++)
     {
         UIButton *button = [[UIButton alloc]init];
@@ -123,19 +133,42 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.bigCategoryBackView.alpha = 0;
         self.searchCategory.alpha = 1;
+        self.filterBtn.alpha = 1;
     }];
     self.navigationItem.titleView = self.searchField;
 
 }
 
-- (void)showConditionTableViewHeight: (NSInteger)height
+- (void)showConditionTableView
 {
-    if (height <= 0)
+    NSInteger height = 100;
+    switch (self.searchType)
     {
-        height = 100;
+        case 0:
+        {
+            height = self.legalPersonFilterHeight;
+            break;
+        }
+        case 1:
+        {
+            height = self.focusPeopleFilterHeight;
+            break;
+        }
+        case 2:
+        {
+            height = 0;
+            break;
+        }
+
+        default:
+            break;
     }
+    
+    
+    int width = self.view.frame.size.width - 50;
+    int x = self.view.frame.size.width * 0.5 - width * 0.5;
     [UIView animateWithDuration:0.5 animations:^{
-        self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, self.tableView.frame.size.width, height);
+        self.tableView.frame = CGRectMake(x, 40, width, height);
     } completion:^(BOOL finished) {
         
     }];
@@ -144,10 +177,23 @@
 - (void)dismissConditionTableView
 {
     [UIView animateWithDuration:0.5 animations:^{
-        self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, self.tableView.frame.size.width, 0);
+        self.tableView.frame = self.filterBtn.frame;
     } completion:^(BOOL finished) {
         
     }];
+}
+
+- (void)filterBtnDidClicking: (UIButton *)sender
+{
+    NSLog(@"点击了筛选按钮");
+    sender.selected = !sender.selected;
+    if (sender.selected)
+    {
+        [self showConditionTableView];
+    }else
+    {
+        [self dismissConditionTableView];
+    }
 }
 
 - (void)searchCategorySegmentDidClicking: (UISegmentedControl *)sender
@@ -166,7 +212,8 @@
         self.tableView.rowsData = self.rowsData;
         
         [self.tableView reloadData];
-        [self showConditionTableViewHeight:44*5];
+        self.legalPersonFilterHeight = 44*5;
+        [self showConditionTableView];
     }else if (self.searchType == 1)
     {
         WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
@@ -179,7 +226,8 @@
             self.rowsData = [self constructCellContentDict:result];
             self.tableView.rowsData = self.rowsData;
             [self.tableView reloadData];
-            [self showConditionTableViewHeight:self.tableView.rowsData.count * 44];
+            self.focusPeopleFilterHeight = self.tableView.rowsData.count * 44;
+            [self showConditionTableView];
             
         } failure:^(NSError *error) {
             NSLog(@"%@",error);
@@ -201,9 +249,9 @@
     tableView.delegate = self;
     [self.view addSubview:tableView];
     [WLCommonTool makeViewShowingWithRoundCorner:tableView andRadius:10];
-    int x = self.searchCategory.frame.origin.x;
-    int y = CGRectGetMaxY(self.searchCategory.frame);
-    int width = self.searchCategory.frame.size.width;
+    int width = self.view.frame.size.width - 50;
+    int x = self.view.frame.size.width * 0.5 - width * 0.5;
+    int y = 40;
     int height = 0;
     tableView.frame = CGRectMake(x, y, width, height);
 }
@@ -273,8 +321,16 @@
         }
     }else if (self.searchType == 2)
     {
-        
+        WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
+        NSString *urlString = networkTool.queryAPIList[@"getCompanyList"];
+        urlString = [urlString stringByReplacingOccurrencesOfString:@"{querytype}" withString:textField.text];
+        self.searchURL = urlString;
     }
+}
+
+- (void)querySearchData
+{
+    
 }
 
 /*
