@@ -23,5 +23,13 @@
     "WLControls": [
       "WLControls/Assets/*"
     ]
+  },
+  "dependencies": {
+    "Masonry": [
+
+    ],
+    "SDCycleScrollView": [
+
+    ]
   }
 }

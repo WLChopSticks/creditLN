@@ -147,6 +147,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9B1AEBF52211440C007769EC /* 公示展示 */ = {
+			isa = PBXGroup;
+			children = (
+				9BC20BDB22019DA700732DE3 /* WLDoublePublicityViewController.h */,
+				9BC20BDC22019DA700732DE3 /* WLDoublePublicityViewController.m */,
+			);
+			path = "公示展示";
+			sourceTree = "<group>";
+		};
 		9BA009F322068D1D00D1FFD9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,10 +240,9 @@
 		9BC20A6522001EAA00732DE3 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				9B1AEBF52211440C007769EC /* 公示展示 */,
 				9BC20BC82201886D00732DE3 /* WLExhibitonViewController.h */,
 				9BC20BC92201886D00732DE3 /* WLExhibitonViewController.m */,
-				9BC20BDB22019DA700732DE3 /* WLDoublePublicityViewController.h */,
-				9BC20BDC22019DA700732DE3 /* WLDoublePublicityViewController.m */,
 				9BC20C042202A6F000732DE3 /* WLRewardsAndPunishListViewController.h */,
 				9BC20C052202A6F000732DE3 /* WLRewardsAndPunishListViewController.m */,
 				9BA009EB2205D6B700D1FFD9 /* WLRedAndBlackListViewController.h */,
