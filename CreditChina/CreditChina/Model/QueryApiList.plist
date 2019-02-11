@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>host</key>
+	<string>http://223.100.2.221:8383</string>
+	<key>hosts</key>
+	<array>
+		<string>formal,http://47.104.107.196:18070</string>
+		<string>test,http://47.104.85.148:18070</string>
+	</array>
+	<key>AquireStationsOfCity</key>
+	<string>{host}/ckdhd/queryCsZd.action</string>
+	<key>getdatareportings</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datareportings/getdatareportings</string>
+	<key>getpersonselet</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getpersonselet</string>
+	<key>getFocusPeople</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getFocusPeople/{typecode}/zgrxm/zczsbh/1/10</string>
+	<key>getCompanyList</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getcompanylist/{querytype}/{querykey}/1/10</string>
+</dict>
+</plist>

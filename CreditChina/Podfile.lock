@@ -1,0 +1,64 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Masonry (1.1.0)
+  - MJExtension (3.0.15.1)
+  - ProgressHUD (2.51)
+  - SDCycleScrollView (1.75):
+    - SDWebImage (>= 4.0.0)
+  - SDWebImage (4.4.4):
+    - SDWebImage/Core (= 4.4.4)
+  - SDWebImage/Core (4.4.4)
+  - WLControls (0.1.0)
+  - WLPlatform (0.1.0)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.0)
+  - Masonry
+  - MJExtension
+  - ProgressHUD
+  - SDCycleScrollView (~> 1.75)
+  - WLControls (from `../WLControls/WLControls`)
+  - WLPlatform (from `../WLLib/WLPlatform`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - Masonry
+    - MJExtension
+    - ProgressHUD
+    - SDCycleScrollView
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  WLControls:
+    :path: "../WLControls/WLControls"
+  WLPlatform:
+    :path: "../WLLib/WLPlatform"
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
+  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
+  SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
+  WLControls: 6e42a93ca7ca359e2cfe7d2e5cc8e71a42ab19c0
+  WLPlatform: 1566a38e776e783939167ec90a9b2298fbfe8758
+
+PODFILE CHECKSUM: 286cddd1ddc8502f78c001d210dc8596593c1e6d
+
+COCOAPODS: 1.6.0.rc.1

@@ -1,0 +1,22 @@
+{
+  "name": "WLPlatform",
+  "version": "0.1.0",
+  "summary": "A short description of WLPlatform.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/WLChopsticks/WLPlatform",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "WLChopsticks": "wanglei_sy56@163.com"
+  },
+  "source": {
+    "git": "https://github.com/WLChopsticks/WLPlatform.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "WLPlatform/Classes/**/*"
+}
