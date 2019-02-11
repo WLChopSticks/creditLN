@@ -228,7 +228,8 @@
 //            WLCreditPromiseViewController *vc = [[WLCreditPromiseViewController alloc]init];
 //            [self.navigationController pushViewController:vc animated:YES];
             UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
-            [self.navigationController pushViewController:vc animated:YES];
+            [self presentViewController:vc animated:YES completion:nil];
+//            [self.navigationController pushViewController:vc animated:YES];
             break;
         }
         case 6:
