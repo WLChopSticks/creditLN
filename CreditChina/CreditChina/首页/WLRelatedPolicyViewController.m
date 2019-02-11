@@ -31,7 +31,7 @@
     WLTableView *tableView = [[WLTableView alloc]init];
     self.tableView = tableView;
     tableView.cellClass = [WLDoublePublicityCell class];
-    [tableView registNibForCell:@"WLDoublePublicityCell" andBundleName:@"WLControls"];
+    [tableView registNibForCell:@"WLDoublePublicityCell"  inBundel:nil orBundleName:@"WLControls"];
     tableView.delegate = self;
     [self.view addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {

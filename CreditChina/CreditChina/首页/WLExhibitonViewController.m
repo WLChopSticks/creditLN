@@ -236,6 +236,7 @@
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
             segVC.titles = @[@"国家政策",@"省内政策",@"市级政策"];
+            segVC.title = @"政策法规";
             WLRelatedPolicyViewController *vc1 = [[WLRelatedPolicyViewController alloc]init];
             vc1.policyType = @"1";
             WLRelatedPolicyViewController *vc2 = [[WLRelatedPolicyViewController alloc]init];

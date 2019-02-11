@@ -8,8 +8,9 @@
 
 #import "WLDoublePolicyDetailViewController.h"
 #import "WLPlatform.h"
-#import "WLSectionHeaderCell.h"
+#import "WLChartRatioTableViewCell.h"
 #import "WLTableView.h"
+#import "WLDoublePublicityModel.h"
 
 #define FirstItemWidthRaio 3
 #define SecondItemWidthRaio 7
@@ -43,7 +44,7 @@
     self.title = @"行政处罚";
     WLTableView *tableView = [[WLTableView alloc]init];
     self.tableView = tableView;
-    tableView.cellClass = [WLSectionHeaderCell class];
+    tableView.cellClass = [WLChartRatioTableViewCell class];
     tableView.delegate = self;
     tableView.wltableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:tableView];
@@ -74,7 +75,7 @@
     [networkTool GET_queryWithURL:urlString andParameters:nil success:^(id  _Nullable responseObject) {
         NSDictionary *result = (NSDictionary *)responseObject;
 //        WLDoublePublicityModel *model = [[WLDoublePublicityModel alloc]init];
-//        model = [model getModel:result];
+//        WLDoublePublicityDetailModel *detailModel = [model detailGetModel:result];
         self.tableView.rowsData = [self constructCellContentDict:result];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
@@ -87,8 +88,21 @@
 {
     
     NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
-    [constructingDict setObject:@"国家" forKey:@"数据来源"];
-    [constructingDict setObject:@"行政处罚" forKey:@"数据类别"];
+    [constructingDict setObject:model[@"xzcfjdswh"] forKey:@"行政处罚决定书文号"];
+    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
+    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
+    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
+    [constructingDict setObject:model[@"xzcfjdswh"] forKey:@"行政处罚决定书文号"];
+    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
+    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
+    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
+    [constructingDict setObject:model[@"xzcfjdswh"] forKey:@"行政处罚决定书文号"];
+    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
+    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
+    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
+    
+    
+    
     [constructingDict setObject:@"北京卓宏润酒店管理有限公司" forKey:@"行政相对人名称"];
     [constructingDict setObject:@"91110106784834803J" forKey:@"统一社会信用代码"];
     [constructingDict setObject:@"110106009267488" forKey:@"工商注册号"];
@@ -115,6 +129,7 @@
         [tempDict setObject:[NSNumber numberWithInteger:FirstItemWidthRaio] forKey:@"firstItemWidth"];
         [tempDict setObject:[NSNumber numberWithInteger:SecondItemWidthRaio] forKey:@"secondItemWidth"];
         [tempDict setObject:[NSNumber numberWithInteger:THirdItemWidthRaio] forKey:@"thirdItemWidth"];
+        [tempDict setObject:[UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1] forKey:@"firstItemBackground"];
         [constructingArr addObject:tempDict];
     }
     

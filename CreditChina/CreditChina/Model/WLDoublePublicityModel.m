@@ -23,4 +23,11 @@
     return model;
 }
 
+-(WLDoublePublicityDetailModel *)detailGetModel:(NSDictionary *)dict
+{
+    WLDoublePublicityDetailModel *model = [[WLDoublePublicityDetailModel alloc]init];
+    model = [WLDoublePublicityDetailModel mj_objectWithKeyValues:dict];
+    return model;
+}
+
 @end

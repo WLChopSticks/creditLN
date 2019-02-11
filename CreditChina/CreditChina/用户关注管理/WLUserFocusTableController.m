@@ -33,7 +33,7 @@
     WLTableView *tableView = [[WLTableView alloc]init];
     self.tableView = tableView;
     tableView.cellClass = [WLTitleContentTimeCell class];
-    [tableView registNibForCell:@"WLTitleContentTimeCell" andBundleName:@"WLControls"];
+    [tableView registNibForCell:@"WLTitleContentTimeCell"  inBundel:nil orBundleName:@"WLControls"];
     tableView.rowsData = @[@{@"title":@"234",@"内容":@"普通"},@{@"标题":@"234",@"内容":@"普通"},@{@"标题":@"234",@"内容":@"普通"},@{@"标题":@"234",@"内容":@"普通"},@{@"标题":@"234",@"内容":@"普通"}];
     tableView.delegate = self;
     [self.view addSubview:tableView];

@@ -7,11 +7,9 @@
 //
 
 #import "WLDoublePublicityViewController.h"
-#import "WLFourItemsCell.h"
+#import <WLPlatform.h>
 #import "WLTableView.h"
-#import <Masonry.h>
-#import "WLNetworkTool.h"
-#import "WLDoublePublicityCell.h"
+#import "WLDoublePublicitysTableViewCell.h"
 #import "WLDoublePublicityModel.h"
 #import "WLDoublePolicyDetailViewController.h"
 
@@ -39,8 +37,9 @@
 {
     WLTableView *tableView = [[WLTableView alloc]init];
     self.tableView = tableView;
-    tableView.cellClass = [WLDoublePublicityCell class];
-    [tableView registNibForCell:@"WLDoublePublicityCell" andBundleName:@"WLControls"];
+    tableView.wltableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    tableView.cellClass = [WLDoublePublicitysTableViewCell class];
+    [tableView registNibForCell:@"WLDoublePublicitysTableViewCell"  inBundel:[NSBundle mainBundle] orBundleName:@"WLControls"];
     tableView.delegate = self;
     [self.view addSubview:tableView];
     
@@ -53,7 +52,6 @@
 
 - (void)queryData
 {
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
     NSMutableString *URL = [NSMutableString stringWithString:networkTool.queryAPIList[@"getdatareportings"]];
     
@@ -72,7 +70,13 @@
         NSDictionary *result = (NSDictionary *)responseObject;
         WLDoublePublicityModel *model = [[WLDoublePublicityModel alloc]init];
         model = [model getModel:result];
-        self.tableView.rowsData = [self constructPunishCellContentDict:model];
+        if ([self.doublePubliciryType isEqualToString:@"1"])
+        {
+            self.tableView.rowsData = [self constructPunishCellContentDict:model];
+        }else if ([self.doublePubliciryType isEqualToString:@"2"])
+        {
+            self.tableView.rowsData = [self constructPermissionCellContentDict:model];
+        }
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
@@ -87,19 +91,51 @@
     for (WLDoublePublicityDetailModel *detailModel in model.dataList)
     {
         NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
-        [constructingDict setObject:detailModel.wfxwlx forKey:@"publicityType"];
-        NSString *symbolString = @"";
-        if ([self.doublePubliciryType isEqualToString:@"2"])
-        {
-            symbolString = @"行政许可";
-        }
-        if ([self.doublePubliciryType isEqualToString:@"1"])
-        {
-            symbolString = @"行政处罚";
-        }
-        [constructingDict setObject:symbolString forKey:@"symbolString"];
-        [constructingDict setObject:[WLCommonTool transferTimeFormatWIthTime:detailModel.updatetime] forKey:@"updateTime"];
+
+        [constructingDict setObject:detailModel.xzxdrmc forKey:@"company"];
+        [constructingDict setObject:detailModel.etablename forKey:@"content"];
+        [constructingDict setObject:[WLCommonTool transferTimeFormatWIthTime:detailModel.updatetime] forKey:@"time"];
+        [constructingDict setObject:detailModel.xzcfjdswh forKey:@"shuwenhao"];
+        [constructingArr addObject:constructingDict];
+    }
+    
+//    for (int i = 0; i < 10; i++)
+//    {
+//        NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
+//        
+//        [constructingDict setObject:@"鞍钢股份有限公司" forKey:@"company"];
+//        [constructingDict setObject:@"关于对鞍钢股份有限公司的处罚" forKey:@"content"];
+//        [constructingDict setObject:@"2019-01-23" forKey:@"time"];
+//        [constructingDict setObject:@"鞍环罚决字[2018]第(11006)号" forKey:@"shuwenhao"];
+//        [constructingArr addObject:constructingDict];
+//    }
+    
+    return constructingArr;
+}
+
+- (NSArray *)constructPermissionCellContentDict: (WLDoublePublicityModel *)model
+{
+    NSMutableArray *constructingArr = [NSMutableArray array];
+    
+//    for (WLDoublePublicityDetailModel *detailModel in model.dataList)
+//    {
+//        NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
+//
+//        [constructingDict setObject:detailModel.xzxdrmc forKey:@"company"];
+//        [constructingDict setObject:detailModel.cfsy forKey:@"content"];
+//        [constructingDict setObject:[WLCommonTool transferTimeFormatWIthTime:detailModel.updatetime] forKey:@"time"];
+//        [constructingDict setObject:detailModel.xzxkjdswh forKey:@"shuwenhao"];
+//        [constructingArr addObject:constructingDict];
+//    }
+    
+    for (int i = 0; i < 10; i++)
+    {
+        NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
         
+        [constructingDict setObject:@"大连东山热力有限公司" forKey:@"company"];
+        [constructingDict setObject:@"热力抢修" forKey:@"content"];
+        [constructingDict setObject:@"2019-01-24" forKey:@"time"];
+        [constructingDict setObject:@"XKCG0005000119005" forKey:@"shuwenhao"];
         [constructingArr addObject:constructingDict];
     }
     return constructingArr;

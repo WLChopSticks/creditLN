@@ -7,11 +7,12 @@
 //
 
 #import "WLRewardsAndPunishExampleViewController.h"
-#import "WLDoublePublicityCell.h"
+#import "WLRewardsAndPunishEgTableViewCell.h"
 #import "WLTableView.h"
 #import <Masonry.h>
 #import "WLCommonTool.h"
 #import "WLNetworkTool.h"
+#import "WLRewardsAndPunishDetailController.h"
 
 @interface WLRewardsAndPunishExampleViewController ()<wlTableViewDelegate>
 
@@ -32,8 +33,8 @@
     self.title = @"联合奖惩案例";
     WLTableView *tableView = [[WLTableView alloc]init];
     self.tableView = tableView;
-    tableView.cellClass = [WLDoublePublicityCell class];
-    [tableView registNibForCell:@"WLDoublePublicityCell" andBundleName:@"WLControls"];
+    tableView.cellClass = [WLRewardsAndPunishEgTableViewCell class];
+    [tableView registNibForCell:@"WLRewardsAndPunishEgTableViewCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
     tableView.delegate = self;
     [self.view addSubview:tableView];
     
@@ -57,13 +58,13 @@
     [URL appendString:[NSString stringWithFormat:@"/%@",page]];
     [URL appendString:[NSString stringWithFormat:@"/%@",pageSize]];
     NSString *urlString = [NSString stringWithString:URL];
-    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    urlString = @"http://223.100.2.221:8383/credit-webservice-app/restwebservice/app/datacase/getdatacase/%E6%B2%88%E9%98%B3%E5%B8%82%E6%9D%BE%E9%99%B5%E5%B7%A5%E5%85%B7%E5%8E%82/%E6%B2%88%E9%98%B3%E5%B8%82%E6%9D%BE%E9%99%B5%E5%B7%A5%E5%85%B7%E5%8E%82/2/1/10";
+//    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     
     
     [networkTool GET_queryWithURL:urlString andParameters:nil success:^(id  _Nullable responseObject) {
+        
         NSDictionary *result = (NSDictionary *)responseObject;
-//        WLDoublePublicityModel *model = [[WLDoublePublicityModel alloc]init];
-//        model = [model getModel:result];
         self.tableView.rowsData = [self constructLosePromiseCellContentDict:result];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
@@ -72,34 +73,29 @@
     }];
 }
 
--(void)wlTableView:(UITableView *)tableView didSelectCellAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"点击了cell %ld", indexPath.row);
-}
-
 - (NSArray *)constructLosePromiseCellContentDict: (NSDictionary *)model
 {
     NSMutableArray *constructingArr = [NSMutableArray array];
     
-//    for (WLDoublePublicityDetailModel *detailModel in model.dataList)
-    for (int i = 0; i < 10; i++)
+    NSArray *dataList = model[@"rows"];
+    for (NSDictionary *dataDict in dataList)
     {
         NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
-        [constructingDict setObject:@"辽宁省守信案例实例一" forKey:@"publicityType"];
-        NSString *symbolString = @"";
-        if ([self.keepOrBreakPromise isEqualToString:@"1"])
-        {
-            symbolString = @"守信激励案例";
-        }else
-        {
-            symbolString = @"失信惩戒案例";
-        }
-        [constructingDict setObject:symbolString forKey:@"symbolString"];
-        [constructingDict setObject:[WLCommonTool transferTimeFormatWIthTime:213231221312] forKey:@"updateTime"];
+        [constructingDict setObject:dataDict[@"datacasename"] forKey:@"caseName"];
+        [constructingDict setObject:dataDict[@"datapunishtypename"] forKey:@"symbol"];
+        [constructingDict setObject:dataDict[@"datacasesubjectsname"] forKey:@"subtitle"];
+        NSInteger times = [dataDict[@"datacaseupdatetime"]integerValue];
+        [constructingDict setObject:[WLCommonTool transferTimeFormatWIthTime:times] forKey:@"time"];
         
         [constructingArr addObject:constructingDict];
     }
     return constructingArr;
+}
+
+-(void)wlTableView:(UITableView *)tableView didSelectCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    WLRewardsAndPunishDetailController *vc = [[WLRewardsAndPunishDetailController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

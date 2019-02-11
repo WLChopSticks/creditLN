@@ -68,6 +68,8 @@
 
 -(instancetype)getModel:(NSDictionary *)dict;
 
+-(WLDoublePublicityDetailModel *)detailGetModel:(NSDictionary *)dict;
+
 @end
 
 

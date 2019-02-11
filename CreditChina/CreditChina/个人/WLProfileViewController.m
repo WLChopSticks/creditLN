@@ -65,8 +65,8 @@
     self.tableView = tableView;
     tableView.cellClass = [WLImageTitleAccessCell class];
     tableView.wltableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [tableView registNibForCell:@"WLImageTitleAccessCell" andBundleName:@"WLControls"];
-    [tableView registNibForCell:@"WLProfileHeaderCell" andBundleName:@"WLControls"];
+    [tableView registNibForCell:@"WLImageTitleAccessCell"  inBundel:nil orBundleName:@"WLControls"];
+    [tableView registNibForCell:@"WLProfileHeaderCell"  inBundel:nil orBundleName:@"WLControls"];
     self.rowsData =@[
                      @{@"image":@"SearchQuestion",@"title":@"问题搜索",@"subTitle":@"",@"accessView":@"accessView"},
                      @{@"image":@"feedback",@"title":@"意见反馈",@"subTitle":@"",@"accessView":@"accessView"},
