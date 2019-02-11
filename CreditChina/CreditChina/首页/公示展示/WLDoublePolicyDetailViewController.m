@@ -88,34 +88,33 @@
 {
     
     NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
-    [constructingDict setObject:model[@"xzcfjdswh"] forKey:@"行政处罚决定书文号"];
-    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
-    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
-    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
-    [constructingDict setObject:model[@"xzcfjdswh"] forKey:@"行政处罚决定书文号"];
-    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
-    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
-    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
-    [constructingDict setObject:model[@"xzcfjdswh"] forKey:@"行政处罚决定书文号"];
-    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
-    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
-    [constructingDict setObject:model[@"xzxdrmc"] forKey:@"行政相对人名称"];
+    NSMutableArray *keyArr = [NSMutableArray array];
+    [constructingDict setObject:model[@"xzcfjdswh"] forKey:[WLKeyValueStandard getFullStringFromAbbreviation:@"xzcfjdswh"]];
+    [keyArr addObject:[WLKeyValueStandard getFullStringFromAbbreviation:@"xzcfjdswh"]];
     
+    [constructingDict setObject:model[@"xzxdrmc"] forKey:[WLKeyValueStandard getFullStringFromAbbreviation:@"xzxdrmc"]];
+    [keyArr addObject:[WLKeyValueStandard getFullStringFromAbbreviation:@"xzxdrmc"]];
     
+    [constructingDict setObject:model[@"xzxdrlb"] forKey:[WLKeyValueStandard getFullStringFromAbbreviation:@"xzxdrlb"]];
+    [keyArr addObject:[WLKeyValueStandard getFullStringFromAbbreviation:@"xzxdrlb"]];
     
-    [constructingDict setObject:@"北京卓宏润酒店管理有限公司" forKey:@"行政相对人名称"];
-    [constructingDict setObject:@"91110106784834803J" forKey:@"统一社会信用代码"];
-    [constructingDict setObject:@"110106009267488" forKey:@"工商注册号"];
-    [constructingDict setObject:@"784834803" forKey:@"组织机构代码"];
-    [constructingDict setObject:@"" forKey:@"税务登记号"];
-    [constructingDict setObject:@"" forKey:@"法定代表人"];
-    [constructingDict setObject:@"（京丰）安监罚【2018】执-19号" forKey:@"行政处罚决定书文号"];
-    [constructingDict setObject:@"生产安全事故应急救援预案违法" forKey:@"违法事实"];
-    [constructingDict setObject:@"中华人民共和国安全生产法第九十四条第五项" forKey:@"处罚依据"];
-    [constructingDict setObject:@"罚款" forKey:@"处罚类别"];
-    [constructingDict setObject:@"空" forKey:@"处罚内容"];
+    [constructingDict setObject:model[@"cfsy"] forKey:[WLKeyValueStandard getFullStringFromAbbreviation:@"cfsy"]];
+    [keyArr addObject:[WLKeyValueStandard getFullStringFromAbbreviation:@"cfsy"]];
     
-    NSArray *keyArr = @[@"数据来源",@"数据类别",@"行政相对人名称",@"统一社会信用代码",@"工商注册号",@"组织机构代码",@"税务登记号",@"法定代表人",@"行政处罚决定书文号",@"违法事实",@"处罚依据",@"处罚类别",@"处罚内容"];
+    [constructingDict setObject:model[@"cfyj"] forKey:[WLKeyValueStandard getFullStringFromAbbreviation:@"cfyj"]];
+    [keyArr addObject:[WLKeyValueStandard getFullStringFromAbbreviation:@"cfyj"]];
+    
+    [constructingDict setObject:model[@"cflb"] forKey:[WLKeyValueStandard getFullStringFromAbbreviation:@"cflb"]];
+    [keyArr addObject:[WLKeyValueStandard getFullStringFromAbbreviation:@"cflb"]];
+    
+    [constructingDict setObject:model[@"cfnr"] forKey:[WLKeyValueStandard getFullStringFromAbbreviation:@"cfnr"]];
+    [keyArr addObject:[WLKeyValueStandard getFullStringFromAbbreviation:@"cfnr"]];
+    
+    [constructingDict setObject:[NSString stringWithFormat:@"%@",model[@"cfjdrq"]] forKey:[WLKeyValueStandard getFullStringFromAbbreviation:@"cfjdrq"]];
+    [keyArr addObject:[WLKeyValueStandard getFullStringFromAbbreviation:@"cfjdrq"]];
+    
+    [constructingDict setObject:model[@"cfjg"] forKey:[WLKeyValueStandard getFullStringFromAbbreviation:@"cfjg"]];
+    [keyArr addObject:[WLKeyValueStandard getFullStringFromAbbreviation:@"cfjg"]];
     
     
     NSMutableArray *constructingArr = [NSMutableArray array];
@@ -132,9 +131,6 @@
         [tempDict setObject:[UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1] forKey:@"firstItemBackground"];
         [constructingArr addObject:tempDict];
     }
-    
-    
-    
     
     return constructingArr;
 }
