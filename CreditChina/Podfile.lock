@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - CTMediator (25)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
   - ProgressHUD (2.51)
@@ -23,7 +24,14 @@ PODS:
     - SDWebImage/Core (= 4.4.4)
   - SDWebImage/Core (4.4.4)
   - WLControls (0.1.0)
-  - WLPlatform (0.1.0)
+  - WLLogin (0.1.0)
+  - WLLogin_Category (0.1.0):
+    - CTMediator
+  - WLPlatform (0.1.0):
+    - AFNetworking
+    - Masonry
+    - MJExtension
+    - ProgressHUD
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -32,11 +40,14 @@ DEPENDENCIES:
   - ProgressHUD
   - SDCycleScrollView (~> 1.75)
   - WLControls (from `../WLControls/WLControls`)
+  - WLLogin (from `../WLLogin`)
+  - WLLogin_Category (from `../WLLogin_Category`)
   - WLPlatform (from `../WLLib/WLPlatform`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - CTMediator
     - Masonry
     - MJExtension
     - ProgressHUD
@@ -46,19 +57,26 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   WLControls:
     :path: "../WLControls/WLControls"
+  WLLogin:
+    :path: "../WLLogin"
+  WLLogin_Category:
+    :path: "../WLLogin_Category"
   WLPlatform:
     :path: "../WLLib/WLPlatform"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
   WLControls: 6e42a93ca7ca359e2cfe7d2e5cc8e71a42ab19c0
-  WLPlatform: 1566a38e776e783939167ec90a9b2298fbfe8758
+  WLLogin: 7b1bb7b179900734110f6ae08277643c2daaee31
+  WLLogin_Category: 337c48a0f0b013cd67b27e6641be08fd3c7f2451
+  WLPlatform: 7df6082f09b9712a4556196cd2f4a34d81882462
 
-PODFILE CHECKSUM: 286cddd1ddc8502f78c001d210dc8596593c1e6d
+PODFILE CHECKSUM: f605672909cdfe646e6b1b99df1a608b18fd114d
 
 COCOAPODS: 1.6.0.rc.1

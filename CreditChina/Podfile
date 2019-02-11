@@ -7,6 +7,8 @@ target 'CreditChina' do
 
 pod 'WLPlatform', :path => '../WLLib/WLPlatform'
 pod 'WLControls', :path => '../WLControls/WLControls'
+pod 'WLLogin_Category', :path => '../WLLogin_Category'
+pod 'WLLogin', :path => '../WLLogin'
 pod 'Masonry'
 pod 'ProgressHUD'
 pod 'MJExtension'

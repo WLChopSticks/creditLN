@@ -21,8 +21,6 @@
 		9BC20A2E21FF1B8C00732DE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A2D21FF1B8C00732DE3 /* main.m */; };
 		9BC20A3821FF1B8C00732DE3 /* CreditChinaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A3721FF1B8C00732DE3 /* CreditChinaTests.m */; };
 		9BC20A4321FF1B8C00732DE3 /* CreditChinaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A4221FF1B8C00732DE3 /* CreditChinaUITests.m */; };
-		9BC20A5522000D8A00732DE3 /* WLLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A5322000D8A00732DE3 /* WLLogInViewController.m */; };
-		9BC20A5622000D8A00732DE3 /* WLLogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BC20A5422000D8A00732DE3 /* WLLogInViewController.xib */; };
 		9BC20BB82201804200732DE3 /* WLNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20BB72201804200732DE3 /* WLNewFeatureViewController.m */; };
 		9BC20BC1220187B400732DE3 /* WLUserFocusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20BC0220187B400732DE3 /* WLUserFocusViewController.m */; };
 		9BC20BC4220187D000732DE3 /* WLProfileCreditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20BC3220187D000732DE3 /* WLProfileCreditViewController.m */; };
@@ -83,9 +81,6 @@
 		9BC20A3E21FF1B8C00732DE3 /* CreditChinaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditChinaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC20A4221FF1B8C00732DE3 /* CreditChinaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreditChinaUITests.m; sourceTree = "<group>"; };
 		9BC20A4421FF1B8C00732DE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BC20A5222000D8A00732DE3 /* WLLogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLogInViewController.h; sourceTree = "<group>"; };
-		9BC20A5322000D8A00732DE3 /* WLLogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLogInViewController.m; sourceTree = "<group>"; };
-		9BC20A5422000D8A00732DE3 /* WLLogInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLLogInViewController.xib; sourceTree = "<group>"; };
 		9BC20BB62201804200732DE3 /* WLNewFeatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLNewFeatureViewController.h; sourceTree = "<group>"; };
 		9BC20BB72201804200732DE3 /* WLNewFeatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLNewFeatureViewController.m; sourceTree = "<group>"; };
 		9BC20BBF220187B400732DE3 /* WLUserFocusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLUserFocusViewController.h; sourceTree = "<group>"; };
@@ -229,9 +224,6 @@
 		9BC20A5122000D3100732DE3 /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
-				9BC20A5222000D8A00732DE3 /* WLLogInViewController.h */,
-				9BC20A5322000D8A00732DE3 /* WLLogInViewController.m */,
-				9BC20A5422000D8A00732DE3 /* WLLogInViewController.xib */,
 			);
 			path = "登录";
 			sourceTree = "<group>";
@@ -432,7 +424,6 @@
 				9BC20A2B21FF1B8C00732DE3 /* LaunchScreen.storyboard in Resources */,
 				9B1AE9EC220FE430007769EC /* QueryApiList.plist in Resources */,
 				9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */,
-				9BC20A5622000D8A00732DE3 /* WLLogInViewController.xib in Resources */,
 				9BC20A2821FF1B8C00732DE3 /* Assets.xcassets in Resources */,
 				9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */,
 			);
@@ -488,6 +479,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-CreditChina/Pods-CreditChina-resources.sh",
 				"${PODS_ROOT}/ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/WLControls/WLControls.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/WLLogin/WLLogin.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
@@ -495,6 +487,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ProgressHUD.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WLControls.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WLLogin.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -535,7 +528,6 @@
 				9BA00A072209CD5D00D1FFD9 /* WLDoublePolicyDetailViewController.m in Sources */,
 				9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */,
 				9BC20BC7220187E400732DE3 /* WLProfileViewController.m in Sources */,
-				9BC20A5522000D8A00732DE3 /* WLLogInViewController.m in Sources */,
 				9BC20C162202A7BC00732DE3 /* WLRelatedPolicyViewController.m in Sources */,
 				9BC20BCA2201886D00732DE3 /* WLExhibitonViewController.m in Sources */,
 				9BC20BC4220187D000732DE3 /* WLProfileCreditViewController.m in Sources */,

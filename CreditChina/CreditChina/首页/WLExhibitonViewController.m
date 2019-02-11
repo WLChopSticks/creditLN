@@ -18,6 +18,7 @@
 #import <SDCycleScrollView.h>
 #import "WLSegmentTableViewController.h"
 #import <WLPlatform.h>
+#import <CTMediator+Login.h>
 
 @interface WLExhibitonViewController ()<SDCycleScrollViewDelegate>
 
@@ -224,7 +225,9 @@
         }
         case 5:
         {
-            WLCreditPromiseViewController *vc = [[WLCreditPromiseViewController alloc]init];
+//            WLCreditPromiseViewController *vc = [[WLCreditPromiseViewController alloc]init];
+//            [self.navigationController pushViewController:vc animated:YES];
+            UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

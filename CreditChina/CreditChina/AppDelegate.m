@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "WLLogInViewController.h"
 #import "WLNewFeatureViewController.h"
 #import "WLProfileViewController.h"
 #import "WLProfileCreditViewController.h"

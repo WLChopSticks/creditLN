@@ -99,10 +99,12 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLControls/WLControls.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLLogin/WLLogin.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLControls/WLControls.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLLogin/WLLogin.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

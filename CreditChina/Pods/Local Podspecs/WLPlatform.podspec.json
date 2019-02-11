@@ -18,5 +18,19 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "WLPlatform/Classes/**/*"
+  "source_files": "WLPlatform/Classes/**/*",
+  "dependencies": {
+    "Masonry": [
+
+    ],
+    "AFNetworking": [
+
+    ],
+    "MJExtension": [
+
+    ],
+    "ProgressHUD": [
+
+    ]
+  }
 }

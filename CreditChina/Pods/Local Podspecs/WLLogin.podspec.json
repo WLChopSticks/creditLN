@@ -1,0 +1,27 @@
+{
+  "name": "WLLogin",
+  "version": "0.1.0",
+  "summary": "A short description of WLLogin.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/WLChopsticks/WLLogin",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "WLChopsticks": "wanglei_sy56@163.com"
+  },
+  "source": {
+    "git": "https://github.com/WLChopsticks/WLLogin.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "WLLogin/Classes/**/*",
+  "resource_bundles": {
+    "WLLogin": [
+      "WLLogin/Assets/*"
+    ]
+  }
+}
