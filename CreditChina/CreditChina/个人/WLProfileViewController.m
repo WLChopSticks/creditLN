@@ -8,7 +8,7 @@
 
 #import "WLProfileViewController.h"
 #import "WLTableView.h"
-#import <Masonry.h>
+#import <WLPlatform.h>
 #import "WLImageTitleAccessCell.h"
 #import <objc/runtime.h>
 #import "WLProfileHeaderCell.h"
@@ -32,7 +32,18 @@
 
 - (void)decorateUI
 {
+    //颜色上下渐变
+    CAGradientLayer *layer=[CAGradientLayer layer];
+    layer.frame=self.view.frame;
+    [layer setColors:@[(id)[UIColor colorWithRed:222/255.0 green:30/255.0 blue:32/255.0 alpha:1].CGColor, (id)[UIColor whiteColor].CGColor]];
+    [self.view.layer insertSublayer:layer atIndex:0];
+    [layer setStartPoint:CGPointMake(0, 0)];
+    [layer setEndPoint:CGPointMake(0, 0.8)];
+    
+    
     UIView *profileView = [[UIView alloc]init];
+    profileView.backgroundColor = [UIColor whiteColor];
+    [WLCommonTool makeViewShowingWithRoundCorner:profileView andRadius:10];
     [self.view addSubview:profileView];
     UIImageView *profileImageView=  [[UIImageView alloc]init];
     profileImageView.image = [UIImage imageNamed:@"profileImage"];
@@ -63,6 +74,7 @@
     
     WLTableView *tableView = [[WLTableView alloc]init];
     self.tableView = tableView;
+    [WLCommonTool makeViewShowingWithRoundCorner:tableView andRadius:10];
     tableView.cellClass = [WLImageTitleAccessCell class];
     tableView.wltableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [tableView registNibForCell:@"WLImageTitleAccessCell"  inBundel:nil orBundleName:@"WLControls"];

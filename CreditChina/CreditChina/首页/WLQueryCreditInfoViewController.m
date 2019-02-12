@@ -10,6 +10,7 @@
 #import "WLPlatform.h"
 #import "WLSearchConditionCell.h"
 #import "WLTableView.h"
+#import "WLLegalPeopleSearchResultCell.h"
 
 @interface WLQueryCreditInfoViewController ()<wlTableViewDelegate, UITextFieldDelegate>
 
@@ -20,7 +21,9 @@
 @property (nonatomic, weak) UIButton *filterBtn;
 @property (nonatomic, strong) UITextField *searchField;
 @property (nonatomic, weak) WLTableView *tableView;
+@property (nonatomic, weak) WLTableView *searchResulTableView;
 @property (nonatomic, strong) NSArray *rowsData;
+@property (nonatomic, strong) NSArray *searchResultRowsData;
 @property (nonatomic, strong) NSString *searchURL;
 
 //不同种类时, 条件tableview的高度
@@ -45,6 +48,7 @@
     [self decorateNavigationBarSearchBar];
     [self decorateFilterView];
     [self decorateTopView];
+    [self decorateSearchResultTaleView];
     
     
 }
@@ -84,12 +88,50 @@
     [self.view addSubview:searchCategory];
     
     UIButton *filterBtn = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.searchCategory.frame) + 5, 5, 30, 30)];
+    [filterBtn setImage:[UIImage imageNamed:@"filterBtn"] forState:UIControlStateNormal];
+    [filterBtn setImage:[UIImage imageNamed:@"filterBtn"] forState:UIControlStateSelected];
     self.filterBtn = filterBtn;
     filterBtn.alpha = 0;
     [self.view addSubview:filterBtn];
-    filterBtn.backgroundColor = [UIColor redColor];
+//    filterBtn.backgroundColor = [UIColor redColor];
     [filterBtn addTarget:self action:@selector(filterBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
     
+}
+
+- (void)decorateFilterView
+{
+    WLTableView *tableView = [[WLTableView alloc]init];
+    self.tableView = tableView;
+    tableView.clipsToBounds = YES;
+    tableView.cellClass = [WLSearchConditionCell class];
+    tableView.wltableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    tableView.delegate = self;
+    [self.view addSubview:tableView];
+    [WLCommonTool makeViewShowingWithRoundCorner:tableView andRadius:10];
+    int width = self.view.frame.size.width - 50;
+    int x = self.view.frame.size.width * 0.5 - width * 0.5;
+    int y = 40;
+    int height = 0;
+    tableView.frame = CGRectMake(x, y, width, height);
+}
+
+- (void)decorateSearchResultTaleView
+{
+    WLTableView *resultTableView = [[WLTableView alloc]init];
+    self.searchResulTableView = resultTableView;
+    resultTableView.clipsToBounds = YES;
+    resultTableView.cellClass = [WLLegalPeopleSearchResultCell class];
+    [resultTableView registNibForCell:@"WLLegalPeopleSearchResultCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
+    resultTableView.wltableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    resultTableView.delegate = self;
+    [self.view addSubview:resultTableView];
+    [WLCommonTool makeViewShowingWithRoundCorner:resultTableView andRadius:10];
+    int width = self.view.frame.size.width - 20;
+    int x = 10;
+    int y = CGRectGetMaxY(self.searchCategory.frame) + 5;
+    int height = self.view.frame.size.height - y;
+    resultTableView.frame = CGRectMake(x, y, width, height);
+    resultTableView.alpha = 0;
 }
 
 - (void)decorateBigCategoryView
@@ -239,23 +281,6 @@
     }
 }
 
-- (void)decorateFilterView
-{
-    WLTableView *tableView = [[WLTableView alloc]init];
-    self.tableView = tableView;
-    tableView.clipsToBounds = YES;
-    tableView.cellClass = [WLSearchConditionCell class];
-    tableView.wltableView.separatorStyle = UITableViewCellSelectionStyleNone;
-    tableView.delegate = self;
-    [self.view addSubview:tableView];
-    [WLCommonTool makeViewShowingWithRoundCorner:tableView andRadius:10];
-    int width = self.view.frame.size.width - 50;
-    int x = self.view.frame.size.width * 0.5 - width * 0.5;
-    int y = 40;
-    int height = 0;
-    tableView.frame = CGRectMake(x, y, width, height);
-}
-
 - (NSArray *)constructCellContentDict: (NSDictionary *)dict
 {
     NSArray *peoplename = dict[@"personlist"];
@@ -326,11 +351,50 @@
         urlString = [urlString stringByReplacingOccurrencesOfString:@"{querytype}" withString:textField.text];
         self.searchURL = urlString;
     }
+    
+    [self querySearchData];
 }
 
 - (void)querySearchData
 {
+    WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
+    self.searchURL = @"http://223.100.2.221:8383/credit-webservice-app/restwebservice/app/dataquery/getcompanylist/91/辽宁立科/1/1";
+    self.searchURL = [self.searchURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    [networkTool GET_queryWithURL:self.searchURL andParameters:nil success:^(id  _Nullable responseObject) {
+        NSDictionary *result = (NSDictionary *)responseObject;
+        if (self.searchType == 0)
+        {
+            self.searchResultRowsData = [self constructLegalPeopleCellContentDict:result];
+        }
+//        self.searchResultRowsData = [self constructCellContentDict:result];
+        self.searchResulTableView.cellClass = [WLLegalPeopleSearchResultCell class];
+        self.searchResulTableView.rowsData = self.searchResultRowsData;
+        [self.searchResulTableView reloadData];
+        
+        self.searchResulTableView.alpha = 1;
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+        
+    }];
+}
+
+- (NSArray *)constructLegalPeopleCellContentDict: (NSDictionary *)dict
+{
+    NSArray *legalPeople = dict[@"dataList"];
+    NSMutableArray *constructingArr = [NSMutableArray array];
     
+    //    for (WLDoublePublicityDetailModel *detailModel in model.dataList)
+    for (int i = 0; i < 10; i++)
+    {
+        NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
+        [constructingDict setObject:legalPeople[0][@"企业名称"] forKey:@"company"];
+        [constructingDict setObject:legalPeople[0][@"营业执照注册号"] forKey:@"signupNo"];
+        [constructingDict setObject:legalPeople[0][@"法定代表人"] forKey:@"legalPeople"];
+        [constructingDict setObject:legalPeople[0][@"机构地址"] forKey:@"address"];
+        [constructingArr addObject:constructingDict];
+    }
+    return constructingArr;
 }
 
 /*

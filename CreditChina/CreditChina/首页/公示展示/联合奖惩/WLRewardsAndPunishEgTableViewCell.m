@@ -44,7 +44,7 @@
 
 +(CGFloat)tableView:(UITableView *)tableView rowHeightAtIndexPath:(NSIndexPath *)indexPath withContentDict:(NSDictionary *)dict
 {
-    return 90;
+    return 85;
 }
 
 @end

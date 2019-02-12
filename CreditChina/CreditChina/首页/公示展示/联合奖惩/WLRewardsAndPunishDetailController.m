@@ -31,7 +31,7 @@
 
 - (void)decorateUI
 {
-    self.title = @"行政处罚";
+    self.title = @"联合奖惩";
     WLTableView *tableView = [[WLTableView alloc]init];
     self.tableView = tableView;
     tableView.cellClass = [WLChartRatioTableViewCell class];

@@ -42,6 +42,8 @@
 		9BC20C162202A7BC00732DE3 /* WLRelatedPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C152202A7BC00732DE3 /* WLRelatedPolicyViewController.m */; };
 		9BC20C192202A7E300732DE3 /* WLQueryCreditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C182202A7E300732DE3 /* WLQueryCreditInfoViewController.m */; };
 		9BC20C3422031D4500732DE3 /* WLUserFocusTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C3322031D4500732DE3 /* WLUserFocusTableController.m */; };
+		9BF69A1B22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF69A1922129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m */; };
+		9BF69A1C22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BF69A1A22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,9 @@
 		9BC20C182202A7E300732DE3 /* WLQueryCreditInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLQueryCreditInfoViewController.m; sourceTree = "<group>"; };
 		9BC20C3222031D4500732DE3 /* WLUserFocusTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLUserFocusTableController.h; sourceTree = "<group>"; };
 		9BC20C3322031D4500732DE3 /* WLUserFocusTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLUserFocusTableController.m; sourceTree = "<group>"; };
+		9BF69A1822129BE100AA41B1 /* WLLegalPeopleSearchResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalPeopleSearchResultCell.h; sourceTree = "<group>"; };
+		9BF69A1922129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalPeopleSearchResultCell.m; sourceTree = "<group>"; };
+		9BF69A1A22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLLegalPeopleSearchResultCell.xib; sourceTree = "<group>"; };
 		DD4A422AB8ECC4E7AD688F7F /* Pods-CreditChina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditChina.debug.xcconfig"; path = "Target Support Files/Pods-CreditChina/Pods-CreditChina.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -280,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				9B1AEBF52211440C007769EC /* 公示展示 */,
+				9BF69A1722129B6200AA41B1 /* 信用查询 */,
 				9BC20BC82201886D00732DE3 /* WLExhibitonViewController.h */,
 				9BC20BC92201886D00732DE3 /* WLExhibitonViewController.m */,
 				9BC20C042202A6F000732DE3 /* WLRewardsAndPunishListViewController.h */,
@@ -346,6 +352,16 @@
 				9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		9BF69A1722129B6200AA41B1 /* 信用查询 */ = {
+			isa = PBXGroup;
+			children = (
+				9BF69A1822129BE100AA41B1 /* WLLegalPeopleSearchResultCell.h */,
+				9BF69A1922129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m */,
+				9BF69A1A22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib */,
+			);
+			path = "信用查询";
 			sourceTree = "<group>";
 		};
 		DDCCA9A590C475E30E67E230 /* Frameworks */ = {
@@ -471,6 +487,7 @@
 				9B1AEC1222116689007769EC /* WLRewardsAndPunishEgTableViewCell.xib in Resources */,
 				9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */,
 				9B1AEC0C2211527C007769EC /* WLChartRatioTableViewCell.xib in Resources */,
+				9BF69A1C22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib in Resources */,
 				9BC20A2821FF1B8C00732DE3 /* Assets.xcassets in Resources */,
 				9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */,
 				9B1AEC0722114AA4007769EC /* WLDoublePublicitysTableViewCell.xib in Resources */,
@@ -585,6 +602,7 @@
 				9BC20BC4220187D000732DE3 /* WLProfileCreditViewController.m in Sources */,
 				9BC20C0F2202A77A00732DE3 /* WLNewsViewController.m in Sources */,
 				9BC20BDD22019DA700732DE3 /* WLDoublePublicityViewController.m in Sources */,
+				9BF69A1B22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m in Sources */,
 				9BC20C132202A79C00732DE3 /* WLCreditPromiseViewController.m in Sources */,
 				9BC20BC1220187B400732DE3 /* WLUserFocusViewController.m in Sources */,
 				9BC20A2E21FF1B8C00732DE3 /* main.m in Sources */,
@@ -766,7 +784,7 @@
 				INFOPLIST_FILE = CreditChina/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wanglei.CreditChina;
+				PRODUCT_BUNDLE_IDENTIFIER = wanglei.CreditChina.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -782,7 +800,7 @@
 				INFOPLIST_FILE = CreditChina/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = wanglei.CreditChina;
+				PRODUCT_BUNDLE_IDENTIFIER = wanglei.CreditChina.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

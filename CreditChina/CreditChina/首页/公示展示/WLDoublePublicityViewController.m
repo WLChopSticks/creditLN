@@ -132,8 +132,8 @@
     {
         NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
         
-        [constructingDict setObject:@"大连东山热力有限公司" forKey:@"company"];
-        [constructingDict setObject:@"热力抢修" forKey:@"content"];
+        [constructingDict setObject:@"丹东边境经济合作区泰金木制品加工厂" forKey:@"company"];
+        [constructingDict setObject:@"木材运输证" forKey:@"content"];
         [constructingDict setObject:@"2019-01-24" forKey:@"time"];
         [constructingDict setObject:@"XKCG0005000119005" forKey:@"shuwenhao"];
         [constructingArr addObject:constructingDict];

@@ -78,17 +78,30 @@
     NSMutableArray *constructingArr = [NSMutableArray array];
     
     NSArray *dataList = model[@"rows"];
-    for (NSDictionary *dataDict in dataList)
+//    for (NSDictionary *dataDict in dataList)
+//    {
+//        NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
+//        [constructingDict setObject:dataDict[@"datacasename"] forKey:@"caseName"];
+//        [constructingDict setObject:dataDict[@"datapunishtypename"] forKey:@"symbol"];
+//        [constructingDict setObject:dataDict[@"datacasesubjectsname"] forKey:@"subtitle"];
+//        NSInteger times = [dataDict[@"datacaseupdatetime"]integerValue];
+//        [constructingDict setObject:[WLCommonTool transferTimeFormatWIthTime:times] forKey:@"time"];
+//
+//        [constructingArr addObject:constructingDict];
+//    }
+    
+    for (int i = 0; i < 10; i++)
     {
         NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
-        [constructingDict setObject:dataDict[@"datacasename"] forKey:@"caseName"];
-        [constructingDict setObject:dataDict[@"datapunishtypename"] forKey:@"symbol"];
-        [constructingDict setObject:dataDict[@"datacasesubjectsname"] forKey:@"subtitle"];
-        NSInteger times = [dataDict[@"datacaseupdatetime"]integerValue];
-        [constructingDict setObject:[WLCommonTool transferTimeFormatWIthTime:times] forKey:@"time"];
+        [constructingDict setObject:@"辽宁华杰医药物流有限公司" forKey:@"caseName"];
+        [constructingDict setObject:@"黑名单" forKey:@"symbol"];
+        [constructingDict setObject:@"税务总局_重大税收违法案件当事人名单" forKey:@"subtitle"];
+        [constructingDict setObject:@"2010-00-00" forKey:@"time"];
         
         [constructingArr addObject:constructingDict];
     }
+
+
     return constructingArr;
 }
 

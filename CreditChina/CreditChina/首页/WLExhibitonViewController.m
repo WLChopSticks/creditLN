@@ -122,7 +122,7 @@
     int width = topView.frame.size.width - 30;
     int height = 40;
     int x = topView.frame.size.width * 0.5 - width * 0.5;
-    int y = topView.frame.size.height * 0.5 + height + 10;
+    int y = topView.frame.size.height * 0.5 + height * 0.5;
     searchField.frame = CGRectMake( x, y, width, height);
     [topView addSubview:searchField];
     
@@ -140,13 +140,13 @@
     title.frame = CGRectMake(titleX, titleY, titleWidth, titleHeight);
     [topView addSubview:title];
     
-    NSArray *categoryTitles = @[@"法人信用查询",@"个人身份核实",@"重点人群信用查询"];
-    UISegmentedControl *searchCategory = [[UISegmentedControl alloc]initWithItems:categoryTitles];
-    searchCategory.tintColor = [UIColor whiteColor];
-    searchCategory.frame = CGRectMake(x, y-35, width, 30);
-    searchCategory.selectedSegmentIndex = 0;
-    [searchCategory addTarget:self action:@selector(searchCategorySegmentDidClicking:) forControlEvents:UIControlEventValueChanged];
-    [topView addSubview:searchCategory];
+//    NSArray *categoryTitles = @[@"法人信用查询",@"个人身份核实",@"重点人群信用查询"];
+//    UISegmentedControl *searchCategory = [[UISegmentedControl alloc]initWithItems:categoryTitles];
+//    searchCategory.tintColor = [UIColor whiteColor];
+//    searchCategory.frame = CGRectMake(x, y-35, width, 30);
+//    searchCategory.selectedSegmentIndex = 0;
+//    [searchCategory addTarget:self action:@selector(searchCategorySegmentDidClicking:) forControlEvents:UIControlEventValueChanged];
+//    [topView addSubview:searchCategory];
     
 }
 

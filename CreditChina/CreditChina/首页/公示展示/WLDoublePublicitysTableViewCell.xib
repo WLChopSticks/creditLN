@@ -32,16 +32,16 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018-12-31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2E-xi-Kov">
-                        <rect key="frame" x="229" y="69" width="75" height="16"/>
+                        <rect key="frame" x="229" y="70" width="75" height="14.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="ay7-oA-h6D"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="鞍环罚决字[2018]第(11006)号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gC-8c-ccp">
-                        <rect key="frame" x="16" y="69" width="208" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大开公特公章字第180202号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gC-8c-ccp">
+                        <rect key="frame" x="61" y="69" width="163" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -53,12 +53,22 @@
                             <constraint firstAttribute="height" constant="0.5" id="QGP-IM-vAh"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="书文号: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="419-hn-rZy">
+                        <rect key="frame" x="16" y="69" width="45" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="45" id="xHp-1v-ULj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="2gC-8c-ccp" firstAttribute="leading" secondItem="419-hn-rZy" secondAttribute="trailing" id="4In-1n-pCw"/>
+                    <constraint firstItem="419-hn-rZy" firstAttribute="leading" secondItem="auE-ta-Ctd" secondAttribute="leading" id="8LB-zL-xAe"/>
                     <constraint firstItem="XPu-8E-LHZ" firstAttribute="leading" secondItem="8Kk-do-tM8" secondAttribute="leadingMargin" id="AZ8-iX-Ohc"/>
                     <constraint firstAttribute="bottom" secondItem="XPu-8E-LHZ" secondAttribute="bottom" id="C0s-tA-wPo"/>
                     <constraint firstItem="auE-ta-Ctd" firstAttribute="top" secondItem="pyi-If-hvG" secondAttribute="bottom" constant="10" id="EYb-b7-LdI"/>
-                    <constraint firstItem="2gC-8c-ccp" firstAttribute="leading" secondItem="8Kk-do-tM8" secondAttribute="leadingMargin" id="Ft3-s5-oId"/>
                     <constraint firstItem="pyi-If-hvG" firstAttribute="leading" secondItem="8Kk-do-tM8" secondAttribute="leadingMargin" id="Tuv-rn-pK7"/>
                     <constraint firstAttribute="trailingMargin" secondItem="XPu-8E-LHZ" secondAttribute="trailing" id="YPC-yd-zTL"/>
                     <constraint firstItem="V2E-xi-Kov" firstAttribute="trailing" secondItem="8Kk-do-tM8" secondAttribute="trailingMargin" id="aZF-2Q-rk4"/>
@@ -66,6 +76,8 @@
                     <constraint firstItem="V2E-xi-Kov" firstAttribute="leading" secondItem="2gC-8c-ccp" secondAttribute="trailing" constant="5" id="f4Y-fA-LpV"/>
                     <constraint firstItem="2gC-8c-ccp" firstAttribute="top" secondItem="auE-ta-Ctd" secondAttribute="bottom" constant="10" id="igS-KQ-Apg"/>
                     <constraint firstItem="pyi-If-hvG" firstAttribute="top" secondItem="8Kk-do-tM8" secondAttribute="topMargin" id="jHW-z2-mTs"/>
+                    <constraint firstItem="V2E-xi-Kov" firstAttribute="leading" secondItem="2gC-8c-ccp" secondAttribute="trailing" constant="5" id="oCZ-oY-SPG"/>
+                    <constraint firstItem="419-hn-rZy" firstAttribute="top" secondItem="auE-ta-Ctd" secondAttribute="bottom" constant="10" id="rkA-7e-iOp"/>
                     <constraint firstItem="V2E-xi-Kov" firstAttribute="centerY" secondItem="2gC-8c-ccp" secondAttribute="centerY" id="ydX-2W-bQY"/>
                     <constraint firstAttribute="trailingMargin" secondItem="auE-ta-Ctd" secondAttribute="trailing" id="z7e-wv-fao"/>
                 </constraints>
