@@ -13,11 +13,11 @@
 	<string>{host}/ckdhd/queryCsZd.action</string>
 	<key>getdatareportings</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/datareportings/getdatareportings</string>
-	<key>getpersonselet</key>
+	<key>getpersonselect</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getpersonselet</string>
 	<key>getFocusPeople</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getFocusPeople/{typecode}/zgrxm/zczsbh/1/10</string>
 	<key>getCompanyList</key>
-	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getcompanylist/{querytype}/{querykey}/1/10</string>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getcompanylist/querytype/{querykey}/1/10</string>
 </dict>
 </plist>

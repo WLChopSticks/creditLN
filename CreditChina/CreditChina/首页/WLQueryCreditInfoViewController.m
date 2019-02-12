@@ -44,13 +44,11 @@
 {
     self.title = @"信用信息查询";
     [self decorateBigCategoryView];
-    
     [self decorateNavigationBarSearchBar];
     [self decorateFilterView];
     [self decorateTopView];
     [self decorateSearchResultTaleView];
-    
-    
+  
 }
 
 - (void)decorateNavigationBarSearchBar
@@ -218,8 +216,12 @@
 
 - (void)dismissConditionTableView
 {
+    int width = self.view.frame.size.width - 50;
+    int x = self.view.frame.size.width * 0.5 - width * 0.5;
+    int y = 40;
+    int height = 0;
     [UIView animateWithDuration:0.5 animations:^{
-        self.tableView.frame = self.filterBtn.frame;
+        self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, self.tableView.frame.size.width, 0);
     } completion:^(BOOL finished) {
         
     }];
@@ -228,9 +230,34 @@
 - (void)filterBtnDidClicking: (UIButton *)sender
 {
     NSLog(@"点击了筛选按钮");
+    [self.view bringSubviewToFront:self.tableView];
     sender.selected = !sender.selected;
     if (sender.selected)
     {
+        if (self.searchType == 0)
+        {
+            self.rowsData = @[@{@"condition":@"不限", @"parameter":@"querykey"},
+                              @{@"condition":@"企业", @"parameter":@"91"},
+                              @{@"condition":@"事业单位", @"parameter":@"12"},
+                              @{@"condition":@"民政", @"parameter":@"5"},
+                              @{@"condition":@"个体商户", @"parameter":@"92"},];
+            self.tableView.rowsData = self.rowsData;
+            [self.tableView reloadData];
+            self.legalPersonFilterHeight = 44*5;
+        }else if (self.searchType == 1)
+        {
+            if (self.rowsData.count <= 0)
+            {
+                [self queryFocusPeopleSelect:^(NSDictionary *result, NSError *error) {
+                    if (error == nil)
+                    {
+                        [self showConditionTableView];
+                    }
+                }];
+            }
+            
+        }
+        
         [self showConditionTableView];
     }else
     {
@@ -246,38 +273,17 @@
     self.searchType = sender.selectedSegmentIndex;
     if (self.searchType == 0)
     {
-        self.rowsData = @[@{@"condition":@"不限", @"parameter":@"querykey"},
-                          @{@"condition":@"企业", @"parameter":@"91"},
-                          @{@"condition":@"事业单位", @"parameter":@"12"},
-                          @{@"condition":@"民政", @"parameter":@"5"},
-                          @{@"condition":@"个体商户", @"parameter":@"92"},];
-        self.tableView.rowsData = self.rowsData;
-        
-        [self.tableView reloadData];
-        self.legalPersonFilterHeight = 44*5;
-        [self showConditionTableView];
+        [self.searchField becomeFirstResponder];
+        self.searchField.placeholder = @"请输入法人";
     }else if (self.searchType == 1)
     {
-        WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
-        NSMutableString *URL = [NSMutableString stringWithString:networkTool.queryAPIList[@"getpersonselet"]];
-        NSString *urlString = [NSString stringWithString:URL];
-        urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-        
-        [networkTool GET_queryWithURL:urlString andParameters:nil success:^(id  _Nullable responseObject) {
-            NSDictionary *result = (NSDictionary *)responseObject;
-            self.rowsData = [self constructCellContentDict:result];
-            self.tableView.rowsData = self.rowsData;
-            [self.tableView reloadData];
-            self.focusPeopleFilterHeight = self.tableView.rowsData.count * 44;
-            [self showConditionTableView];
-            
-        } failure:^(NSError *error) {
-            NSLog(@"%@",error);
-            
-        }];
+        [self.searchField resignFirstResponder];
+        [self queryFocusPeopleSelect:nil];
+        self.searchField.placeholder = @"重点人群";
     }else if (self.searchType == 2)
     {
         [self.searchField becomeFirstResponder];
+        self.searchField.placeholder = @"请输入姓名";
     }
 }
 
@@ -306,7 +312,7 @@
     if (self.searchType == 0)
     {
         NSString *urlString = networkTool.queryAPIList[@"getCompanyList"];
-        urlString = [urlString stringByReplacingOccurrencesOfString:@"{querytype}" withString:para];
+        urlString = [urlString stringByReplacingOccurrencesOfString:@"querytype" withString:para];
         self.searchURL = urlString;
     }else if (self.searchType == 1)
     {
@@ -336,6 +342,11 @@
         NSString *searchString = textField.text;
         if (searchString.length > 0)
         {
+            //如果没有选择类别, 弹窗强制选择
+            if ([self.searchURL containsString:@"{typecode}"])
+            {
+                [self showConditionTableView];
+            }
             if ([searchString integerValue])
             {
                 self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"zczsbh" withString:searchString];
@@ -395,6 +406,33 @@
         [constructingArr addObject:constructingDict];
     }
     return constructingArr;
+}
+
+- (void)queryFocusPeopleSelect:(void (^)(NSDictionary *, NSError *))response
+{
+    WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
+    NSMutableString *URL = [NSMutableString stringWithString:networkTool.queryAPIList[@"getpersonselect"]];
+    NSString *urlString = [NSString stringWithString:URL];
+    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    
+    [networkTool GET_queryWithURL:urlString andParameters:nil success:^(id  _Nullable responseObject) {
+        NSDictionary *result = (NSDictionary *)responseObject;
+        self.rowsData = [self constructCellContentDict:result];
+        self.tableView.rowsData = self.rowsData;
+        [self.tableView reloadData];
+        self.focusPeopleFilterHeight = self.tableView.rowsData.count * 44;
+        if (response != nil)
+        {
+            response(result, nil);
+        }
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+        if (response != nil)
+        {
+            response(nil, error);
+        }
+        
+    }];
 }
 
 /*
