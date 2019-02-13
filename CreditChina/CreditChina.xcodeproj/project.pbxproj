@@ -44,6 +44,10 @@
 		9BC20C3422031D4500732DE3 /* WLUserFocusTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C3322031D4500732DE3 /* WLUserFocusTableController.m */; };
 		9BF69A1B22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF69A1922129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m */; };
 		9BF69A1C22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BF69A1A22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib */; };
+		9BFBCF1822141A7300319D2B /* WLFocusPeopleResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFBCF1622141A7300319D2B /* WLFocusPeopleResultCell.m */; };
+		9BFBCF1922141A7300319D2B /* WLFocusPeopleResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BFBCF1722141A7300319D2B /* WLFocusPeopleResultCell.xib */; };
+		9BFBCF1D22141D4A00319D2B /* WLPersonResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFBCF1B22141D4A00319D2B /* WLPersonResultCell.m */; };
+		9BFBCF1E22141D4A00319D2B /* WLPersonResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BFBCF1C22141D4A00319D2B /* WLPersonResultCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +136,12 @@
 		9BF69A1822129BE100AA41B1 /* WLLegalPeopleSearchResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalPeopleSearchResultCell.h; sourceTree = "<group>"; };
 		9BF69A1922129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalPeopleSearchResultCell.m; sourceTree = "<group>"; };
 		9BF69A1A22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLLegalPeopleSearchResultCell.xib; sourceTree = "<group>"; };
+		9BFBCF1522141A7300319D2B /* WLFocusPeopleResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLFocusPeopleResultCell.h; sourceTree = "<group>"; };
+		9BFBCF1622141A7300319D2B /* WLFocusPeopleResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLFocusPeopleResultCell.m; sourceTree = "<group>"; };
+		9BFBCF1722141A7300319D2B /* WLFocusPeopleResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLFocusPeopleResultCell.xib; sourceTree = "<group>"; };
+		9BFBCF1A22141D4A00319D2B /* WLPersonResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLPersonResultCell.h; sourceTree = "<group>"; };
+		9BFBCF1B22141D4A00319D2B /* WLPersonResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLPersonResultCell.m; sourceTree = "<group>"; };
+		9BFBCF1C22141D4A00319D2B /* WLPersonResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLPersonResultCell.xib; sourceTree = "<group>"; };
 		DD4A422AB8ECC4E7AD688F7F /* Pods-CreditChina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditChina.debug.xcconfig"; path = "Target Support Files/Pods-CreditChina/Pods-CreditChina.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -360,6 +370,12 @@
 				9BF69A1822129BE100AA41B1 /* WLLegalPeopleSearchResultCell.h */,
 				9BF69A1922129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m */,
 				9BF69A1A22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib */,
+				9BFBCF1522141A7300319D2B /* WLFocusPeopleResultCell.h */,
+				9BFBCF1622141A7300319D2B /* WLFocusPeopleResultCell.m */,
+				9BFBCF1722141A7300319D2B /* WLFocusPeopleResultCell.xib */,
+				9BFBCF1A22141D4A00319D2B /* WLPersonResultCell.h */,
+				9BFBCF1B22141D4A00319D2B /* WLPersonResultCell.m */,
+				9BFBCF1C22141D4A00319D2B /* WLPersonResultCell.xib */,
 			);
 			path = "信用查询";
 			sourceTree = "<group>";
@@ -483,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC20A2B21FF1B8C00732DE3 /* LaunchScreen.storyboard in Resources */,
+				9BFBCF1922141A7300319D2B /* WLFocusPeopleResultCell.xib in Resources */,
 				9B1AE9EC220FE430007769EC /* QueryApiList.plist in Resources */,
 				9B1AEC1222116689007769EC /* WLRewardsAndPunishEgTableViewCell.xib in Resources */,
 				9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */,
@@ -491,6 +508,7 @@
 				9BC20A2821FF1B8C00732DE3 /* Assets.xcassets in Resources */,
 				9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */,
 				9B1AEC0722114AA4007769EC /* WLDoublePublicitysTableViewCell.xib in Resources */,
+				9BFBCF1E22141D4A00319D2B /* WLPersonResultCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +602,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC20C092202A73B00732DE3 /* WLRewardsAndPunishExampleViewController.m in Sources */,
+				9BFBCF1D22141D4A00319D2B /* WLPersonResultCell.m in Sources */,
 				9BC20C062202A6F000732DE3 /* WLRewardsAndPunishListViewController.m in Sources */,
 				9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */,
 				9B1AEC0B2211527C007769EC /* WLChartRatioTableViewCell.m in Sources */,
@@ -592,6 +611,7 @@
 				9BA009ED2205D6B700D1FFD9 /* WLRedAndBlackListViewController.m in Sources */,
 				9BC20C3422031D4500732DE3 /* WLUserFocusTableController.m in Sources */,
 				9BC20C192202A7E300732DE3 /* WLQueryCreditInfoViewController.m in Sources */,
+				9BFBCF1822141A7300319D2B /* WLFocusPeopleResultCell.m in Sources */,
 				9BA00A072209CD5D00D1FFD9 /* WLDoublePolicyDetailViewController.m in Sources */,
 				9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */,
 				9B1AEC1522116D00007769EC /* WLRewardsAndPunishDetailController.m in Sources */,

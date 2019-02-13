@@ -11,6 +11,8 @@
 #import "WLSearchConditionCell.h"
 #import "WLTableView.h"
 #import "WLLegalPeopleSearchResultCell.h"
+#import "WLFocusPeopleResultCell.h"
+#import "WLPersonResultCell.h"
 
 @interface WLQueryCreditInfoViewController ()<wlTableViewDelegate, UITextFieldDelegate>
 
@@ -120,6 +122,8 @@
     resultTableView.clipsToBounds = YES;
     resultTableView.cellClass = [WLLegalPeopleSearchResultCell class];
     [resultTableView registNibForCell:@"WLLegalPeopleSearchResultCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
+    [resultTableView registNibForCell:@"WLFocusPeopleResultCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
+    [resultTableView registNibForCell:@"WLPersonResultCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
     resultTableView.wltableView.separatorStyle = UITableViewCellSelectionStyleNone;
     resultTableView.delegate = self;
     [self.view addSubview:resultTableView];
@@ -380,16 +384,25 @@
 - (void)querySearchData
 {
     WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
-    self.searchURL = @"http://223.100.2.221:8383/credit-webservice-app/restwebservice/app/dataquery/getcompanylist/91/辽宁立科/1/1";
-    self.searchURL = [self.searchURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    self.searchURL = @"http://223.100.2.221:8383/credit-webservice-app/restwebservice/app/dataquery/getPersonData/%E7%A7%A6%E9%A2%96/21010217443210023";
+//    self.searchURL = [self.searchURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     [networkTool GET_queryWithURL:self.searchURL andParameters:nil success:^(id  _Nullable responseObject) {
         NSDictionary *result = (NSDictionary *)responseObject;
         if (self.searchType == 0)
         {
             self.searchResultRowsData = [self constructLegalPeopleCellContentDict:result];
+            self.searchResulTableView.cellClass = [WLLegalPeopleSearchResultCell class];
+        }else if (self.searchType == 1)
+        {
+            self.searchResultRowsData = [self constructFocusPeopleCellContentDict:result];
+            self.searchResulTableView.cellClass = [WLFocusPeopleResultCell class];
+        }else if (self.searchType == 2)
+        {
+            self.searchResultRowsData = [self constructPersonCellContentDict:result];
+            self.searchResulTableView.cellClass = [WLPersonResultCell class];
         }
 //        self.searchResultRowsData = [self constructCellContentDict:result];
-        self.searchResulTableView.cellClass = [WLLegalPeopleSearchResultCell class];
+//        self.searchResulTableView.cellClass = [WLLegalPeopleSearchResultCell class];
         self.searchResulTableView.rowsData = self.searchResultRowsData;
         [self.searchResulTableView reloadData];
         
@@ -414,6 +427,43 @@
         [constructingDict setObject:legalPeople[0][@"营业执照注册号"] forKey:@"signupNo"];
         [constructingDict setObject:legalPeople[0][@"法定代表人"] forKey:@"legalPeople"];
         [constructingDict setObject:legalPeople[0][@"机构地址"] forKey:@"address"];
+        [constructingArr addObject:constructingDict];
+    }
+    return constructingArr;
+}
+
+- (NSArray *)constructFocusPeopleCellContentDict: (NSDictionary *)dict
+{
+    NSArray *focusPeople = dict[@"rows"];
+    NSMutableArray *constructingArr = [NSMutableArray array];
+    
+    //    for (WLDoublePublicityDetailModel *detailModel in model.dataList)
+    for (int i = 0; i < 10; i++)
+    {
+        NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
+        [constructingDict setObject:focusPeople[0][@"zgrxm"] forKey:@"name"];
+        [constructingDict setObject:focusPeople[0][@"zczsmc"] forKey:@"job"];
+        [constructingDict setObject:focusPeople[0][@"zyzgdj"] forKey:@"grade"];
+        [constructingDict setObject:focusPeople[0][@"gaid"] forKey:@"idCard"];
+        [constructingDict setObject:focusPeople[0][@"zczsbh"] forKey:@"number"];
+        [constructingArr addObject:constructingDict];
+    }
+    return constructingArr;
+}
+
+- (NSArray *)constructPersonCellContentDict: (NSDictionary *)dict
+{
+    NSArray *people = dict[@"rows"];
+    NSMutableArray *constructingArr = [NSMutableArray array];
+    
+    //    for (WLDoublePublicityDetailModel *detailModel in model.dataList)
+    for (int i = 0; i < 10; i++)
+    {
+        NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
+        [constructingDict setObject:people[0][@"grxm"] forKey:@"name"];
+        [constructingDict setObject:people[0][@"receivedate"] forKey:@"receiveTime"];
+        [constructingDict setObject:people[0][@"sourcetablename"] forKey:@"tableName"];
+        [constructingDict setObject:people[0][@"sfzjhm"] forKey:@"idCard"];
         [constructingArr addObject:constructingDict];
     }
     return constructingArr;
