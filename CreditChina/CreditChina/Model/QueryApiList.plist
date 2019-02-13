@@ -19,5 +19,7 @@
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getFocusPeople/{typecode}/zgrxm/zczsbh/1/10</string>
 	<key>getCompanyList</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getcompanylist/querytype/{querykey}/1/10</string>
+	<key>getPersonData</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getPersonData/name/IDCardNo</string>
 </dict>
 </plist>

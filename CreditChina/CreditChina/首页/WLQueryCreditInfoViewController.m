@@ -181,6 +181,7 @@
 
 - (void)showConditionTableView
 {
+    self.filterBtn.selected = !self.filterBtn.selected;
     NSInteger height = 100;
     switch (self.searchType)
     {
@@ -216,6 +217,7 @@
 
 - (void)dismissConditionTableView
 {
+    self.filterBtn.selected = !self.filterBtn.selected;
     int width = self.view.frame.size.width - 50;
     int x = self.view.frame.size.width * 0.5 - width * 0.5;
     int y = 40;
@@ -275,16 +277,21 @@
     {
         [self.searchField becomeFirstResponder];
         self.searchField.placeholder = @"请输入法人";
+        self.searchURL = [WLNetworkTool sharedNetworkToolManager].queryAPIList[@"getCompanyList"];
     }else if (self.searchType == 1)
     {
         [self.searchField resignFirstResponder];
         [self queryFocusPeopleSelect:nil];
         self.searchField.placeholder = @"重点人群";
+        self.searchURL = [WLNetworkTool sharedNetworkToolManager].queryAPIList[@"getFocusPeople"];
     }else if (self.searchType == 2)
     {
         [self.searchField becomeFirstResponder];
         self.searchField.placeholder = @"请输入姓名";
+        self.searchURL = [WLNetworkTool sharedNetworkToolManager].queryAPIList[@"getPersonData"];
     }
+    
+
 }
 
 - (NSArray *)constructCellContentDict: (NSDictionary *)dict
@@ -308,17 +315,18 @@
     [self dismissConditionTableView];
     
     NSString *para = self.rowsData[indexPath.row][@"parameter"];
-    WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
     if (self.searchType == 0)
     {
-        NSString *urlString = networkTool.queryAPIList[@"getCompanyList"];
-        urlString = [urlString stringByReplacingOccurrencesOfString:@"querytype" withString:para];
-        self.searchURL = urlString;
+        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"querytype" withString:para];
     }else if (self.searchType == 1)
     {
-        NSString *urlString = networkTool.queryAPIList[@"getFocusPeople"];
-        urlString = [urlString stringByReplacingOccurrencesOfString:@"{typecode}" withString:para];
-        self.searchURL = urlString;
+        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"{typecode}" withString:para];
+        if ([self.searchURL containsString:@"need_to_push"])
+        {
+            self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"need_to_push" withString:@""];
+            [self dismissConditionTableView];
+            [self querySearchData];
+        }
     }
     
 }
@@ -342,11 +350,6 @@
         NSString *searchString = textField.text;
         if (searchString.length > 0)
         {
-            //如果没有选择类别, 弹窗强制选择
-            if ([self.searchURL containsString:@"{typecode}"])
-            {
-                [self showConditionTableView];
-            }
             if ([searchString integerValue])
             {
                 self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"zczsbh" withString:searchString];
@@ -354,13 +357,21 @@
             {
                 self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"zgrxm" withString:searchString];
             }
+            //如果没有选择类别, 弹窗强制选择
+            if ([self.searchURL containsString:@"{typecode}"])
+            {
+                self.searchURL = [self.searchURL stringByAppendingString:@"need_to_push"];
+                [self showConditionTableView];
+                return;
+            }
         }
     }else if (self.searchType == 2)
     {
-        WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
-        NSString *urlString = networkTool.queryAPIList[@"getCompanyList"];
-        urlString = [urlString stringByReplacingOccurrencesOfString:@"{querytype}" withString:textField.text];
-        self.searchURL = urlString;
+        NSString *inputStr = [self.searchField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSArray *fields = [inputStr componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"name" withString:fields.firstObject];
+        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"IDCardNo" withString:fields.lastObject];
     }
     
     [self querySearchData];
