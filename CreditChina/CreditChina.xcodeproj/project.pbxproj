@@ -48,6 +48,11 @@
 		9BFBCF1922141A7300319D2B /* WLFocusPeopleResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BFBCF1722141A7300319D2B /* WLFocusPeopleResultCell.xib */; };
 		9BFBCF1D22141D4A00319D2B /* WLPersonResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFBCF1B22141D4A00319D2B /* WLPersonResultCell.m */; };
 		9BFBCF1E22141D4A00319D2B /* WLPersonResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BFBCF1C22141D4A00319D2B /* WLPersonResultCell.xib */; };
+		9BFBCF7022145ADB00319D2B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFBCF6F22145ADA00319D2B /* AVFoundation.framework */; };
+		9BFBCF7222145AE100319D2B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFBCF7122145AE000319D2B /* CoreData.framework */; };
+		9BFBCF7422145AE700319D2B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFBCF7322145AE600319D2B /* AssetsLibrary.framework */; };
+		9BFBCF7622145AF200319D2B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFBCF7522145AF200319D2B /* GLKit.framework */; };
+		9BFBCF7822145AFC00319D2B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFBCF7722145AFB00319D2B /* CoreMedia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +147,11 @@
 		9BFBCF1A22141D4A00319D2B /* WLPersonResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLPersonResultCell.h; sourceTree = "<group>"; };
 		9BFBCF1B22141D4A00319D2B /* WLPersonResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLPersonResultCell.m; sourceTree = "<group>"; };
 		9BFBCF1C22141D4A00319D2B /* WLPersonResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLPersonResultCell.xib; sourceTree = "<group>"; };
+		9BFBCF6F22145ADA00319D2B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9BFBCF7122145AE000319D2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9BFBCF7322145AE600319D2B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		9BFBCF7522145AF200319D2B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		9BFBCF7722145AFB00319D2B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		DD4A422AB8ECC4E7AD688F7F /* Pods-CreditChina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditChina.debug.xcconfig"; path = "Target Support Files/Pods-CreditChina/Pods-CreditChina.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +160,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFBCF7822145AFC00319D2B /* CoreMedia.framework in Frameworks */,
+				9BFBCF7622145AF200319D2B /* GLKit.framework in Frameworks */,
+				9BFBCF7422145AE700319D2B /* AssetsLibrary.framework in Frameworks */,
+				9BFBCF7222145AE100319D2B /* CoreData.framework in Frameworks */,
+				9BFBCF7022145ADB00319D2B /* AVFoundation.framework in Frameworks */,
 				7BB17B9A6409CA6E79BB1835 /* libPods-CreditChina.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,6 +223,13 @@
 				9B1AEC1422116D00007769EC /* WLRewardsAndPunishDetailController.m */,
 			);
 			path = "联合奖惩";
+			sourceTree = "<group>";
+		};
+		9B391751221675D400B7E8EF /* 新闻政策 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "新闻政策";
 			sourceTree = "<group>";
 		};
 		9BA009F322068D1D00D1FFD9 /* Model */ = {
@@ -295,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				9B1AEBF52211440C007769EC /* 公示展示 */,
+				9B391751221675D400B7E8EF /* 新闻政策 */,
 				9BF69A1722129B6200AA41B1 /* 信用查询 */,
 				9BC20BC82201886D00732DE3 /* WLExhibitonViewController.h */,
 				9BC20BC92201886D00732DE3 /* WLExhibitonViewController.m */,
@@ -383,6 +406,11 @@
 		DDCCA9A590C475E30E67E230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9BFBCF7722145AFB00319D2B /* CoreMedia.framework */,
+				9BFBCF7522145AF200319D2B /* GLKit.framework */,
+				9BFBCF7322145AE600319D2B /* AssetsLibrary.framework */,
+				9BFBCF7122145AE000319D2B /* CoreData.framework */,
+				9BFBCF6F22145ADA00319D2B /* AVFoundation.framework */,
 				57EAABDB20D4B2230A562DBB /* libPods-CreditChina.a */,
 			);
 			name = Frameworks;
