@@ -10,10 +10,13 @@
 #import "WLPlatform.h"
 #import "WLTableView.h"
 #import "WLDoublePublicityCell.h"
+#import "WLNewsDetailViewController.h"
 
 @interface WLRelatedPolicyViewController ()<wlTableViewDelegate>
 
 @property (nonatomic, weak) WLTableView *tableView;
+@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSDictionary *responseDict;
 
 @end
 
@@ -58,10 +61,35 @@
     
     
     [networkTool GET_queryWithURL:urlString andParameters:nil success:^(id  _Nullable responseObject) {
-        NSDictionary *result = (NSDictionary *)responseObject;
+//        NSDictionary *result = (NSDictionary *)responseObject;
         //        WLDoublePublicityModel *model = [[WLDoublePublicityModel alloc]init];
         //        model = [model getModel:result];
-        self.tableView.rowsData = [self constructCellContentDict:result];
+        NSString *fileName = @"";
+        switch (self.policyType.integerValue)
+        {
+            case 1:
+            {
+                fileName = @"law_nation_20190215";
+                break;
+            }
+            case 2:
+            {
+                fileName = @"law_province_20190215";
+                break;
+            }
+            case 3:
+            {
+                fileName = @"law_city_20190215";
+                break;
+            }
+  
+            default:
+                break;
+        }
+        NSDictionary *result = [WLCommonTool getLocalJsonFileWithName:fileName];
+        self.responseDict = result;
+        self.dataArray = [self constructCellContentDict:result];
+        self.tableView.rowsData = self.dataArray;
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
@@ -72,35 +100,37 @@
 -(void)wlTableView:(UITableView *)tableView didSelectCellAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"点击了cell %ld", indexPath.row);
+    NSDictionary *content = self.dataArray[indexPath.row];
+    WLNewsDetailViewController *vc = [[WLNewsDetailViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.content = content;
+    vc.contentBaseURL = [self getContentBaseURL:self.responseDict];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (NSArray *)constructCellContentDict: (NSDictionary *)model
 {
     NSMutableArray *constructingArr = [NSMutableArray array];
-    
-    //    for (WLDoublePublicityDetailModel *detailModel in model.dataList)
-    for (int i = 0; i < 10; i++)
+    NSArray *news = model[@"news"];
+    for (NSDictionary *detailNews in news)
     {
         NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
-        [constructingDict setObject:@"关于对违法失信上市公司相关责任主体实施联合惩戒的合作备忘录" forKey:@"publicityType"];
-        NSString *symbolString = @"国家政策";
-        if ([self.policyType isEqualToString:@"1"])
-        {
-            symbolString = @"国家政策";
-        }else if ([self.policyType isEqualToString:@"2"])
-        {
-            symbolString = @"省内政策";
-        }else
-        {
-            symbolString = @"市级政策";
-        }
+        [constructingDict setObject:detailNews[@"title"] forKey:@"publicityType"];
+        [constructingDict setObject:detailNews[@"column"] forKey:@"symbolString"];
+        [constructingDict setObject:detailNews[@"date"] forKey:@"updateTime"];
         
-        [constructingDict setObject:symbolString forKey:@"symbolString"];
-        [constructingDict setObject:[WLCommonTool transferTimeFormatWIthTime:113231221312] forKey:@"updateTime"];
+        [constructingDict setObject:detailNews[@"content"] forKey:@"content"];
         
         [constructingArr addObject:constructingDict];
     }
     return constructingArr;
+}
+
+- (NSString *)getContentBaseURL: (NSDictionary *)model
+{
+    NSDictionary *baseDict = model[@"base"];
+    NSString *baseURL = baseDict[@"address"];
+    return baseURL;
 }
 
 /*
