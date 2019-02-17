@@ -18,7 +18,10 @@
 #import <SDCycleScrollView.h>
 #import "WLSegmentTableViewController.h"
 #import <WLPlatform.h>
+#import <WLTableView.h>
 #import <CTMediator+Login.h>
+#import "WLExhibitionMessageCell.h"
+#import "WLNewsAndPolicyShowInExhibitionController.h"
 
 @interface WLExhibitonViewController ()<SDCycleScrollViewDelegate>
 
@@ -50,62 +53,97 @@
 
 - (void)decorateUI
 {
-    [self decorateTopView];
+    UIScrollView *backScroll = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.view addSubview:backScroll];
     
-    UIView *functionView = [[UIView alloc]initWithFrame:CGRectMake(0, self.topView.frame.size.height + 20, Screen_Width, Screen_Height * 0.25)];
-    [self.view addSubview:functionView];
-
-    for (int i = 0; i < self.functionBtns.count; i++)
-    {
-        UIButton *functionBtn = [[UIButton alloc]init];
-
-        NSDictionary *dict = self.functionBtns[i];
-        [functionBtn setTitle:dict[@"title"] forState:UIControlStateNormal];
-        [functionBtn setImage:[UIImage imageNamed:dict[@"image"]] forState:UIControlStateNormal];
-        functionBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-        [functionBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-
-        functionBtn.tag = i;
-        [functionBtn addTarget:self action:@selector(functionBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
-        int width = Screen_Width * 0.25;
-        int height = functionView.frame.size.height * 0.5;
-        int x = i % 4 == 0 ? 0 : Screen_Width * 0.25 * (i % 4);
-        int y = i / 4 * height;
-        functionBtn.frame = CGRectMake(x, y, width, height);
-
-        functionBtn.titleEdgeInsets = UIEdgeInsetsMake(10, -functionBtn.imageView.frame.size.width, -functionBtn.imageView.frame.size.height, 0);
-        functionBtn.imageEdgeInsets = UIEdgeInsetsMake(-functionBtn.titleLabel.intrinsicContentSize.height, 0, 0, -functionBtn.titleLabel.intrinsicContentSize.width);
-
-        [functionView addSubview:functionBtn];
-
-    }
+    UIView *bgView = [[UIView alloc]init];
+    bgView.backgroundColor = [UIColor lightGrayColor];
+    [backScroll addSubview:bgView];
+    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(backScroll);
+                make.top.equalTo(backScroll.mas_top).offset(-20);
+                make.left.equalTo(backScroll.mas_left);
+                make.right.equalTo(backScroll.mas_right);
+                make.bottom.equalTo(backScroll.mas_bottom);
+        make.width.equalTo(backScroll);
+    }];
     
-        SDCycleScrollView *topView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(10, CGRectGetMaxY(functionView.frame) + 20, Screen_Width-20, Screen_Height * 0.25) delegate:self placeholderImage:[UIImage imageNamed:@"temp"]];
-        NSArray *imagesURLStrings = @[
-                                      @"https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a4b3d7085dee3d6d2293d48b252b5910/0e2442a7d933c89524cd5cd4d51373f0830200ea.jpg",
-                                      @"https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a41eb338dd33c895a62bcb3bb72e47c2/5fdf8db1cb134954a2192ccb524e9258d1094a1e.jpg",
-                                      @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"
-                                      ];
-        topView.imageURLStringsGroup = imagesURLStrings;
-        [self.view addSubview:topView];
-
+    UIView *topView = [[UIView alloc]init];
+    topView.backgroundColor = [UIColor whiteColor];
+    [bgView addSubview:topView];
+    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(bgView.mas_top);
+        make.left.right.equalTo(bgView);
+        make.height.mas_equalTo(Screen_Height * 0.25);
+    }];
+    
+    UIView *functionBtnView = [[UIView alloc]init];
+    functionBtnView.backgroundColor = [UIColor whiteColor];
+    [bgView addSubview:functionBtnView];
+    [functionBtnView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_bottom);
+        make.left.right.equalTo(backScroll);
+        make.height.mas_equalTo(Screen_Height * 0.25);
+    }];
+    
+    UIView *creditMessageView = [[UIView alloc]init];
+    creditMessageView.backgroundColor = [UIColor whiteColor];
+    [bgView addSubview:creditMessageView];
+    [creditMessageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(functionBtnView.mas_bottom).offset(10);
+        make.left.right.equalTo(backScroll);
+        make.height.mas_equalTo(150);
+    }];
+    
+    UIView *newsView = [[UIView alloc]init];
+    newsView.backgroundColor = [UIColor redColor];
+    [bgView addSubview:newsView];
+    [newsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(creditMessageView.mas_bottom).offset(10);
+        make.left.right.equalTo(backScroll);
+        make.height.mas_equalTo(Screen_Height * 0.3);
+    }];
+    
+    UIView *policyView = [[UIView alloc]init];
+    policyView.backgroundColor = [UIColor whiteColor];
+    [bgView addSubview:policyView];
+    [policyView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(newsView.mas_bottom).offset(10);
+        make.left.right.equalTo(backScroll);
+        make.height.mas_equalTo(230);
+        make.bottom.equalTo(backScroll);
+    }];
+    
+    [self decorateTopView:topView];
+    [self decorateFunctionButtonsView:functionBtnView];
+    [self decorateCreditMessageView:creditMessageView];
+    
+    [self decoratePolicyInfoView:policyView];
+    
+    
+    
+    //        SDCycleScrollView *topView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(10, CGRectGetMaxY(functionView.frame) + 20, Screen_Width-20, Screen_Height * 0.25) delegate:self placeholderImage:[UIImage imageNamed:@"temp"]];
+    //        NSArray *imagesURLStrings = @[
+    //                                      @"https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a4b3d7085dee3d6d2293d48b252b5910/0e2442a7d933c89524cd5cd4d51373f0830200ea.jpg",
+    //                                      @"https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a41eb338dd33c895a62bcb3bb72e47c2/5fdf8db1cb134954a2192ccb524e9258d1094a1e.jpg",
+    //                                      @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"
+    //                                      ];
+    //        topView.imageURLStringsGroup = imagesURLStrings;
+    //        [self.view addSubview:topView];
+    
     
     
 }
 
-- (void)decorateTopView
+- (void)decorateTopView: (UIView *)containerView
 {
-    UIView *topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height / 3)];
-    self.topView = topView;
-//    topView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:topView];
-    
-    UIImageView *backImage = [[UIImageView alloc]initWithFrame:topView.bounds];
+    UIImageView *backImage = [[UIImageView alloc]init];
     backImage.image = [UIImage imageNamed:@"2"];
-    [topView addSubview:backImage];
+    [containerView addSubview:backImage];
+    
     UITextField *searchField = [[UITextField alloc]init];
     searchField.borderStyle = UITextBorderStyleRoundedRect;
-    NSString *holderText = @"请输入企业法人/法人名称";
+    NSString *holderText = @"请输入企业名,人名,品牌等关键字";
     NSMutableAttributedString *placeholder = [[NSMutableAttributedString alloc] initWithString:holderText];
     [placeholder addAttribute:NSFontAttributeName
                         value:[UIFont boldSystemFontOfSize:14]
@@ -116,39 +154,186 @@
     searchLeftImageView.image = [UIImage imageNamed:@"search"];
     [leftView addSubview:searchLeftImageView];
     searchField.leftViewMode = UITextFieldViewModeAlways;
-    
     searchField.leftView = leftView;
-
-    int width = topView.frame.size.width - 30;
-    int height = 40;
-    int x = topView.frame.size.width * 0.5 - width * 0.5;
-    int y = topView.frame.size.height * 0.5 + height * 0.5;
-    searchField.frame = CGRectMake( x, y, width, height);
-    [topView addSubview:searchField];
+    [containerView addSubview:searchField];
+    
+    [backImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(containerView);
+        make.bottom.equalTo(containerView.mas_bottom).offset(-20);
+    }];
+    
+    [searchField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(containerView.mas_left).offset(25);
+        make.right.equalTo(containerView.mas_right).offset(-25);
+        make.bottom.equalTo(containerView);
+        make.height.mas_equalTo(40);
+    }];
     
     
     
-    UILabel *title = [[UILabel alloc]init];
-    title.text = @"信用辽宁";
-    title.font = [UIFont fontWithName:@"kaiti_GB2312" size:45];
-    title.textAlignment = NSTextAlignmentCenter;
-    title.textColor = [UIColor whiteColor];
-    int titleWidth = topView.frame.size.width - 150;
-    int titleHeight = 40;
-    int titleX = topView.frame.size.width * 0.5 - titleWidth * 0.5;
-    int titleY = topView.frame.size.height * 0.5 - 60;
-    title.frame = CGRectMake(titleX, titleY, titleWidth, titleHeight);
-    [topView addSubview:title];
     
-//    NSArray *categoryTitles = @[@"法人信用查询",@"个人身份核实",@"重点人群信用查询"];
-//    UISegmentedControl *searchCategory = [[UISegmentedControl alloc]initWithItems:categoryTitles];
-//    searchCategory.tintColor = [UIColor whiteColor];
-//    searchCategory.frame = CGRectMake(x, y-35, width, 30);
-//    searchCategory.selectedSegmentIndex = 0;
-//    [searchCategory addTarget:self action:@selector(searchCategorySegmentDidClicking:) forControlEvents:UIControlEventValueChanged];
-//    [topView addSubview:searchCategory];
     
 }
+
+
+- (void)decorateFunctionButtonsView: (UIView *)containerView
+{
+    UIView *functionView = [[UIView alloc]initWithFrame:CGRectMake(0, self.topView.frame.size.height + 20, Screen_Width, Screen_Height * 0.25)];
+    [self.view addSubview:functionView];
+    
+    for (int i = 0; i < self.functionBtns.count; i++)
+    {
+        UIButton *functionBtn = [[UIButton alloc]init];
+        
+        NSDictionary *dict = self.functionBtns[i];
+        [functionBtn setTitle:dict[@"title"] forState:UIControlStateNormal];
+        [functionBtn setImage:[UIImage imageNamed:dict[@"image"]] forState:UIControlStateNormal];
+        functionBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+        [functionBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        
+        functionBtn.tag = i;
+        [functionBtn addTarget:self action:@selector(functionBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
+        int width = Screen_Width * 0.25;
+        int height = functionView.frame.size.height * 0.5;
+        int x = i % 4 == 0 ? 0 : Screen_Width * 0.25 * (i % 4);
+        int y = i / 4 * height;
+        functionBtn.frame = CGRectMake(x, y, width, height);
+        
+        functionBtn.titleEdgeInsets = UIEdgeInsetsMake(10, -functionBtn.imageView.frame.size.width, -functionBtn.imageView.frame.size.height, 0);
+        functionBtn.imageEdgeInsets = UIEdgeInsetsMake(-functionBtn.titleLabel.intrinsicContentSize.height, 0, 0, -functionBtn.titleLabel.intrinsicContentSize.width);
+        
+        [containerView addSubview:functionBtn];
+        
+    }
+}
+
+
+- (void)decorateCreditMessageView: (UIView *)containerView
+{
+    UIImageView *leftimage = [[UIImageView alloc]init];
+    leftimage.backgroundColor = [UIColor redColor];
+    [containerView addSubview:leftimage];
+    UILabel *viewTitle = [[UILabel alloc]init];
+    viewTitle.text = @"信用信息";
+    [containerView addSubview:viewTitle];
+    UILabel *messageCount = [[UILabel alloc]init];
+    messageCount.font = [UIFont systemFontOfSize:13];
+    messageCount.textAlignment = NSTextAlignmentCenter;
+    messageCount.text = @"今天收到3条消息";
+    [containerView addSubview:messageCount];
+    UIButton *moreBtn = [[UIButton alloc]init];
+    moreBtn.backgroundColor = [UIColor redColor];
+    [containerView addSubview:moreBtn];
+    
+    WLTableView *messageTable = [[WLTableView alloc]init];
+    [containerView addSubview:messageTable];
+    messageTable.cellClass = [WLExhibitionMessageCell class];
+    messageTable.wltableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [messageTable registNibForCell:@"WLExhibitionMessageCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
+    messageTable.rowsData = @[@{@"content":@"您有1条预警消息, 关于被人民法院定位失信被执行人的信息",@"showDetailBtn":@"1"},@{@"content":@"您提交的异议申诉已经进入处理流程, 请耐心等待处理结果",@"showDetailBtn":@"1"}];
+    
+    [leftimage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(containerView);
+        make.left.equalTo(containerView);
+        make.width.height.mas_equalTo(30);
+    }];
+    
+    [viewTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(leftimage.mas_centerY);
+        make.left.equalTo(leftimage.mas_right).offset(5);
+    }];
+    
+    [moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(containerView.mas_right);
+        make.top.equalTo(containerView.mas_top);
+        make.width.height.mas_equalTo(30);
+    }];
+    
+    [messageCount mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(leftimage.mas_bottom).offset(5);
+        make.left.right.equalTo(containerView);
+    }];
+    
+    [messageTable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(containerView);
+        make.top.equalTo(messageCount.mas_bottom).offset(10);
+        make.bottom.equalTo(containerView.mas_bottom);
+    }];
+    
+}
+
+- (void)decorateNewsInfoView: (UIView *)containerView
+{
+    UIImageView *leftimage = [[UIImageView alloc]init];
+    leftimage.backgroundColor = [UIColor redColor];
+    [containerView addSubview:leftimage];
+    UILabel *viewTitle = [[UILabel alloc]init];
+    viewTitle.text = @"新闻资讯";
+    [containerView addSubview:viewTitle];
+    UIButton *moreBtn = [[UIButton alloc]init];
+    moreBtn.backgroundColor = [UIColor redColor];
+    [containerView addSubview:moreBtn];
+}
+
+- (void)decoratePolicyInfoView: (UIView *)containerView
+{
+    UIImageView *leftimage = [[UIImageView alloc]init];
+    leftimage.backgroundColor = [UIColor redColor];
+    [containerView addSubview:leftimage];
+    UILabel *viewTitle = [[UILabel alloc]init];
+    viewTitle.text = @"政策法规";
+    [containerView addSubview:viewTitle];
+    UIButton *moreBtn = [[UIButton alloc]init];
+    moreBtn.backgroundColor = [UIColor redColor];
+    [containerView addSubview:moreBtn];
+
+    WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
+//    categoryTable.view.backgroundColor = [UIColor whiteColor]
+    categoryTable.titles = @[@"国家",@"省级",@"市级"];
+    WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
+    vc10.showType = @"2";
+    WLNewsAndPolicyShowInExhibitionController *vc20 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
+    vc20.showType = @"2";
+    WLNewsAndPolicyShowInExhibitionController *vc30 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
+    vc30.showType = @"2";
+    categoryTable.controllers = @[vc10,vc20,vc30];
+    categoryTable.categoryWidth = 200;
+    
+    [containerView addSubview:categoryTable.view];
+    [self addChildViewController:categoryTable];
+    
+    
+    [leftimage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(containerView);
+        make.left.equalTo(containerView);
+        make.width.height.mas_equalTo(30);
+    }];
+    
+    [viewTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(leftimage.mas_centerY);
+        make.left.equalTo(leftimage.mas_right).offset(5);
+    }];
+    
+    [moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(containerView.mas_right);
+        make.top.equalTo(containerView.mas_top);
+        make.width.height.mas_equalTo(30);
+    }];
+    
+    [categoryTable.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(leftimage.mas_bottom).offset(10);
+        make.left.right.equalTo(containerView);
+        make.bottom.equalTo(containerView.mas_bottom);
+    }];
+    
+    
+    
+}
+
+
+
+
+
 
 - (void)searchCategorySegmentDidClicking: (UISegmentedControl *)sender
 {
@@ -267,13 +452,13 @@
     {
         NSMutableArray *arrTem = [NSMutableArray arrayWithCapacity:8];
         [arrTem addObject:@{@"image":@"doublePublicity", @"title":@"双公示"}];
-        [arrTem addObject:@{@"image":@"RewardsAndPunish", @"title":@"红黑名单"}];
-        [arrTem addObject:@{@"image":@"RewardsAndPunish1", @"title":@"典型案例"}];
-        [arrTem addObject:@{@"image":@"creditReport", @"title":@"信用报告"}];
-        [arrTem addObject:@{@"image":@"newsIcon", @"title":@"新闻资讯"}];
+        [arrTem addObject:@{@"image":@"RewardsAndPunish", @"title":@"联合奖惩"}];
+        [arrTem addObject:@{@"image":@"RewardsAndPunish1", @"title":@"信用报告"}];
+        [arrTem addObject:@{@"image":@"creditReport", @"title":@"重点人群"}];
+        [arrTem addObject:@{@"image":@"newsIcon", @"title":@"典型案例"}];
         [arrTem addObject:@{@"image":@"creditPromise", @"title":@"信用承诺"}];
-        [arrTem addObject:@{@"image":@"relatedPolicy", @"title":@"相关政策"}];
-        [arrTem addObject:@{@"image":@"queryInfo", @"title":@"信用信息查询"}];
+        [arrTem addObject:@{@"image":@"relatedPolicy", @"title":@"异议申诉"}];
+        [arrTem addObject:@{@"image":@"queryInfo", @"title":@"信用修复"}];
         _functionBtns = [NSArray arrayWithArray:arrTem];
     }
     return _functionBtns;
