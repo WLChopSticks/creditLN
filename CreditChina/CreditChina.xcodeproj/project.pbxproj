@@ -29,6 +29,8 @@
 		9B9117A922192B150069F619 /* WLExhibitionMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9117A722192B150069F619 /* WLExhibitionMessageCell.m */; };
 		9B9117AA22192B150069F619 /* WLExhibitionMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9117A822192B150069F619 /* WLExhibitionMessageCell.xib */; };
 		9B9117AD221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9117AC221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m */; };
+		9B9117B122195F290069F619 /* WLNewsTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9117AF22195F290069F619 /* WLNewsTabCell.m */; };
+		9B9117B222195F290069F619 /* WLNewsTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9117B022195F290069F619 /* WLNewsTabCell.xib */; };
 		9BA009ED2205D6B700D1FFD9 /* WLRedAndBlackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA009EC2205D6B700D1FFD9 /* WLRedAndBlackListViewController.m */; };
 		9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */; };
 		9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */; };
@@ -116,6 +118,9 @@
 		9B9117A822192B150069F619 /* WLExhibitionMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLExhibitionMessageCell.xib; sourceTree = "<group>"; };
 		9B9117AB221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLNewsAndPolicyShowInExhibitionController.h; sourceTree = "<group>"; };
 		9B9117AC221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLNewsAndPolicyShowInExhibitionController.m; sourceTree = "<group>"; };
+		9B9117AE22195F290069F619 /* WLNewsTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLNewsTabCell.h; sourceTree = "<group>"; };
+		9B9117AF22195F290069F619 /* WLNewsTabCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLNewsTabCell.m; sourceTree = "<group>"; };
+		9B9117B022195F290069F619 /* WLNewsTabCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLNewsTabCell.xib; sourceTree = "<group>"; };
 		9BA009EB2205D6B700D1FFD9 /* WLRedAndBlackListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLRedAndBlackListViewController.h; sourceTree = "<group>"; };
 		9BA009EC2205D6B700D1FFD9 /* WLRedAndBlackListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLRedAndBlackListViewController.m; sourceTree = "<group>"; };
 		9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kaiti_GB2312.ttf; sourceTree = "<group>"; };
@@ -363,6 +368,9 @@
 				9BC20BC92201886D00732DE3 /* WLExhibitonViewController.m */,
 				9B9117AB221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.h */,
 				9B9117AC221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m */,
+				9B9117AE22195F290069F619 /* WLNewsTabCell.h */,
+				9B9117AF22195F290069F619 /* WLNewsTabCell.m */,
+				9B9117B022195F290069F619 /* WLNewsTabCell.xib */,
 				9BC20C042202A6F000732DE3 /* WLRewardsAndPunishListViewController.h */,
 				9BC20C052202A6F000732DE3 /* WLRewardsAndPunishListViewController.m */,
 				9BA009EB2205D6B700D1FFD9 /* WLRedAndBlackListViewController.h */,
@@ -589,6 +597,7 @@
 				9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */,
 				9B39179E2216F91600B7E8EF /* law_city_20190215.json in Resources */,
 				9B1AEC0722114AA4007769EC /* WLDoublePublicitysTableViewCell.xib in Resources */,
+				9B9117B222195F290069F619 /* WLNewsTabCell.xib in Resources */,
 				9B9117AA22192B150069F619 /* WLExhibitionMessageCell.xib in Resources */,
 				9B39179F2216F91600B7E8EF /* law_nation_20190215.json in Resources */,
 				9BFBCF1E22141D4A00319D2B /* WLPersonResultCell.xib in Resources */,
@@ -708,6 +717,7 @@
 				9BC20BC4220187D000732DE3 /* WLProfileCreditViewController.m in Sources */,
 				9BC20C0F2202A77A00732DE3 /* WLNewsViewController.m in Sources */,
 				9BC20BDD22019DA700732DE3 /* WLDoublePublicityViewController.m in Sources */,
+				9B9117B122195F290069F619 /* WLNewsTabCell.m in Sources */,
 				9BF69A1B22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m in Sources */,
 				9BC20C132202A79C00732DE3 /* WLCreditPromiseViewController.m in Sources */,
 				9BC20BC1220187B400732DE3 /* WLUserFocusViewController.m in Sources */,

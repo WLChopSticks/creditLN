@@ -23,7 +23,7 @@
 #import "WLExhibitionMessageCell.h"
 #import "WLNewsAndPolicyShowInExhibitionController.h"
 
-@interface WLExhibitonViewController ()<SDCycleScrollViewDelegate>
+@interface WLExhibitonViewController ()<SDCycleScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) NSArray *functionBtns;
 @property (nonatomic, weak) UIView *topView;
@@ -96,12 +96,12 @@
     }];
     
     UIView *newsView = [[UIView alloc]init];
-    newsView.backgroundColor = [UIColor redColor];
+    newsView.backgroundColor = [UIColor whiteColor];
     [bgView addSubview:newsView];
     [newsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(creditMessageView.mas_bottom).offset(10);
-        make.left.right.equalTo(backScroll);
-        make.height.mas_equalTo(Screen_Height * 0.3);
+        make.left.right.equalTo(bgView);
+        make.height.mas_equalTo(Screen_Height * 0.45);
     }];
     
     UIView *policyView = [[UIView alloc]init];
@@ -117,7 +117,7 @@
     [self decorateTopView:topView];
     [self decorateFunctionButtonsView:functionBtnView];
     [self decorateCreditMessageView:creditMessageView];
-    
+    [self decorateNewsInfoView:newsView];
     [self decoratePolicyInfoView:policyView];
     
     
@@ -273,6 +273,45 @@
     UIButton *moreBtn = [[UIButton alloc]init];
     moreBtn.backgroundColor = [UIColor redColor];
     [containerView addSubview:moreBtn];
+    
+    WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
+    categoryTable.titles = @[@"国家",@"省级",@"市级",@"国外"];
+    WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
+    vc10.showType = @"1";
+    WLNewsAndPolicyShowInExhibitionController *vc20 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
+    vc20.showType = @"1";
+    WLNewsAndPolicyShowInExhibitionController *vc30 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
+    vc30.showType = @"1";
+    WLNewsAndPolicyShowInExhibitionController *vc4 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
+    vc30.showType = @"1";
+    categoryTable.controllers = @[vc10,vc20,vc30,vc4];
+    categoryTable.categoryWidth = 200;
+
+    [containerView addSubview:categoryTable.view];
+    [self addChildViewController:categoryTable];
+    
+    [leftimage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(containerView);
+        make.left.equalTo(containerView);
+        make.width.height.mas_equalTo(30);
+    }];
+    
+    [viewTitle mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(leftimage.mas_centerY);
+        make.left.equalTo(leftimage.mas_right).offset(5);
+    }];
+    
+    [moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(containerView.mas_right);
+        make.top.equalTo(containerView.mas_top);
+        make.width.height.mas_equalTo(30);
+    }];
+    
+    [categoryTable.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(leftimage.mas_bottom).offset(10);
+        make.left.right.equalTo(containerView);
+        make.bottom.equalTo(containerView.mas_bottom);
+    }];
 }
 
 - (void)decoratePolicyInfoView: (UIView *)containerView
@@ -288,7 +327,6 @@
     [containerView addSubview:moreBtn];
 
     WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
-//    categoryTable.view.backgroundColor = [UIColor whiteColor]
     categoryTable.titles = @[@"国家",@"省级",@"市级"];
     WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc10.showType = @"2";
