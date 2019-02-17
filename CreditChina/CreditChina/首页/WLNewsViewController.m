@@ -9,12 +9,15 @@
 #import "WLNewsViewController.h"
 #import "WLTableView.h"
 #import "WLTitleContentTimeCell.h"
-#import <Masonry.h>
 #import <WLPlatform.h>
+#import "WLNewsDetailViewController.h"
+#import "WLImageTitleContentTimeCell.h"
 
 @interface WLNewsViewController ()<wlTableViewDelegate>
 
 @property (nonatomic, weak) WLTableView *tableView;
+@property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSDictionary *responseDict;
 
 @end
 
@@ -33,6 +36,7 @@
     self.tableView = tableView;
     tableView.cellClass = [WLTitleContentTimeCell class];
     [tableView registNibForCell:@"WLTitleContentTimeCell"  inBundel:nil orBundleName:@"WLControls"];
+    [tableView registNibForCell:@"WLImageTitleContentTimeCell"  inBundel:nil orBundleName:@"WLControls"];
     tableView.delegate = self;
     [self.view addSubview:tableView];
     [self queryData];
@@ -42,9 +46,45 @@
     }];
 }
 
+-(UITableViewCell *)wltableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WLBaseTableViewCell *cell;
+    NSDictionary *dataDict = self.dataArray[indexPath.row];
+    NSString *image = dataDict[@"image"];
+    if (image.length > 0)
+    {
+        Class class = [WLImageTitleContentTimeCell class];
+        
+        NSString *className = [NSString stringWithUTF8String:class_getName(class)];
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:className forIndexPath:indexPath];
+        self.tableView.cellClass = class;
+        [cell fillCellContent:self.dataArray[indexPath.row] withTableView:tableView];
+    }else
+    {
+        Class class = [WLTitleContentTimeCell class];
+        self.tableView.cellClass = class;
+        NSString *className = [NSString stringWithUTF8String:class_getName(class)];
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:className forIndexPath:indexPath];
+        
+        [cell fillCellContent:self.dataArray[indexPath.row] withTableView:tableView];
+    }
+
+
+    return cell;
+}
+
 -(void)wlTableView:(UITableView *)tableView didSelectCellAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"点击了cell %ld", indexPath.row);
+    NSDictionary *content = self.dataArray[indexPath.row];
+    WLNewsDetailViewController *vc = [[WLNewsDetailViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.content = content;
+    vc.newsType = @"1";
+    vc.contentBaseURL = [self getContentBaseURL:self.responseDict];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)queryData
@@ -64,10 +104,30 @@
     
     
     [networkTool GET_queryWithURL:urlString andParameters:nil success:^(id  _Nullable responseObject) {
-        NSDictionary *result = (NSDictionary *)responseObject;
+//        NSDictionary *result = (NSDictionary *)responseObject;
         //        WLDoublePublicityModel *model = [[WLDoublePublicityModel alloc]init];
         //        model = [model getModel:result];
-        self.tableView.rowsData = [self constructCellContentDict:result];
+        NSString *fileName = @"";
+        switch (self.newsSource.integerValue)
+        {
+            case 1:
+            {
+                fileName = @"news_nation_20190215";
+                break;
+            }
+            case 2:
+            {
+                fileName = @"news_province_20190215";
+                break;
+            }
+                
+            default:
+                break;
+        }
+        NSDictionary *result = [WLCommonTool getLocalJsonFileWithName:fileName];
+        self.responseDict = result;
+        self.dataArray = [self constructCellContentDict:result];
+        self.tableView.rowsData = self.dataArray;
         [self.tableView reloadData];
         
         
@@ -81,40 +141,38 @@
 - (NSArray *)constructCellContentDict: (NSDictionary *)model
 {
     NSMutableArray *constructingArr = [NSMutableArray array];
-    
-    //    for (WLDoublePublicityDetailModel *detailModel in model.dataList)
-    
+    NSArray *news = model[@"news"];
+    for (NSDictionary *detailNews in news)
     {
         NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
-        [constructingDict setObject:@"政府网站工作年度报表" forKey:@"title"];
-        [constructingDict setObject:@"" forKey:@"content"];
-        [constructingDict setObject:[WLCommonTool transferTimeFormatWIthTime:13231221312] forKey:@"time"];
-        [constructingDict setObject:@"省内动态"forKey:@"type"];
+        [constructingDict setObject:detailNews[@"title"] forKey:@"title"];
+        NSString *content = detailNews[@"content"];
+        if (content.length > 0)
+        {
+            NSArray *paragrphs = [WLCommonTool getHtmlTagContent:content withXpath:@"//p"];
+            content = paragrphs.firstObject;
+        }
+        [constructingDict setObject:content == nil ? @"" : content forKey:@"abstract"];
+        [constructingDict setObject:detailNews[@"content"] forKey:@"content"];
+        [constructingDict setObject:detailNews[@"date"] forKey:@"time"];
+        [constructingDict setObject:detailNews[@"column"]forKey:@"type"];
+        NSString *picString = detailNews[@"pictures"];
+        if (picString.length > 0)
+        {
+            picString = [WLCommonTool replaceImageSrcURL:picString withHost:@"http://www.xyln.net"];
+        }
+        [constructingDict setObject:picString forKey:@"image"];
         [constructingArr addObject:constructingDict];
-        
-        NSMutableDictionary * constructingDict1 = [NSMutableDictionary dictionary];
-        [constructingDict1 setObject:@"关于事业单位转企后涉及信用评估相关问题处理意见的公告" forKey:@"title"];
-        [constructingDict1 setObject:@"" forKey:@"content"];
-        [constructingDict1 setObject:[WLCommonTool transferTimeFormatWIthTime:13231221312] forKey:@"time"];
-        [constructingDict1 setObject:@"省内动态"forKey:@"type"];
-        [constructingArr addObject:constructingDict1];
-        
-        NSMutableDictionary * constructingDict2 = [NSMutableDictionary dictionary];
-        [constructingDict2 setObject:@"“信用沈阳”：创新建设模式 优化营商环境" forKey:@"title"];
-        [constructingDict2 setObject:@"近年来，在国家、省发展改革委的指导下，在沈阳市委、市政府的正确领导下，在沈阳市信用办的综合协调下，经过领导小组成员单位的共同努力，沈阳市以信用制度建设为保障，以沈阳市公共信用信息平台为支撑，以政务诚信、商务诚信、社会诚信和司法公信为主要内容，以创建社会信用体系建设示范城市为契机，以危害群众利益、损害市场公平等突出问题为导向，以守信联合激励和失信联合惩戒机制为手段，以诚信宣传教育为引领，逐步提高全社会诚信意识和诚信水平。" forKey:@"content"];
-        [constructingDict2 setObject:[WLCommonTool transferTimeFormatWIthTime:13231221312] forKey:@"time"];
-        [constructingDict2 setObject:@"省内动态"forKey:@"type"];
-        [constructingArr addObject:constructingDict2];
-        
-        NSMutableDictionary * constructingDict3 = [NSMutableDictionary dictionary];
-        [constructingDict3 setObject:@"“信用大连”：强化体制机制 突出创新发展" forKey:@"title"];
-        [constructingDict3 setObject:@"作为全国第二批创建社会信用体系建设示范城市之一，大连市近年来不断完善体制机制，加大信用体系平台建设力度，在社会信用体系建设方面取得了积极成效。在本轮事业单位改革中，大连市重新组建市政府直属的大连市信用中心，这在全国属于首例。此外，大连市还全面加强顶层设计，出台《关于进一步加快推进社会信用体系建设的实施方案》，从四大领域、30多个行业全面推动大连市信用体系建设再上新台阶。" forKey:@"content"];
-        [constructingDict3 setObject:[WLCommonTool transferTimeFormatWIthTime:13231221312] forKey:@"time"];
-        [constructingDict3 setObject:@"省内动态"forKey:@"type"];
-        [constructingArr addObject:constructingDict3];
         
     }
     return constructingArr;
+}
+
+- (NSString *)getContentBaseURL: (NSDictionary *)model
+{
+    NSDictionary *baseDict = model[@"base"];
+    NSString *baseURL = baseDict[@"address"];
+    return baseURL;
 }
 
 

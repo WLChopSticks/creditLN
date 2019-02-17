@@ -17,12 +17,15 @@
 		9B1AEC1222116689007769EC /* WLRewardsAndPunishEgTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B1AEC1022116689007769EC /* WLRewardsAndPunishEgTableViewCell.xib */; };
 		9B1AEC1522116D00007769EC /* WLRewardsAndPunishDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AEC1422116D00007769EC /* WLRewardsAndPunishDetailController.m */; };
 		9B391759221676B200B7E8EF /* json格式说明.docx in Resources */ = {isa = PBXBuildFile; fileRef = 9B391753221676B100B7E8EF /* json格式说明.docx */; };
-		9B39175A221676B200B7E8EF /* law_province_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B391754221676B100B7E8EF /* law_province_20190215.json */; };
-		9B39175B221676B200B7E8EF /* news_province_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B391755221676B100B7E8EF /* news_province_20190215.json */; };
-		9B39175C221676B200B7E8EF /* news_nation_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B391756221676B100B7E8EF /* news_nation_20190215.json */; };
-		9B39175D221676B200B7E8EF /* law_city_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B391757221676B200B7E8EF /* law_city_20190215.json */; };
-		9B39175E221676B200B7E8EF /* law_nation_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B391758221676B200B7E8EF /* law_nation_20190215.json */; };
 		9B39176422167C1E00B7E8EF /* WLNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B39176322167C1E00B7E8EF /* WLNewsDetailViewController.m */; };
+		9B39176822169D8400B7E8EF /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B39176722169D8400B7E8EF /* libxml2.2.tbd */; };
+		9B39177722169F6500B7E8EF /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B39177622169F6500B7E8EF /* libxml2.tbd */; };
+		9B3917952216E10B00B7E8EF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3917942216E10B00B7E8EF /* WebKit.framework */; };
+		9B39179B2216F91600B7E8EF /* law_province_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B3917962216F91500B7E8EF /* law_province_20190215.json */; };
+		9B39179C2216F91600B7E8EF /* news_province_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B3917972216F91500B7E8EF /* news_province_20190215.json */; };
+		9B39179D2216F91600B7E8EF /* news_nation_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B3917982216F91600B7E8EF /* news_nation_20190215.json */; };
+		9B39179E2216F91600B7E8EF /* law_city_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B3917992216F91600B7E8EF /* law_city_20190215.json */; };
+		9B39179F2216F91600B7E8EF /* law_nation_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B39179A2216F91600B7E8EF /* law_nation_20190215.json */; };
 		9BA009ED2205D6B700D1FFD9 /* WLRedAndBlackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA009EC2205D6B700D1FFD9 /* WLRedAndBlackListViewController.m */; };
 		9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */; };
 		9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */; };
@@ -95,13 +98,16 @@
 		9B1AEC1322116D00007769EC /* WLRewardsAndPunishDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLRewardsAndPunishDetailController.h; sourceTree = "<group>"; };
 		9B1AEC1422116D00007769EC /* WLRewardsAndPunishDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLRewardsAndPunishDetailController.m; sourceTree = "<group>"; };
 		9B391753221676B100B7E8EF /* json格式说明.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "json格式说明.docx"; sourceTree = "<group>"; };
-		9B391754221676B100B7E8EF /* law_province_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = law_province_20190215.json; sourceTree = "<group>"; };
-		9B391755221676B100B7E8EF /* news_province_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_province_20190215.json; sourceTree = "<group>"; };
-		9B391756221676B100B7E8EF /* news_nation_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_nation_20190215.json; sourceTree = "<group>"; };
-		9B391757221676B200B7E8EF /* law_city_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = law_city_20190215.json; sourceTree = "<group>"; };
-		9B391758221676B200B7E8EF /* law_nation_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = law_nation_20190215.json; sourceTree = "<group>"; };
 		9B39176222167C1E00B7E8EF /* WLNewsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLNewsDetailViewController.h; sourceTree = "<group>"; };
 		9B39176322167C1E00B7E8EF /* WLNewsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLNewsDetailViewController.m; sourceTree = "<group>"; };
+		9B39176722169D8400B7E8EF /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		9B39177622169F6500B7E8EF /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		9B3917942216E10B00B7E8EF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		9B3917962216F91500B7E8EF /* law_province_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = law_province_20190215.json; sourceTree = "<group>"; };
+		9B3917972216F91500B7E8EF /* news_province_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_province_20190215.json; sourceTree = "<group>"; };
+		9B3917982216F91600B7E8EF /* news_nation_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_nation_20190215.json; sourceTree = "<group>"; };
+		9B3917992216F91600B7E8EF /* law_city_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = law_city_20190215.json; sourceTree = "<group>"; };
+		9B39179A2216F91600B7E8EF /* law_nation_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = law_nation_20190215.json; sourceTree = "<group>"; };
 		9BA009EB2205D6B700D1FFD9 /* WLRedAndBlackListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLRedAndBlackListViewController.h; sourceTree = "<group>"; };
 		9BA009EC2205D6B700D1FFD9 /* WLRedAndBlackListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLRedAndBlackListViewController.m; sourceTree = "<group>"; };
 		9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kaiti_GB2312.ttf; sourceTree = "<group>"; };
@@ -175,6 +181,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3917952216E10B00B7E8EF /* WebKit.framework in Frameworks */,
+				9B39177722169F6500B7E8EF /* libxml2.tbd in Frameworks */,
+				9B39176822169D8400B7E8EF /* libxml2.2.tbd in Frameworks */,
 				9BFBCF7822145AFC00319D2B /* CoreMedia.framework in Frameworks */,
 				9BFBCF7622145AF200319D2B /* GLKit.framework in Frameworks */,
 				9BFBCF7422145AE700319D2B /* AssetsLibrary.framework in Frameworks */,
@@ -254,11 +263,11 @@
 			isa = PBXGroup;
 			children = (
 				9B391753221676B100B7E8EF /* json格式说明.docx */,
-				9B391757221676B200B7E8EF /* law_city_20190215.json */,
-				9B391758221676B200B7E8EF /* law_nation_20190215.json */,
-				9B391754221676B100B7E8EF /* law_province_20190215.json */,
-				9B391756221676B100B7E8EF /* news_nation_20190215.json */,
-				9B391755221676B100B7E8EF /* news_province_20190215.json */,
+				9B3917992216F91600B7E8EF /* law_city_20190215.json */,
+				9B39179A2216F91600B7E8EF /* law_nation_20190215.json */,
+				9B3917962216F91500B7E8EF /* law_province_20190215.json */,
+				9B3917982216F91600B7E8EF /* news_nation_20190215.json */,
+				9B3917972216F91500B7E8EF /* news_province_20190215.json */,
 			);
 			path = json_files;
 			sourceTree = "<group>";
@@ -299,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				9BA009F322068D1D00D1FFD9 /* Model */,
-				9BC20A5122000D3100732DE3 /* 登录 */,
 				9BC20A6522001EAA00732DE3 /* 首页 */,
 				9BC20BCB22018BBB00732DE3 /* 用户关注管理 */,
 				9BC20BB52201801A00732DE3 /* 新特性 */,
@@ -335,13 +343,6 @@
 				9BC20A4421FF1B8C00732DE3 /* Info.plist */,
 			);
 			path = CreditChinaUITests;
-			sourceTree = "<group>";
-		};
-		9BC20A5122000D3100732DE3 /* 登录 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "登录";
 			sourceTree = "<group>";
 		};
 		9BC20A6522001EAA00732DE3 /* 首页 */ = {
@@ -437,6 +438,9 @@
 		DDCCA9A590C475E30E67E230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B3917942216E10B00B7E8EF /* WebKit.framework */,
+				9B39177622169F6500B7E8EF /* libxml2.tbd */,
+				9B39176722169D8400B7E8EF /* libxml2.2.tbd */,
 				9BFBCF7722145AFB00319D2B /* CoreMedia.framework */,
 				9BFBCF7522145AF200319D2B /* GLKit.framework */,
 				9BFBCF7322145AE600319D2B /* AssetsLibrary.framework */,
@@ -559,20 +563,20 @@
 			files = (
 				9BC20A2B21FF1B8C00732DE3 /* LaunchScreen.storyboard in Resources */,
 				9BFBCF1922141A7300319D2B /* WLFocusPeopleResultCell.xib in Resources */,
-				9B39175A221676B200B7E8EF /* law_province_20190215.json in Resources */,
+				9B39179B2216F91600B7E8EF /* law_province_20190215.json in Resources */,
 				9B1AE9EC220FE430007769EC /* QueryApiList.plist in Resources */,
-				9B39175B221676B200B7E8EF /* news_province_20190215.json in Resources */,
+				9B39179C2216F91600B7E8EF /* news_province_20190215.json in Resources */,
 				9B1AEC1222116689007769EC /* WLRewardsAndPunishEgTableViewCell.xib in Resources */,
 				9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */,
 				9B1AEC0C2211527C007769EC /* WLChartRatioTableViewCell.xib in Resources */,
-				9B39175C221676B200B7E8EF /* news_nation_20190215.json in Resources */,
+				9B39179D2216F91600B7E8EF /* news_nation_20190215.json in Resources */,
 				9BF69A1C22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib in Resources */,
 				9BC20A2821FF1B8C00732DE3 /* Assets.xcassets in Resources */,
 				9B391759221676B200B7E8EF /* json格式说明.docx in Resources */,
 				9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */,
-				9B39175D221676B200B7E8EF /* law_city_20190215.json in Resources */,
+				9B39179E2216F91600B7E8EF /* law_city_20190215.json in Resources */,
 				9B1AEC0722114AA4007769EC /* WLDoublePublicitysTableViewCell.xib in Resources */,
-				9B39175E221676B200B7E8EF /* law_nation_20190215.json in Resources */,
+				9B39179F2216F91600B7E8EF /* law_nation_20190215.json in Resources */,
 				9BFBCF1E22141D4A00319D2B /* WLPersonResultCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -799,6 +803,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -852,6 +857,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

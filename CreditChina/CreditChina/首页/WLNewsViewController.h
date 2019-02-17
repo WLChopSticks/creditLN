@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WLNewsViewController : WLBaseUIViewController
 
-//1为省内动态, 2为国内动态
+//1为国内动态, 2为省内动态
 @property (nonatomic, strong) NSString *newsSource;
 
 @end

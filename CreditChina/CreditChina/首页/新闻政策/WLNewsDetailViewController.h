@@ -14,6 +14,9 @@
 
 @property (nonatomic, strong) NSDictionary *content;
 @property (nonatomic, strong) NSString *contentBaseURL;
+//1为新闻详情页, 2为国家政策详情页
+@property (nonatomic, strong) NSString *newsType;
+
 
 @end
 

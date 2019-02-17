@@ -214,12 +214,12 @@
         case 4:
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
-            segVC.titles = @[@"省内动态",@"国内动态"];
+            segVC.titles = @[@"国内动态",@"省内动态"];
             WLNewsViewController *vc1 = [[WLNewsViewController alloc]init];
+            vc1.newsSource = @"1";
             WLNewsViewController *vc2 = [[WLNewsViewController alloc]init];
-            WLNewsViewController *vc3 = [[WLNewsViewController alloc]init];
-            WLNewsViewController *vc4 = [[WLNewsViewController alloc]init];
-            segVC.controllers = @[vc1,vc2, vc3, vc4];
+            vc2.newsSource = @"2";
+            segVC.controllers = @[vc1,vc2];
             [self.navigationController pushViewController:segVC animated:YES];
             break;
         }

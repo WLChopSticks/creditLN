@@ -104,6 +104,7 @@
     WLNewsDetailViewController *vc = [[WLNewsDetailViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     vc.content = content;
+    vc.newsType = @"2";
     vc.contentBaseURL = [self getContentBaseURL:self.responseDict];
     [self.navigationController pushViewController:vc animated:YES];
 }
