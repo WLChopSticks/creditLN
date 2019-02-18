@@ -275,6 +275,7 @@
     [containerView addSubview:moreBtn];
     
     WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
+    categoryTable.categoryType = @"1";
     categoryTable.titles = @[@"国家",@"省级",@"市级",@"国外"];
     WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc10.showType = @"1";
@@ -328,6 +329,7 @@
 
     WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
     categoryTable.titles = @[@"国家",@"省级",@"市级"];
+    categoryTable.categoryType = @"1";
     WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc10.showType = @"2";
     WLNewsAndPolicyShowInExhibitionController *vc20 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];

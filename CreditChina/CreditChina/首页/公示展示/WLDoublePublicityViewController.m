@@ -93,7 +93,7 @@
         NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
 
         [constructingDict setObject:detailModel.xzxdrmc forKey:@"company"];
-        [constructingDict setObject:detailModel.etablename forKey:@"content"];
+        [constructingDict setObject:detailModel.wfxwlx forKey:@"content"];
         [constructingDict setObject:[WLCommonTool transferTimeFormatWIthTime:detailModel.updatetime] forKey:@"time"];
         [constructingDict setObject:detailModel.xzcfjdswh forKey:@"shuwenhao"];
         [constructingArr addObject:constructingDict];
