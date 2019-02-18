@@ -23,7 +23,7 @@
 
 -(void)fillCellContent:(NSDictionary *)contentDict withTableView:(UITableView *)tableView
 {
-    self.infoLabel.text = contentDict[@"content"];
+    self.infoLabel.text = contentDict[@"title"];
     self.detailBtn.hidden = ![contentDict[@"showDetailBtn"]boolValue];
 }
 

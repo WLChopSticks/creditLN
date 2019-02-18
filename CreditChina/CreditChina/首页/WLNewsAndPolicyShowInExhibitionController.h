@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 //1为新闻, 2为政策法规
 @property (nonatomic, strong) NSString *showType;
+//1为国家, 2为省级
+@property (nonatomic, strong) NSString *newsType;
+//1为国家, 2为省级, 3为市级
+@property (nonatomic, strong) NSString *policyType;
 
 @end
 

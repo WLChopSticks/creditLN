@@ -230,7 +230,7 @@
     messageTable.cellClass = [WLExhibitionMessageCell class];
     messageTable.wltableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [messageTable registNibForCell:@"WLExhibitionMessageCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
-    messageTable.rowsData = @[@{@"content":@"您有1条预警消息, 关于被人民法院定位失信被执行人的信息",@"showDetailBtn":@"1"},@{@"content":@"您提交的异议申诉已经进入处理流程, 请耐心等待处理结果",@"showDetailBtn":@"1"}];
+    messageTable.rowsData = @[@{@"title":@"您有1条预警消息, 关于被人民法院定位失信被执行人的信息",@"showDetailBtn":@"1"},@{@"title":@"您提交的异议申诉已经进入处理流程, 请耐心等待处理结果",@"showDetailBtn":@"1"}];
     
     [leftimage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(containerView);
@@ -276,17 +276,19 @@
     
     WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
     categoryTable.categoryType = @"1";
-    categoryTable.titles = @[@"国家",@"省级",@"市级",@"国外"];
+    categoryTable.titles = @[@"国家",@"省级"];
     WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc10.showType = @"1";
+    vc10.newsType = @"1";
     WLNewsAndPolicyShowInExhibitionController *vc20 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc20.showType = @"1";
-    WLNewsAndPolicyShowInExhibitionController *vc30 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
-    vc30.showType = @"1";
-    WLNewsAndPolicyShowInExhibitionController *vc40 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
-    vc40.showType = @"1";
-    categoryTable.controllers = @[vc10,vc20,vc30,vc40];
-    categoryTable.categoryWidth = 200;
+    vc20.newsType = @"2";
+//    WLNewsAndPolicyShowInExhibitionController *vc30 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
+//    vc30.showType = @"1";
+//    WLNewsAndPolicyShowInExhibitionController *vc40 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
+//    vc40.showType = @"1";
+    categoryTable.controllers = @[vc10,vc20];
+    categoryTable.categoryWidth = 100;
 
     [containerView addSubview:categoryTable.view];
     [self addChildViewController:categoryTable];
@@ -325,6 +327,7 @@
     [containerView addSubview:viewTitle];
     UIButton *moreBtn = [[UIButton alloc]init];
     moreBtn.backgroundColor = [UIColor redColor];
+    [moreBtn addTarget:self action:@selector(policyMoreBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:moreBtn];
 
     WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
@@ -332,10 +335,13 @@
     categoryTable.categoryType = @"1";
     WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc10.showType = @"2";
+    vc10.policyType = @"1";
     WLNewsAndPolicyShowInExhibitionController *vc20 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc20.showType = @"2";
+    vc20.policyType = @"2";
     WLNewsAndPolicyShowInExhibitionController *vc30 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc30.showType = @"2";
+    vc30.policyType = @"3";
     categoryTable.controllers = @[vc10,vc20,vc30];
     categoryTable.categoryWidth = 200;
     
@@ -473,6 +479,21 @@
             break;
     }
     
+}
+
+- (void)policyMoreBtnDidClicking: (UIButton *)sender
+{
+    WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+    segVC.titles = @[@"国家政策",@"省内政策",@"市级政策"];
+    segVC.title = @"政策法规";
+    WLRelatedPolicyViewController *vc1 = [[WLRelatedPolicyViewController alloc]init];
+    vc1.policyType = @"1";
+    WLRelatedPolicyViewController *vc2 = [[WLRelatedPolicyViewController alloc]init];
+    vc2.policyType = @"2";
+    WLRelatedPolicyViewController *vc3 = [[WLRelatedPolicyViewController alloc]init];
+    vc3.policyType = @"3";
+    segVC.controllers = @[vc1,vc2, vc3];
+    [self.navigationController pushViewController:segVC animated:YES];
 }
 
 -(void)wlTableView:(UITableView *)tableView didSelectCellAtIndexPath:(NSIndexPath *)indexPath
