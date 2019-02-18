@@ -22,8 +22,9 @@
 #import <CTMediator+Login.h>
 #import "WLExhibitionMessageCell.h"
 #import "WLNewsAndPolicyShowInExhibitionController.h"
+#import <WLScrollView.h>
 
-@interface WLExhibitonViewController ()<SDCycleScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface WLExhibitonViewController ()<wlTableViewDelegate>
 
 @property (nonatomic, strong) NSArray *functionBtns;
 @property (nonatomic, weak) UIView *topView;
@@ -179,7 +180,6 @@
 - (void)decorateFunctionButtonsView: (UIView *)containerView
 {
     UIView *functionView = [[UIView alloc]initWithFrame:CGRectMake(0, self.topView.frame.size.height + 20, Screen_Width, Screen_Height * 0.25)];
-    [self.view addSubview:functionView];
     
     for (int i = 0; i < self.functionBtns.count; i++)
     {
@@ -207,7 +207,6 @@
     }
 }
 
-
 - (void)decorateCreditMessageView: (UIView *)containerView
 {
     UIImageView *leftimage = [[UIImageView alloc]init];
@@ -226,6 +225,7 @@
     [containerView addSubview:moreBtn];
     
     WLTableView *messageTable = [[WLTableView alloc]init];
+    messageTable.delegate = self;
     [containerView addSubview:messageTable];
     messageTable.cellClass = [WLExhibitionMessageCell class];
     messageTable.wltableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -283,9 +283,9 @@
     vc20.showType = @"1";
     WLNewsAndPolicyShowInExhibitionController *vc30 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc30.showType = @"1";
-    WLNewsAndPolicyShowInExhibitionController *vc4 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
-    vc30.showType = @"1";
-    categoryTable.controllers = @[vc10,vc20,vc30,vc4];
+    WLNewsAndPolicyShowInExhibitionController *vc40 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
+    vc40.showType = @"1";
+    categoryTable.controllers = @[vc10,vc20,vc30,vc40];
     categoryTable.categoryWidth = 200;
 
     [containerView addSubview:categoryTable.view];
@@ -368,17 +368,6 @@
     
     
     
-}
-
-
-
-
-
-
-- (void)searchCategorySegmentDidClicking: (UISegmentedControl *)sender
-{
-    NSLog(@"点击了搜索种类");
-    NSLog(@"%ld",(long)sender.selectedSegmentIndex);
 }
 
 - (void)functionBtnDidClicking: (UIButton *)sender
@@ -484,6 +473,11 @@
             break;
     }
     
+}
+
+-(void)wlTableView:(UITableView *)tableView didSelectCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"@d");
 }
 
 -(NSArray *)functionBtns

@@ -42,6 +42,15 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.showType.integerValue == 1)
+    {
+        [self.newsCollection scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    }
+}
+
 - (void)decorateNewsPart
 {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
