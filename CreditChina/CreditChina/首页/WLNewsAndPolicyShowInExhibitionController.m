@@ -72,6 +72,7 @@
     }];
     
     [self queryNewsData];
+    
 }
 
 - (void)queryNewsData
@@ -158,6 +159,7 @@
     vc.newsType = @"1";
     vc.content = dict;
     vc.contentBaseURL = [self getContentBaseURL:self.responseDict];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

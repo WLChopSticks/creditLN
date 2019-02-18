@@ -8,7 +8,14 @@
 
 #import "WLBaseUIViewController.h"
 
+@interface WLNewsDetailTitleCell : UITableViewCell
+@end
 
+@interface WLNewsDetailContentCell : UITableViewCell
+@end
+
+@interface WLNewsDetailRemarkCell : UITableViewCell
+@end
 
 @interface WLNewsDetailViewController : WLBaseUIViewController
 
