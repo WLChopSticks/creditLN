@@ -411,13 +411,12 @@
         case 2:
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
-            segVC.titles = @[@"守信激励案例",@"失信惩戒案例"];
-            WLRewardsAndPunishExampleViewController *vc1 = [[WLRewardsAndPunishExampleViewController alloc]init];
-            vc1.keepOrBreakPromise = @"1";
-            WLRewardsAndPunishExampleViewController *vc2 = [[WLRewardsAndPunishExampleViewController alloc]init];
-            vc2.keepOrBreakPromise = @"2";
+            segVC.titles = @[@"国内动态",@"省内动态"];
+            WLNewsViewController *vc1 = [[WLNewsViewController alloc]init];
+            vc1.newsSource = @"1";
+            WLNewsViewController *vc2 = [[WLNewsViewController alloc]init];
+            vc2.newsSource = @"2";
             segVC.controllers = @[vc1,vc2];
-            segVC.title = @"联合奖惩案例";
             [self.navigationController pushViewController:segVC animated:YES];
             break;
         }
@@ -437,12 +436,13 @@
         case 4:
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
-            segVC.titles = @[@"国内动态",@"省内动态"];
-            WLNewsViewController *vc1 = [[WLNewsViewController alloc]init];
-            vc1.newsSource = @"1";
-            WLNewsViewController *vc2 = [[WLNewsViewController alloc]init];
-            vc2.newsSource = @"2";
+            segVC.titles = @[@"守信激励案例",@"失信惩戒案例"];
+            WLRewardsAndPunishExampleViewController *vc1 = [[WLRewardsAndPunishExampleViewController alloc]init];
+            vc1.keepOrBreakPromise = @"1";
+            WLRewardsAndPunishExampleViewController *vc2 = [[WLRewardsAndPunishExampleViewController alloc]init];
+            vc2.keepOrBreakPromise = @"2";
             segVC.controllers = @[vc1,vc2];
+            segVC.title = @"联合奖惩案例";
             [self.navigationController pushViewController:segVC animated:YES];
             break;
         }
