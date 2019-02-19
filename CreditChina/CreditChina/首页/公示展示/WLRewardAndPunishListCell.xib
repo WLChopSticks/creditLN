@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="KGk-i7-Jjw" customClass="WLRewardAndPunishListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="84.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="市国税局_纳税信用A级纳税人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXt-gD-8tj">
+                        <rect key="frame" x="16" y="11" width="213.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="沈阳黎明航空发动机（集团）有限责任公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gT4-8M-wjN">
+                        <rect key="frame" x="16" y="35.5" width="288" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信用标识码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8u-XQ-gVl">
+                        <rect key="frame" x="16" y="62.5" width="61.5" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="275356873" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hm-I2-N16">
+                        <rect key="frame" x="82.5" y="62.5" width="66" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2010-00-00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOn-L5-EgX">
+                        <rect key="frame" x="234" y="62.5" width="70" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="VXt-gD-8tj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="0F2-nT-NYu"/>
+                    <constraint firstItem="GOn-L5-EgX" firstAttribute="centerY" secondItem="x8u-XQ-gVl" secondAttribute="centerY" id="BWm-nB-JkL"/>
+                    <constraint firstItem="x8u-XQ-gVl" firstAttribute="top" secondItem="gT4-8M-wjN" secondAttribute="bottom" constant="10" id="DHT-bk-2JX"/>
+                    <constraint firstItem="3Hm-I2-N16" firstAttribute="centerY" secondItem="x8u-XQ-gVl" secondAttribute="centerY" id="IrC-ER-EJZ"/>
+                    <constraint firstItem="gT4-8M-wjN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="LQI-ag-Tj4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gT4-8M-wjN" secondAttribute="trailing" id="PlL-04-dGK"/>
+                    <constraint firstItem="x8u-XQ-gVl" firstAttribute="leading" secondItem="gT4-8M-wjN" secondAttribute="leading" id="Sux-b9-AQU"/>
+                    <constraint firstItem="VXt-gD-8tj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Vpd-sf-Cno"/>
+                    <constraint firstItem="gT4-8M-wjN" firstAttribute="top" secondItem="VXt-gD-8tj" secondAttribute="bottom" constant="5" id="Wk9-FR-VNt"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="GOn-L5-EgX" secondAttribute="trailing" id="fMD-tb-I3z"/>
+                    <constraint firstItem="3Hm-I2-N16" firstAttribute="leading" secondItem="x8u-XQ-gVl" secondAttribute="trailing" constant="5" id="zdX-PI-A1k"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="company" destination="gT4-8M-wjN" id="LkD-fd-dWn"/>
+                <outlet property="time" destination="GOn-L5-EgX" id="BfQ-M6-Tlh"/>
+                <outlet property="title" destination="VXt-gD-8tj" id="RAY-tL-IeG"/>
+                <outlet property="xybsm" destination="3Hm-I2-N16" id="0hm-rE-JSI"/>
+            </connections>
+            <point key="canvasLocation" x="129.59999999999999" y="141.67916041979012"/>
+        </tableViewCell>
+    </objects>
+</document>

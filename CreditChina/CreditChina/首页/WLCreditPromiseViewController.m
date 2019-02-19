@@ -33,7 +33,6 @@
     self.tableView = tableView;
     tableView.cellClass = [WLDoublePublicityCell class];
     [tableView registNibForCell:@"WLDoublePublicityCell"  inBundel:nil orBundleName:@"WLControls"];
-//    tableView.rowsData = @[@{@"公司名":@"234",@"接收时间":@"12",@"接收内容":@"234"},@{@"公司名":@"234",@"接收时间":@"12",@"接收内容":@"234"},@{@"公司名":@"234",@"接收时间":@"12",@"接收内容":@"234"}];
     tableView.delegate = self;
     [self.view addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {

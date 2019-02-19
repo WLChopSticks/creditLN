@@ -23,6 +23,7 @@
 #import "WLExhibitionMessageCell.h"
 #import "WLNewsAndPolicyShowInExhibitionController.h"
 #import <WLScrollView.h>
+#import "WLFocusPeopleController.h"
 
 @interface WLExhibitonViewController ()<wlTableViewDelegate>
 
@@ -402,25 +403,15 @@
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
             segVC.titles = @[@"红名单",@"黑名单"];
             WLRewardsAndPunishListViewController *vc1 = [[WLRewardsAndPunishListViewController alloc]init];
+            vc1.redAndBlackType = @"1";
             WLRewardsAndPunishListViewController *vc2 = [[WLRewardsAndPunishListViewController alloc]init];
+            vc2.redAndBlackType = @"2";
             segVC.controllers = @[vc1,vc2];
             segVC.title = @"联合奖惩(红黑名单)";
             [self.navigationController pushViewController:segVC animated:YES];
             break;
         }
         case 2:
-        {
-            WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
-            segVC.titles = @[@"国内动态",@"省内动态"];
-            WLNewsViewController *vc1 = [[WLNewsViewController alloc]init];
-            vc1.newsSource = @"1";
-            WLNewsViewController *vc2 = [[WLNewsViewController alloc]init];
-            vc2.newsSource = @"2";
-            segVC.controllers = @[vc1,vc2];
-            [self.navigationController pushViewController:segVC animated:YES];
-            break;
-        }
-        case 3:
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
             segVC.titles = @[@"信用报告公示",@"信用报告制度"];
@@ -431,6 +422,20 @@
             segVC.controllers = @[vc1,vc2];
             segVC.title = @"信用报告";
             [self.navigationController pushViewController:segVC animated:YES];
+            break;
+        }
+        case 3:
+        {
+//            WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+//            segVC.titles = @[@"国内动态",@"省内动态"];
+//            WLNewsViewController *vc1 = [[WLNewsViewController alloc]init];
+//            vc1.newsSource = @"1";
+//            WLNewsViewController *vc2 = [[WLNewsViewController alloc]init];
+//            vc2.newsSource = @"2";
+//            segVC.controllers = @[vc1,vc2];
+            WLFocusPeopleController *vc = [[WLFocusPeopleController alloc]init];
+            vc.title = @"重点人群";
+            [self.navigationController pushViewController:vc animated:YES];
             break;
         }
         case 4:
@@ -448,11 +453,10 @@
         }
         case 5:
         {
-//            WLCreditPromiseViewController *vc = [[WLCreditPromiseViewController alloc]init];
-//            [self.navigationController pushViewController:vc animated:YES];
-            UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
-            [self presentViewController:vc animated:YES completion:nil];
-//            [self.navigationController pushViewController:vc animated:YES];
+            WLCreditPromiseViewController *vc = [[WLCreditPromiseViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+//            UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
+//            [self presentViewController:vc animated:YES completion:nil];
             break;
         }
         case 6:

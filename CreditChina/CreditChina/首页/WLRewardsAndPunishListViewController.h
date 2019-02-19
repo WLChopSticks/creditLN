@@ -7,13 +7,14 @@
 //
 
 #import "WLBaseUIViewController.h"
+#import <WLPlatform.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WLRewardsAndPunishListViewController : WLBaseUIViewController
 
 @property (nonatomic, strong) NSString *pageTitle;
-
+@property (nonatomic, strong) NSString *redAndBlackType;
 @end
 
 NS_ASSUME_NONNULL_END

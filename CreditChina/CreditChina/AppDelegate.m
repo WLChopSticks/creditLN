@@ -47,7 +47,6 @@
     WLProfileCreditViewController *profileVC = [[WLProfileCreditViewController alloc]init];
     profileVC.title = @"个人信用";
     WLBaseNavigationViewController *nav3 = [[WLBaseNavigationViewController alloc]initWithRootViewController:profileVC];
-//    nav3.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"个人信用" image:[UIImage imageNamed:@"user_credit"] tag:2];
     UITabBarItem *creditItem = [[UITabBarItem alloc]init];
     creditItem.title = @"个人信用";
     creditItem.image = [[UIImage imageNamed:@"user_credit_normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -57,9 +56,8 @@
     WLProfileViewController *profileCreditVC = [[WLProfileViewController alloc]init];
     profileCreditVC.title = @"个人中心";
     WLBaseNavigationViewController *nav4 = [[WLBaseNavigationViewController alloc]initWithRootViewController:profileCreditVC];
-//    nav4.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"个人中心" image:[UIImage imageNamed:@"profile"] tag:3];
     UITabBarItem *profileItem = [[UITabBarItem alloc]init];
-    profileItem.title = @"个人信用";
+    profileItem.title = @"个人中心";
     profileItem.image = [[UIImage imageNamed:@"profile_normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     profileItem.selectedImage = [[UIImage imageNamed:@"profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     nav4.tabBarItem = profileItem;

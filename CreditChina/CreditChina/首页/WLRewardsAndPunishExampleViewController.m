@@ -47,54 +47,30 @@
 
 - (void)queryData
 {
-//    WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
-//    NSMutableString *URL = [NSMutableString stringWithString:networkTool.queryAPIList[@"getdatareportings"]];
-//
-//    NSString *counterpart = @"xzxdrmc";
-//    NSString *page = @"1";
-//    NSString *pageSize = @"10";
-////    [URL appendString:[NSString stringWithFormat:@"/%@",self.keepOrBreakPromise]];
-//    [URL appendString:[NSString stringWithFormat:@"/%@",counterpart]];
-//    [URL appendString:[NSString stringWithFormat:@"/%@",page]];
-//    [URL appendString:[NSString stringWithFormat:@"/%@",pageSize]];
-//    NSString *urlString = [NSString stringWithString:URL];
-//    urlString = @"http://223.100.2.221:8383/credit-webservice-app/restwebservice/app/datacase/getdatacase/%E6%B2%88%E9%98%B3%E5%B8%82%E6%9D%BE%E9%99%B5%E5%B7%A5%E5%85%B7%E5%8E%82/%E6%B2%88%E9%98%B3%E5%B8%82%E6%9D%BE%E9%99%B5%E5%B7%A5%E5%85%B7%E5%8E%82/2/1/10";
-////    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//
-//
-//    [networkTool GET_queryWithURL:urlString andParameters:nil success:^(id  _Nullable responseObject) {
-//
-//
-//    } failure:^(NSError *error) {
-//        NSLog(@"%@",error);
-//
-//    }];
-    
+    [ProgressHUD show];
     [WLApiManager  queryRewardsAndPunishExampleType:self.exampleType andExampleName:nil andSubjectName:nil page:1 success:^(id  _Nullable response) {
+        [ProgressHUD dismiss];
         NSDictionary *result = (NSDictionary *)response;
-        self.tableView.rowsData = [self constructLosePromiseCellContentDict:result];
+        NSArray *data = [self constructLosePromiseCellContentDict:result];
+        if (data.count > 0)
+        {
+            self.tableView.rowsData = [self constructLosePromiseCellContentDict:result];
+        }else
+        {
+            [self showEmptyView];
+        }
+        
         [self.tableView reloadData];
     } failure:^(NSError *error) {
-        
+        [ProgressHUD dismiss];
+        [self showEmptyView];
     }];
 }
 
 - (NSArray *)constructLosePromiseCellContentDict: (NSDictionary *)result
 {
     NSMutableArray *constructingArr = [NSMutableArray array];
-    
     NSArray *dataList = result[@"rows"];
-//    for (NSDictionary *dataDict in dataList)
-//    {
-//        NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
-//        [constructingDict setObject:dataDict[@"datacasename"] forKey:@"caseName"];
-//        [constructingDict setObject:dataDict[@"datapunishtypename"] forKey:@"symbol"];
-//        [constructingDict setObject:dataDict[@"datacasesubjectsname"] forKey:@"subtitle"];
-//        NSInteger times = [dataDict[@"datacaseupdatetime"]integerValue];
-//        [constructingDict setObject:[WLCommonTool transferTimeFormatWIthTime:times] forKey:@"time"];
-//
-//        [constructingArr addObject:constructingDict];
-//    }
     
     for (NSDictionary *model in dataList) 
     {
@@ -103,10 +79,8 @@
         [constructingDict setObject:model[@"datapunishtypename"] forKey:@"symbol"];
         [constructingDict setObject:model[@"datameasuresname"] forKey:@"subtitle"];
         [constructingDict setObject:model[@"datacasetime"] forKey:@"time"];
-        
         [constructingArr addObject:constructingDict];
     }
-
 
     return constructingArr;
 }

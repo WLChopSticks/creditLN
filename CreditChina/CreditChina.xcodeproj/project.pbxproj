@@ -34,6 +34,9 @@
 		9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */; };
 		9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */; };
 		9BA00A072209CD5D00D1FFD9 /* WLDoublePolicyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA00A062209CD5D00D1FFD9 /* WLDoublePolicyDetailViewController.m */; };
+		9BB63AFA221C31D100132FB7 /* WLRewardAndPunishListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63AF8221C31D100132FB7 /* WLRewardAndPunishListCell.m */; };
+		9BB63AFB221C31D100132FB7 /* WLRewardAndPunishListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB63AF9221C31D100132FB7 /* WLRewardAndPunishListCell.xib */; };
+		9BB63AFE221C365800132FB7 /* WLFocusPeopleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63AFD221C365800132FB7 /* WLFocusPeopleController.m */; };
 		9BC20A2021FF1B8B00732DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */; };
 		9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A2221FF1B8B00732DE3 /* ViewController.m */; };
 		9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC20A2421FF1B8B00732DE3 /* Main.storyboard */; };
@@ -127,6 +130,11 @@
 		9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDoublePublicityModel.m; sourceTree = "<group>"; };
 		9BA00A052209CD5D00D1FFD9 /* WLDoublePolicyDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLDoublePolicyDetailViewController.h; sourceTree = "<group>"; };
 		9BA00A062209CD5D00D1FFD9 /* WLDoublePolicyDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDoublePolicyDetailViewController.m; sourceTree = "<group>"; };
+		9BB63AF7221C31D100132FB7 /* WLRewardAndPunishListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLRewardAndPunishListCell.h; sourceTree = "<group>"; };
+		9BB63AF8221C31D100132FB7 /* WLRewardAndPunishListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLRewardAndPunishListCell.m; sourceTree = "<group>"; };
+		9BB63AF9221C31D100132FB7 /* WLRewardAndPunishListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLRewardAndPunishListCell.xib; sourceTree = "<group>"; };
+		9BB63AFC221C365800132FB7 /* WLFocusPeopleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLFocusPeopleController.h; sourceTree = "<group>"; };
+		9BB63AFD221C365800132FB7 /* WLFocusPeopleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLFocusPeopleController.m; sourceTree = "<group>"; };
 		9BC20A1B21FF1B8B00732DE3 /* CreditChina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditChina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC20A1E21FF1B8B00732DE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -243,6 +251,9 @@
 				9B1AEC082211527C007769EC /* WLChartRatioTableViewCell.h */,
 				9B1AEC092211527C007769EC /* WLChartRatioTableViewCell.m */,
 				9B1AEC0A2211527C007769EC /* WLChartRatioTableViewCell.xib */,
+				9BB63AF7221C31D100132FB7 /* WLRewardAndPunishListCell.h */,
+				9BB63AF8221C31D100132FB7 /* WLRewardAndPunishListCell.m */,
+				9BB63AF9221C31D100132FB7 /* WLRewardAndPunishListCell.xib */,
 				9BA00A052209CD5D00D1FFD9 /* WLDoublePolicyDetailViewController.h */,
 				9BA00A062209CD5D00D1FFD9 /* WLDoublePolicyDetailViewController.m */,
 				9B1AEC0D2211665D007769EC /* 联合奖惩 */,
@@ -381,6 +392,8 @@
 				9BC20C0B2202A76600732DE3 /* WLCreditReportViewController.m */,
 				9BC20C0D2202A77A00732DE3 /* WLNewsViewController.h */,
 				9BC20C0E2202A77A00732DE3 /* WLNewsViewController.m */,
+				9BB63AFC221C365800132FB7 /* WLFocusPeopleController.h */,
+				9BB63AFD221C365800132FB7 /* WLFocusPeopleController.m */,
 				9BC20C112202A79C00732DE3 /* WLCreditPromiseViewController.h */,
 				9BC20C122202A79C00732DE3 /* WLCreditPromiseViewController.m */,
 				9BC20C142202A7BC00732DE3 /* WLRelatedPolicyViewController.h */,
@@ -582,6 +595,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB63AFB221C31D100132FB7 /* WLRewardAndPunishListCell.xib in Resources */,
 				9BC20A2B21FF1B8C00732DE3 /* LaunchScreen.storyboard in Resources */,
 				9BFBCF1922141A7300319D2B /* WLFocusPeopleResultCell.xib in Resources */,
 				9B39179B2216F91600B7E8EF /* law_province_20190215.json in Resources */,
@@ -697,10 +711,12 @@
 				9B9117A922192B150069F619 /* WLExhibitionMessageCell.m in Sources */,
 				9BFBCF1D22141D4A00319D2B /* WLPersonResultCell.m in Sources */,
 				9BC20C062202A6F000732DE3 /* WLRewardsAndPunishListViewController.m in Sources */,
+				9BB63AFA221C31D100132FB7 /* WLRewardAndPunishListCell.m in Sources */,
 				9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */,
 				9B1AEC0B2211527C007769EC /* WLChartRatioTableViewCell.m in Sources */,
 				9B1AEC1122116689007769EC /* WLRewardsAndPunishEgTableViewCell.m in Sources */,
 				9BC20C0C2202A76600732DE3 /* WLCreditReportViewController.m in Sources */,
+				9BB63AFE221C365800132FB7 /* WLFocusPeopleController.m in Sources */,
 				9BA009ED2205D6B700D1FFD9 /* WLRedAndBlackListViewController.m in Sources */,
 				9BC20C3422031D4500732DE3 /* WLUserFocusTableController.m in Sources */,
 				9B9117AD221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m in Sources */,

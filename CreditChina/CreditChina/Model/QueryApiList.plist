@@ -16,12 +16,14 @@
 	<key>getpersonselect</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getpersonselet</string>
 	<key>getFocusPeople</key>
-	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getFocusPeople/{typecode}/zgrxm/zczsbh/1/10</string>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getFocusPeople/{typecode}/{zgrxm}/{zczsbh}/{page}/{pagesize}</string>
 	<key>getCompanyList</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getcompanylist/querytype/{querykey}/1/10</string>
 	<key>getPersonData</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getPersonData/name/IDCardNo</string>
 	<key>getdatacase</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/datacase/getdatacase/{datacasename}/{datacasesubjectsname}/{typecode}/{page}/{pagesize}</string>
+	<key>getblackshow</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datareportings/getblackshow/{querytype}/{creditname}/{page}/{pagesize}</string>
 </dict>
 </plist>
