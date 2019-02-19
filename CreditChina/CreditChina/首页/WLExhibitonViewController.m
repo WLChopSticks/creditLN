@@ -60,7 +60,7 @@
     [self.view addSubview:backScroll];
     
     UIView *bgView = [[UIView alloc]init];
-    bgView.backgroundColor = [UIColor lightGrayColor];
+    bgView.backgroundColor = [UIColor colorWithRed:236.0/250 green:236.0/250 blue:236.0/250 alpha:1];
     [backScroll addSubview:bgView];
     [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.edges.equalTo(backScroll);

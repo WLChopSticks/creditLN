@@ -14,6 +14,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    [self.remark setImage:[[UIImage imageNamed:@"remark.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+    self.remark.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    [self.time setImage:[[UIImage imageNamed:@"newstime.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
 }
 
 -(void)fillCellContent:(NSDictionary *)contentDict withCollectionView:(UICollectionView *)collectionView
