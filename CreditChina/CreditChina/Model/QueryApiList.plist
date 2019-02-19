@@ -21,5 +21,7 @@
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getcompanylist/querytype/{querykey}/1/10</string>
 	<key>getPersonData</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getPersonData/name/IDCardNo</string>
+	<key>getdatacase</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datacase/getdatacase/{datacasename}/{datacasesubjectsname}/{typecode}/{page}/{pagesize}</string>
 </dict>
 </plist>

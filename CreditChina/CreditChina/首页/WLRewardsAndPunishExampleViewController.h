@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WLRewardsAndPunishExampleViewController : WLBaseUIViewController
 
-//1为守信, 2为失信
-@property (nonatomic, strong) NSString *keepOrBreakPromise;
+//1为红名单, 2为黑名单
+@property (nonatomic, strong) NSString *exampleType;
 
 @end
 
