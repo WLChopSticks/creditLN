@@ -29,22 +29,40 @@
     WLExhibitonViewController *exhibitionVC = [[WLExhibitonViewController alloc]init];
 //    exhibitionVC.title = @"信用辽宁(公众版)";
     WLBaseNavigationViewController *nav1 = [[WLBaseNavigationViewController alloc]initWithRootViewController:exhibitionVC];
-    nav1.tabBarItem  = [[UITabBarItem alloc]initWithTitle:@"首页" image:[UIImage imageNamed:@"home"] tag:0];
+    UITabBarItem *homeItem = [[UITabBarItem alloc]init];
+    homeItem.title = @"首页";
+    homeItem.image = [[UIImage imageNamed:@"home_normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    homeItem.selectedImage = [[UIImage imageNamed:@"home.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav1.tabBarItem = homeItem;
     
     WLUserFocusViewController *userFocusVC = [[WLUserFocusViewController alloc]init];
     userFocusVC.title = @"用户关注";
     WLBaseNavigationViewController *nav2 = [[WLBaseNavigationViewController alloc]initWithRootViewController:userFocusVC];
-    nav2.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"用户关注" image:[UIImage imageNamed:@"focus"] tag:1];
+    UITabBarItem *focusItem = [[UITabBarItem alloc]init];
+    focusItem.title = @"用户关注";
+    focusItem.image = [[UIImage imageNamed:@"focus_normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    focusItem.selectedImage = [[UIImage imageNamed:@"focus.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav2.tabBarItem = focusItem;
     
     WLProfileCreditViewController *profileVC = [[WLProfileCreditViewController alloc]init];
     profileVC.title = @"个人信用";
     WLBaseNavigationViewController *nav3 = [[WLBaseNavigationViewController alloc]initWithRootViewController:profileVC];
-    nav3.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"个人信用" image:[UIImage imageNamed:@"user_creidt"] tag:2];
+//    nav3.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"个人信用" image:[UIImage imageNamed:@"user_credit"] tag:2];
+    UITabBarItem *creditItem = [[UITabBarItem alloc]init];
+    creditItem.title = @"个人信用";
+    creditItem.image = [[UIImage imageNamed:@"user_credit_normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    creditItem.selectedImage = [[UIImage imageNamed:@"user_credit.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav3.tabBarItem = creditItem;
     
     WLProfileViewController *profileCreditVC = [[WLProfileViewController alloc]init];
     profileCreditVC.title = @"个人中心";
     WLBaseNavigationViewController *nav4 = [[WLBaseNavigationViewController alloc]initWithRootViewController:profileCreditVC];
-    nav4.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"个人中心" image:[UIImage imageNamed:@"profile"] tag:3];
+//    nav4.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"个人中心" image:[UIImage imageNamed:@"profile"] tag:3];
+    UITabBarItem *profileItem = [[UITabBarItem alloc]init];
+    profileItem.title = @"个人信用";
+    profileItem.image = [[UIImage imageNamed:@"profile_normal.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    profileItem.selectedImage = [[UIImage imageNamed:@"profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    nav4.tabBarItem = profileItem;
     
     WLBaseTabBarViewController *tabVC = [[WLBaseTabBarViewController alloc]init];
     tabVC.viewControllers = @[nav1, nav2, nav3, nav4];

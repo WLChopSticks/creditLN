@@ -17,7 +17,11 @@
 
 @interface WLNewsDetailTitleCell ()
 
+@property (nonatomic, strong) NSDictionary *data;
 @property (nonatomic, weak) UILabel *title;
+@property (nonatomic, weak) UILabel *source;
+@property (nonatomic, weak) UILabel *time;
+
 
 @end
 
@@ -30,18 +34,50 @@
     {
         UILabel *titleLabel = [[UILabel alloc]init];
         self.title = titleLabel;
+        titleLabel.font = [UIFont systemFontOfSize:20];
         titleLabel.numberOfLines = 0;
         [self.contentView addSubview:titleLabel];
+        
+        UILabel *source = [[UILabel alloc]init];
+        self.source = source;
+        source.font = [UIFont systemFontOfSize:14];
+        source.textColor = [UIColor lightGrayColor];
+        [self.contentView addSubview:source];
+        
+        UILabel *time = [[UILabel alloc]init];
+        self.time = time;
+        time.font = [UIFont systemFontOfSize:14];
+        time.textColor = [UIColor lightGrayColor];
+        [self.contentView addSubview:time];
+        
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).offset(10);
             make.left.equalTo(self.contentView.mas_left).offset(10);
             make.right.equalTo(self.contentView.mas_right).offset(-10);
-            make.height.mas_equalTo(100);
+        }];
+        
+        [source mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(titleLabel.mas_bottom);
+            make.left.equalTo(titleLabel.mas_left);
             make.bottom.equalTo(self.contentView.mas_bottom);
+        }];
+        
+        [time mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(source.mas_top);
+            make.left.equalTo(source.mas_right).offset(10);
         }];
     }
     
     return self;
+}
+
+-(void)setData:(NSDictionary *)data
+{
+    _data = data;
+    
+    self.title.text = data[@"title"];
+    self.source.text = data[@"source"];
+    self.time.text = data[@"time"];
 }
 
 @end
@@ -72,7 +108,7 @@
             make.top.equalTo(self.contentView.mas_top).offset(10);
             make.left.equalTo(self.contentView.mas_left).offset(10);
             make.right.equalTo(self.contentView.mas_right).offset(-10);
-            make.height.mas_equalTo(500);
+
             make.bottom.equalTo(self.contentView.mas_bottom);
         }];
     }
@@ -88,7 +124,6 @@
     {
         [_webView loadHTMLString:[NSString stringWithFormat:@"<meta content=\"width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=0;\" name=\"viewport\" />%@<div id=\"testDiv\" style = \"height:100px; width:100px\"></div>",detail] baseURL:[NSURL URLWithString:self.baseURL]];
     }
-
 }
 
 @end
@@ -139,7 +174,6 @@
             make.top.equalTo(username.mas_bottom);
             make.left.equalTo(username.mas_left);
             make.right.equalTo(self.contentView.mas_right).offset(-10);
-            make.height.mas_equalTo(70);
             make.bottom.equalTo(self.contentView.mas_bottom);
         }];
     }
@@ -170,6 +204,8 @@
 @property (nonatomic, assign) CGFloat webHeight;
 @property (nonatomic, weak) UIView *remarkWirttenView;
 
+@property (nonatomic, strong) NSDictionary *titleDict;
+
 @end
 
 @implementation WLNewsDetailViewController
@@ -178,6 +214,12 @@
 {
     [super viewDidLoad];
     [self decorateUI];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [ProgressHUD show];
 }
 
 - (void)decorateUI
@@ -200,7 +242,12 @@
     [backScroll registerClass:[WLNewsDetailContentCell class] forCellReuseIdentifier:NewsContentCell];
     [backScroll registerClass:[WLNewsDetailRemarkCell class] forCellReuseIdentifier:NewsRemarkCell];
     
-    [self decorateRemarkView];
+    [self constructTitleDict:self.content];
+    
+    if (self.newsType.integerValue == 1)
+    {
+        [self decorateRemarkView];
+    }
     
     
 //    UILabel *title = [[UILabel alloc]init];
@@ -254,38 +301,68 @@
 - (void)decorateRemarkView
 {
     UIView *remarkWrittenView = [[UIView alloc]init];
+    remarkWrittenView.backgroundColor = [UIColor whiteColor];
     self.remarkWirttenView = remarkWrittenView;
-    remarkWrittenView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:remarkWrittenView];
     
     [remarkWrittenView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
         make.height.mas_equalTo(40);
     }];
-    NSArray *arr = remarkWrittenView.constraints;
+    
+    UIView *seperateLine = [[UIView alloc]init];
+    seperateLine.backgroundColor = [UIColor lightGrayColor];
+    [remarkWrittenView addSubview:seperateLine];
+    [seperateLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.equalTo(remarkWrittenView);
+        make.height.mas_equalTo(0.5);
+    }];
     
     UITextField *remarkField = [[UITextField alloc]init];
     [remarkWrittenView addSubview:remarkField];
     remarkField.placeholder = @"请填写评论";
+    remarkField.borderStyle = UITextBorderStyleRoundedRect;
     
     [remarkField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(remarkWrittenView.mas_left).offset(10);
         make.top.equalTo(remarkWrittenView.mas_top).offset(5);
-        make.width.mas_equalTo(100);
+        make.right.equalTo(remarkWrittenView.mas_right).offset(-70);
         make.height.mas_equalTo(30);
     }];
     
     UIButton *collectBtn = [[UIButton alloc]init];
-    [collectBtn setTitle:@"收藏" forState:UIControlStateNormal];
+    [collectBtn setImage:[UIImage imageNamed:@"collect"] forState:UIControlStateNormal];
     [remarkWrittenView addSubview:collectBtn];
     [collectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(remarkField);
         make.left.equalTo(remarkField.mas_right).offset(10);
+        make.height.mas_equalTo(30);
+        make.right.equalTo(remarkWrittenView.mas_right).offset(-10);
     }];
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrameNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHideNotification:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)constructTitleDict: (NSDictionary *)content
+{
+    NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+    [dictM setObject:content[@"title"] forKey:@"title"];
+    if (content[@"type"])
+    {
+        [dictM setObject:content[@"type"] forKey:@"source"];
+    }
+    if (content[@"time"])
+    {
+        [dictM setObject:content[@"time"] forKey:@"time"];
+    }
+    if (content[@"updateTime"])
+    {
+        [dictM setObject:content[@"updateTime"] forKey:@"time"];
+    }
+    
+    self.titleDict = dictM;
 }
 
 - (void)keyboardWillChangeFrameNotification:(NSNotification *)notification {
@@ -306,18 +383,13 @@
     }];
 }
 
-- (void)keyboardWillHideNotification:(NSNotification *)notification {
-    
-    // 获得键盘动画时长
+- (void)keyboardWillHideNotification:(NSNotification *)notification
+{
     NSDictionary *userInfo   = [notification userInfo];
     CGFloat keyboardDuration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
-    // 修改为以前的约束（距下边距0）
     [self.remarkWirttenView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(0);
     }];
-    
-    // 更新约束
     [UIView animateWithDuration:keyboardDuration animations:^{
         [self.view layoutIfNeeded];
     }];
@@ -325,6 +397,7 @@
 
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
+    [ProgressHUD dismiss];
     [webView evaluateJavaScript:@"document.getElementById(\"testDiv\").offsetTop"completionHandler:^(id _Nullable result,NSError * _Nullable error) {
         //获取页面高度，并重置webview的frame
         CGFloat lastHeight = [result doubleValue];
@@ -332,6 +405,7 @@
         self.webHeight = lastHeight;
         [self.backScroll beginUpdates];
         [self.backScroll endUpdates]; }];
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -345,7 +419,8 @@
     if (indexPath.row == 0)
     {
         WLNewsDetailTitleCell *titleCell = [tableView dequeueReusableCellWithIdentifier:NewsTitleCell forIndexPath:indexPath];
-        titleCell.title.text = @"发动机拉萨辅导教师;富家大室奥拉夫时间的分类的时间发牢骚分局领导说烦死啦放假的冯老师发;了发的卡萨了;圣诞节啦发生的浪费结束啦睡了拉萨烦死了开发;撒";
+        titleCell.data = self.titleDict;
+//        titleCell.title.text = @"发动机拉萨辅导教师;富家大室奥拉夫时间的分类的时间发牢骚分局领导说烦死啦放假的冯老师发;了发的卡萨了;圣诞节啦发生的浪费结束啦睡了拉萨烦死了开发;撒";
         cell = titleCell;
         
     }else if (indexPath.row == 1)
@@ -372,9 +447,16 @@
 {
     if (indexPath.row == 0)
     {
+        CGFloat cellHeight = 0;
+        CGSize titleSize = [self.titleDict[@"title"] boundingRectWithSize:CGSizeMake(tableView.frame.size.width - 20, MAXFLOAT)options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]}                                       context:nil].size;
+        cellHeight += titleSize.height;
+        return cellHeight + 50;
+        
         return 70;
     }else if (indexPath.row == 1)
     {
+        if (self.webHeight <= 0)
+            return 500;
         return self.webHeight;
     }else
     {

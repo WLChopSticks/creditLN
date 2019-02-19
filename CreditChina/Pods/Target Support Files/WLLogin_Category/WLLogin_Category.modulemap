@@ -1,0 +1,6 @@
+framework module WLLogin_Category {
+  umbrella header "WLLogin_Category-umbrella.h"
+
+  export *
+  module * { export * }
+}

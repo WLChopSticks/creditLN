@@ -210,7 +210,8 @@
 - (void)decorateCreditMessageView: (UIView *)containerView
 {
     UIImageView *leftimage = [[UIImageView alloc]init];
-    leftimage.backgroundColor = [UIColor redColor];
+    leftimage.contentMode = UIViewContentModeScaleAspectFit;
+    leftimage.image = [UIImage imageNamed:@"star"];
     [containerView addSubview:leftimage];
     UILabel *viewTitle = [[UILabel alloc]init];
     viewTitle.text = @"信用信息";
@@ -221,7 +222,7 @@
     messageCount.text = @"今天收到3条消息";
     [containerView addSubview:messageCount];
     UIButton *moreBtn = [[UIButton alloc]init];
-    moreBtn.backgroundColor = [UIColor redColor];
+    [moreBtn setImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal];
     [containerView addSubview:moreBtn];
     
     WLTableView *messageTable = [[WLTableView alloc]init];
@@ -265,13 +266,14 @@
 - (void)decorateNewsInfoView: (UIView *)containerView
 {
     UIImageView *leftimage = [[UIImageView alloc]init];
-    leftimage.backgroundColor = [UIColor redColor];
+    leftimage.contentMode = UIViewContentModeScaleAspectFit;
+    leftimage.image = [UIImage imageNamed:@"star"];
     [containerView addSubview:leftimage];
     UILabel *viewTitle = [[UILabel alloc]init];
     viewTitle.text = @"新闻资讯";
     [containerView addSubview:viewTitle];
     UIButton *moreBtn = [[UIButton alloc]init];
-    moreBtn.backgroundColor = [UIColor redColor];
+    [moreBtn setImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal];
     [containerView addSubview:moreBtn];
     
     WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
@@ -320,13 +322,14 @@
 - (void)decoratePolicyInfoView: (UIView *)containerView
 {
     UIImageView *leftimage = [[UIImageView alloc]init];
-    leftimage.backgroundColor = [UIColor redColor];
+    leftimage.contentMode = UIViewContentModeScaleAspectFit;
+    leftimage.image = [UIImage imageNamed:@"star"];
     [containerView addSubview:leftimage];
     UILabel *viewTitle = [[UILabel alloc]init];
     viewTitle.text = @"政策法规";
     [containerView addSubview:viewTitle];
     UIButton *moreBtn = [[UIButton alloc]init];
-    moreBtn.backgroundColor = [UIColor redColor];
+    [moreBtn setImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal];
     [moreBtn addTarget:self action:@selector(policyMoreBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:moreBtn];
 
@@ -507,13 +510,13 @@
     {
         NSMutableArray *arrTem = [NSMutableArray arrayWithCapacity:8];
         [arrTem addObject:@{@"image":@"doublePublicity", @"title":@"双公示"}];
-        [arrTem addObject:@{@"image":@"RewardsAndPunish", @"title":@"联合奖惩"}];
-        [arrTem addObject:@{@"image":@"RewardsAndPunish1", @"title":@"信用报告"}];
-        [arrTem addObject:@{@"image":@"creditReport", @"title":@"重点人群"}];
-        [arrTem addObject:@{@"image":@"newsIcon", @"title":@"典型案例"}];
-        [arrTem addObject:@{@"image":@"creditPromise", @"title":@"信用承诺"}];
-        [arrTem addObject:@{@"image":@"relatedPolicy", @"title":@"异议申诉"}];
-        [arrTem addObject:@{@"image":@"queryInfo", @"title":@"信用修复"}];
+        [arrTem addObject:@{@"image":@"lhjc", @"title":@"联合奖惩"}];
+        [arrTem addObject:@{@"image":@"xybg", @"title":@"信用报告"}];
+        [arrTem addObject:@{@"image":@"zdrq", @"title":@"重点人群"}];
+        [arrTem addObject:@{@"image":@"dxal", @"title":@"典型案例"}];
+        [arrTem addObject:@{@"image":@"xycn", @"title":@"信用承诺"}];
+        [arrTem addObject:@{@"image":@"yyss", @"title":@"异议申诉"}];
+        [arrTem addObject:@{@"image":@"xyxf", @"title":@"信用修复"}];
         _functionBtns = [NSArray arrayWithArray:arrTem];
     }
     return _functionBtns;
