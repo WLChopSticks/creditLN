@@ -37,6 +37,7 @@
 		9BB63AFA221C31D100132FB7 /* WLRewardAndPunishListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63AF8221C31D100132FB7 /* WLRewardAndPunishListCell.m */; };
 		9BB63AFB221C31D100132FB7 /* WLRewardAndPunishListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB63AF9221C31D100132FB7 /* WLRewardAndPunishListCell.xib */; };
 		9BB63AFE221C365800132FB7 /* WLFocusPeopleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63AFD221C365800132FB7 /* WLFocusPeopleController.m */; };
+		9BB63B01221C479C00132FB7 /* WLCreditInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */; };
 		9BC20A2021FF1B8B00732DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */; };
 		9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A2221FF1B8B00732DE3 /* ViewController.m */; };
 		9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC20A2421FF1B8B00732DE3 /* Main.storyboard */; };
@@ -135,6 +136,8 @@
 		9BB63AF9221C31D100132FB7 /* WLRewardAndPunishListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLRewardAndPunishListCell.xib; sourceTree = "<group>"; };
 		9BB63AFC221C365800132FB7 /* WLFocusPeopleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLFocusPeopleController.h; sourceTree = "<group>"; };
 		9BB63AFD221C365800132FB7 /* WLFocusPeopleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLFocusPeopleController.m; sourceTree = "<group>"; };
+		9BB63AFF221C479C00132FB7 /* WLCreditInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCreditInfoController.h; sourceTree = "<group>"; };
+		9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCreditInfoController.m; sourceTree = "<group>"; };
 		9BC20A1B21FF1B8B00732DE3 /* CreditChina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditChina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC20A1E21FF1B8B00732DE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -400,6 +403,8 @@
 				9BC20C152202A7BC00732DE3 /* WLRelatedPolicyViewController.m */,
 				9BC20C172202A7E300732DE3 /* WLQueryCreditInfoViewController.h */,
 				9BC20C182202A7E300732DE3 /* WLQueryCreditInfoViewController.m */,
+				9BB63AFF221C479C00132FB7 /* WLCreditInfoController.h */,
+				9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -722,6 +727,7 @@
 				9B9117AD221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m in Sources */,
 				9B39176422167C1E00B7E8EF /* WLNewsDetailViewController.m in Sources */,
 				9BC20C192202A7E300732DE3 /* WLQueryCreditInfoViewController.m in Sources */,
+				9BB63B01221C479C00132FB7 /* WLCreditInfoController.m in Sources */,
 				9BFBCF1822141A7300319D2B /* WLFocusPeopleResultCell.m in Sources */,
 				9BA00A072209CD5D00D1FFD9 /* WLDoublePolicyDetailViewController.m in Sources */,
 				9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */,

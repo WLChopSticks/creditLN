@@ -224,7 +224,7 @@
 
 - (void)decorateUI
 {
-    
+    self.title = @"新闻资讯";
     UITableView *backScroll = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 60)];
     self.backScroll = backScroll;
     [self.view addSubview:backScroll];

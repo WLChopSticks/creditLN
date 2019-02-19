@@ -24,6 +24,7 @@
 #import "WLNewsAndPolicyShowInExhibitionController.h"
 #import <WLScrollView.h>
 #import "WLFocusPeopleController.h"
+#import "WLCreditInfoController.h"
 
 @interface WLExhibitonViewController ()<wlTableViewDelegate>
 
@@ -224,6 +225,7 @@
     [containerView addSubview:messageCount];
     UIButton *moreBtn = [[UIButton alloc]init];
     [moreBtn setImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal];
+    [moreBtn addTarget:self action:@selector(creditMoreBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:moreBtn];
     
     WLTableView *messageTable = [[WLTableView alloc]init];
@@ -275,6 +277,7 @@
     [containerView addSubview:viewTitle];
     UIButton *moreBtn = [[UIButton alloc]init];
     [moreBtn setImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal];
+    [moreBtn addTarget:self action:@selector(newsMoreBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
     [containerView addSubview:moreBtn];
     
     WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
@@ -380,6 +383,26 @@
     
 }
 
+- (void)creditMoreBtnDidClicking: (UIButton *)sender
+{
+    WLCreditInfoController *vc = [[WLCreditInfoController alloc]init];
+    vc.title = @"信用信息";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)newsMoreBtnDidClicking: (UIButton *)sender
+{
+    WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+    segVC.title = @"新闻资讯";
+    segVC.titles = @[@"国内动态",@"省内动态"];
+    WLNewsViewController *vc1 = [[WLNewsViewController alloc]init];
+    vc1.newsSource = @"1";
+    WLNewsViewController *vc2 = [[WLNewsViewController alloc]init];
+    vc2.newsSource = @"2";
+    segVC.controllers = @[vc1,vc2];
+    [self.navigationController pushViewController:segVC animated:YES];
+}
+
 - (void)functionBtnDidClicking: (UIButton *)sender
 {
     NSLog(@"点击了功能按钮%ld", (long)sender.tag);
@@ -426,13 +449,6 @@
         }
         case 3:
         {
-//            WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
-//            segVC.titles = @[@"国内动态",@"省内动态"];
-//            WLNewsViewController *vc1 = [[WLNewsViewController alloc]init];
-//            vc1.newsSource = @"1";
-//            WLNewsViewController *vc2 = [[WLNewsViewController alloc]init];
-//            vc2.newsSource = @"2";
-//            segVC.controllers = @[vc1,vc2];
             WLFocusPeopleController *vc = [[WLFocusPeopleController alloc]init];
             vc.title = @"重点人群";
             [self.navigationController pushViewController:vc animated:YES];

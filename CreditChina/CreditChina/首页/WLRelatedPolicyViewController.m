@@ -46,6 +46,7 @@
 
 - (void)queryData
 {
+    [ProgressHUD show];
     WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
     NSMutableString *URL = [NSMutableString stringWithString:networkTool.queryAPIList[@"getdatareportings"]];
     
@@ -64,6 +65,7 @@
 //        NSDictionary *result = (NSDictionary *)responseObject;
         //        WLDoublePublicityModel *model = [[WLDoublePublicityModel alloc]init];
         //        model = [model getModel:result];
+        [ProgressHUD dismiss];
         NSString *fileName = @"";
         switch (self.policyType.integerValue)
         {
@@ -92,6 +94,7 @@
         self.tableView.rowsData = self.dataArray;
         [self.tableView reloadData];
     } failure:^(NSError *error) {
+        [ProgressHUD dismiss];
         NSLog(@"%@",error);
         
     }];
