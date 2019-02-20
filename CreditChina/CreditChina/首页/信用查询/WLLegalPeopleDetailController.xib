@@ -19,6 +19,7 @@
                 <outlet property="creditNo" destination="rTQ-WE-gGw" id="3wJ-wa-Hql"/>
                 <outlet property="legalPeople" destination="y6e-Kp-rS0" id="aCk-cm-B23"/>
                 <outlet property="money" destination="0Lq-su-VK1" id="b4f-Ns-w8I"/>
+                <outlet property="topView" destination="pd4-gI-Vgs" id="Cve-df-Vmf"/>
                 <outlet property="uniqueCreditNo" destination="Ziw-cb-yYa" id="7Nw-NB-xnJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

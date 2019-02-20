@@ -9,6 +9,8 @@
 #import "WLLegalPeopleDetailController.h"
 #import <WLPlatform.h>
 #import "WLLegalDetailModel.h"
+#import <WLSegmentTableViewController.h>
+#import "WLLegalPeopleDetailDisplayController.h"
 
 @interface WLLegalPeopleDetailController ()
 @property (weak, nonatomic) IBOutlet UILabel *company;
@@ -21,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *createTime;
 
 @property (nonatomic, strong) WLLegalDetailModel *model;
+@property (weak, nonatomic) IBOutlet UIView *topView;
+@property (nonatomic, weak) WLSegmentTableViewController *categoryTable;
 
 @end
 
@@ -29,7 +33,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self decorateUI];
     [self queryData];
+}
+
+- (void)decorateUI
+{
+    
 }
 
 - (void)queryData
@@ -43,6 +54,7 @@
         {
             self.model = model;
             [self fillTopViewContent];
+            [self fillCategoryTableContent];
         }else
         {
             [self showEmptyView];
@@ -66,6 +78,46 @@
     self.business.text = enterpriseInfo.business;
     NSString *foundDate = enterpriseInfo.foundDate;
     self.createTime.text = [[foundDate componentsSeparatedByString:@" "]firstObject];
+}
+
+- (void)fillCategoryTableContent
+{
+    WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
+    self.categoryTable = categoryTable;
+    categoryTable.categoryWidth = Screen_Width;
+    categoryTable.isTitlesEqualWidth = NO;
+    
+    
+    //基本信息
+    WLEnterpriseXzDetail *enterpriseDetail = self.model.enterpriseXzDetail;
+    
+    NSMutableArray *titles = [NSMutableArray array];
+    for (WLEnterpriseDetailBlock *block in enterpriseDetail.enterpriseXzDetail)
+    {
+        if (block.typedepartmentname.length > 0)
+        {
+            [titles addObject:block.typedepartmentname];
+        }
+    }
+    self.categoryTable.titles = titles;
+    
+    NSMutableArray *vcs = [NSMutableArray array];
+    for (int i = 0; i < titles.count; i++)
+    {
+        WLLegalPeopleDetailDisplayController *vc = [[WLLegalPeopleDetailDisplayController alloc]init];
+        WLEnterpriseDetailBlock *block = enterpriseDetail.enterpriseXzDetail[i];
+        vc.block = block;
+        [vcs addObject:vc];
+    }
+    self.categoryTable.controllers = vcs;
+    
+    [self.view addSubview:categoryTable.view];
+    [self addChildViewController:categoryTable];
+    
+    [categoryTable.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.topView.mas_bottom);
+        make.left.right.bottom.equalTo(self.view);
+    }];
 }
 
 /*
