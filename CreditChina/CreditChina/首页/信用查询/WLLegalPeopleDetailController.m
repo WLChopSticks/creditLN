@@ -12,7 +12,7 @@
 #import <WLSegmentTableViewController.h>
 #import "WLLegalPeopleDetailDisplayController.h"
 
-@interface WLLegalPeopleDetailController ()
+@interface WLLegalPeopleDetailController ()<HGSegmentedPageViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *company;
 @property (weak, nonatomic) IBOutlet UILabel *uniqueCreditNo;
 @property (weak, nonatomic) IBOutlet UILabel *address;
@@ -23,8 +23,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *createTime;
 
 @property (nonatomic, strong) WLLegalDetailModel *model;
-@property (weak, nonatomic) IBOutlet UIView *topView;
+@property (strong, nonatomic) IBOutlet UIView *topView;
 @property (nonatomic, weak) WLSegmentTableViewController *categoryTable;
+@property (nonatomic, weak) UIView *scrollBackView;
 
 @end
 
@@ -40,7 +41,32 @@
 
 - (void)decorateUI
 {
+    [self.topView removeFromSuperview];
+    UIScrollView *backScroll = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.view addSubview:backScroll];
     
+    UIView *bgView = [[UIView alloc]init];
+    self.scrollBackView = bgView;
+//    bgView.backgroundColor = [UIColor colorWithRed:236.0/250 green:236.0/250 blue:236.0/250 alpha:1];
+    [backScroll addSubview:bgView];
+    
+    [backScroll mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(backScroll);
+//        make.top.equalTo(backScroll.mas_top).offset(-20);
+//        make.left.equalTo(backScroll.mas_left);
+//        make.right.equalTo(backScroll.mas_right);
+//        make.bottom.equalTo(backScroll.mas_bottom);
+        make.width.equalTo(backScroll);
+    }];
+    
+    [bgView addSubview:self.topView];
+    [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(bgView);
+        make.height.mas_equalTo(200);
+    }];
 }
 
 - (void)queryData
@@ -86,8 +112,7 @@
     self.categoryTable = categoryTable;
     categoryTable.categoryWidth = Screen_Width;
     categoryTable.isTitlesEqualWidth = NO;
-    
-    
+
     //基本信息
     WLEnterpriseXzDetail *enterpriseDetail = self.model.enterpriseXzDetail;
     
@@ -111,13 +136,59 @@
     }
     self.categoryTable.controllers = vcs;
     
-    [self.view addSubview:categoryTable.view];
+    [self.scrollBackView addSubview:categoryTable.view];
     [self addChildViewController:categoryTable];
+    categoryTable.segmentedPageViewController.delegate = self;
     
+    WLEnterpriseDetailBlock *firstBlock = enterpriseDetail.enterpriseXzDetail.firstObject;
+    CGFloat vcHeight = [self getVCHeightWithBlock:firstBlock];
     [categoryTable.view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.topView.mas_bottom);
-        make.left.right.bottom.equalTo(self.view);
+        make.height.mas_equalTo(vcHeight);
+        make.left.right.bottom.equalTo(self.scrollBackView);
+        
     }];
+}
+
+-(void)segmentedPageViewControllerDidEndDeceleratingWithPageIndex:(NSInteger)index
+{
+    WLLegalPeopleDetailDisplayController *currentVC =(WLLegalPeopleDetailDisplayController *) self.categoryTable.segmentedPageViewController.currentPageViewController;
+    CGFloat height = [self getVCHeightWithBlock:currentVC.block];
+    // 修改下边距约束
+    [self.categoryTable.view mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(height);
+    }];
+
+    // 更新约束
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+
+}
+
+- (CGFloat)getVCHeightWithBlock: (WLEnterpriseDetailBlock *)block
+{
+    NSInteger type = block.xytype;
+    NSInteger cellCount = 0;
+    NSInteger cellHeight = 0;
+    for (WLEnterpriseIndexSet *indexSet in block.indexedSets)
+    {
+        cellCount += indexSet.indexedSetDataCount;
+    }
+    switch (type)
+    {
+        case 1:
+            cellHeight = cellCount * 140;
+            break;
+        case 2:
+            cellHeight = cellCount * 80;
+            break;
+            
+        default:
+            break;
+    }
+    
+    return cellHeight + 40;
 }
 
 /*

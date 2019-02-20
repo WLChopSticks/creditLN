@@ -29,6 +29,7 @@
 - (void)decorateUI
 {
     WLTableView *tableView = [[WLTableView alloc]init];
+    tableView.wltableView.scrollEnabled = NO;
     NSArray *dataArr;
     if (self.block.xytype == 1)
     {
