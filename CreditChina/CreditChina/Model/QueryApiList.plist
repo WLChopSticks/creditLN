@@ -18,7 +18,9 @@
 	<key>getFocusPeople</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getFocusPeople/{typecode}/{zgrxm}/{zczsbh}/{page}/{pagesize}</string>
 	<key>getCompanyList</key>
-	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getcompanylist/querytype/{querykey}/1/10</string>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getcompanylist/{querytype}/{querykey}/{page}/{pagesize}</string>
+	<key>getCompanyDetail</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getcompanydetail/{usercode}/{xybsm}</string>
 	<key>getPersonData</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getPersonData/name/IDCardNo</string>
 	<key>getdatacase</key>

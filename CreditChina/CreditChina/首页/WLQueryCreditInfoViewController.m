@@ -7,12 +7,13 @@
 //
 
 #import "WLQueryCreditInfoViewController.h"
-#import "WLPlatform.h"
+#import <WLPlatform.h>
 #import "WLSearchConditionCell.h"
 #import "WLTableView.h"
 #import "WLLegalPeopleSearchResultCell.h"
 #import "WLFocusPeopleResultCell.h"
 #import "WLPersonResultCell.h"
+#import "WLLegalDetailController.h"
 
 @interface WLQueryCreditInfoViewController ()<wlTableViewDelegate, UITextFieldDelegate>
 
@@ -26,7 +27,6 @@
 @property (nonatomic, weak) WLTableView *searchResulTableView;
 @property (nonatomic, strong) NSArray *rowsData;
 @property (nonatomic, strong) NSArray *searchResultRowsData;
-@property (nonatomic, strong) NSString *searchURL;
 
 //不同种类时, 条件tableview的高度
 @property (nonatomic, assign) NSInteger legalPersonFilterHeight;
@@ -44,13 +44,14 @@
 
 - (void)decorateUI
 {
-    self.title = @"信用信息查询";
-    [self decorateBigCategoryView];
+//    [self decorateBigCategoryView];
     [self decorateNavigationBarSearchBar];
-    [self decorateFilterView];
-    [self decorateTopView];
+//    [self decorateFilterView];
+//    [self decorateTopView];
     [self decorateSearchResultTaleView];
-  
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(rightBtnDidClicking:)];
+    self.navigationItem.rightBarButtonItem = rightBtn;
+    
 }
 
 - (void)decorateNavigationBarSearchBar
@@ -72,7 +73,9 @@
     searchField.leftViewMode = UITextFieldViewModeAlways;
     
     searchField.leftView = leftView;
-//    self.navigationItem.titleView = searchField;
+    self.navigationItem.titleView = searchField;
+    [searchField becomeFirstResponder];
+    self.searchKey = @"立科科技";
 }
 
 - (void)decorateTopView
@@ -119,21 +122,24 @@
 {
     WLTableView *resultTableView = [[WLTableView alloc]init];
     self.searchResulTableView = resultTableView;
-    resultTableView.clipsToBounds = YES;
+    resultTableView.backgroundColor = [UIColor redColor];
     resultTableView.cellClass = [WLLegalPeopleSearchResultCell class];
     [resultTableView registNibForCell:@"WLLegalPeopleSearchResultCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
-    [resultTableView registNibForCell:@"WLFocusPeopleResultCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
-    [resultTableView registNibForCell:@"WLPersonResultCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
+//    [resultTableView registNibForCell:@"WLFocusPeopleResultCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
+//    [resultTableView registNibForCell:@"WLPersonResultCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
     resultTableView.wltableView.separatorStyle = UITableViewCellSelectionStyleNone;
     resultTableView.delegate = self;
     [self.view addSubview:resultTableView];
-    [WLCommonTool makeViewShowingWithRoundCorner:resultTableView andRadius:10];
     int width = self.view.frame.size.width - 20;
     int x = 10;
     int y = CGRectGetMaxY(self.searchCategory.frame) + 5;
     int height = self.view.frame.size.height - y;
     resultTableView.frame = CGRectMake(x, y, width, height);
-    resultTableView.alpha = 0;
+    
+    [resultTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    
 }
 
 - (void)decorateBigCategoryView
@@ -166,6 +172,11 @@
         
     }
     
+}
+
+- (void)rightBtnDidClicking: (UIBarButtonItem *)sender
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)bigSearchCategoryDidClicking: (UIButton *)sender
@@ -316,6 +327,14 @@
 
 -(void)wlTableView:(UITableView *)tableView didSelectCellAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary *dict = self.searchResultRowsData[indexPath.row];
+    WLLegalDetailController *vc = [[WLLegalDetailController alloc]init];
+    vc.usercode = dict[@"usercode"];
+    vc.creditcode = dict[@"creditcode"];
+    [self.navigationController pushViewController:vc animated:YES];
+    return;
+    
+    
     [self dismissConditionTableView];
     
     NSString *para = self.rowsData[indexPath.row][@"parameter"];
@@ -337,70 +356,95 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [textField endEditing:YES];
+    self.searchKey = textField.text;
+    self.searchKey = @"立科科技";
+    [self querySearchResultData];
     return YES;
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField 
+//-(void)textFieldDidEndEditing:(UITextField *)textField 
+//{
+//    NSLog(@"开始搜索");
+//    if (self.searchType == 0)
+//    {
+//        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"{querykey}" withString:textField.text];
+//    }else if (self.searchType == 1)
+//    {
+//        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"{querykey}" withString:textField.text];
+//        
+//        NSString *searchString = textField.text;
+//        if (searchString.length > 0)
+//        {
+//            if ([searchString integerValue])
+//            {
+//                self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"zczsbh" withString:searchString];
+//            }else
+//            {
+//                self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"zgrxm" withString:searchString];
+//            }
+//            //如果没有选择类别, 弹窗强制选择
+//            if ([self.searchURL containsString:@"{typecode}"])
+//            {
+//                self.searchURL = [self.searchURL stringByAppendingString:@"need_to_push"];
+//                [self showConditionTableView];
+//                return;
+//            }
+//        }
+//    }else if (self.searchType == 2)
+//    {
+//        NSString *inputStr = [self.searchField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//        NSArray *fields = [inputStr componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//        
+//        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"name" withString:fields.firstObject];
+//        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"IDCardNo" withString:fields.lastObject];
+//    }
+//    
+//    [self querySearchData];
+//}
+
+- (void)querySearchResultData
 {
-    NSLog(@"开始搜索");
-    if (self.searchType == 0)
-    {
-        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"{querykey}" withString:textField.text];
-    }else if (self.searchType == 1)
-    {
-        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"{querykey}" withString:textField.text];
-        
-        NSString *searchString = textField.text;
-        if (searchString.length > 0)
+    [ProgressHUD show];
+    [WLApiManager queryCompanyListtype:nil andName:self.searchKey page:1 success:^(id  _Nullable response) {
+        [ProgressHUD dismiss];
+        NSDictionary *result = (NSDictionary *)response;
+        self.searchResultRowsData = [self constructLegalPeopleCellContentDict:result];
+        if (self.searchResultRowsData.count > 0)
         {
-            if ([searchString integerValue])
-            {
-                self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"zczsbh" withString:searchString];
-            }else
-            {
-                self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"zgrxm" withString:searchString];
-            }
-            //如果没有选择类别, 弹窗强制选择
-            if ([self.searchURL containsString:@"{typecode}"])
-            {
-                self.searchURL = [self.searchURL stringByAppendingString:@"need_to_push"];
-                [self showConditionTableView];
-                return;
-            }
+            self.searchResulTableView.cellClass = [WLLegalPeopleSearchResultCell class];
+            self.searchResulTableView.rowsData = self.searchResultRowsData;
+            [self.searchResulTableView reloadData];
+        }else
+        {
+            [self showEmptyView];
+            
         }
-    }else if (self.searchType == 2)
-    {
-        NSString *inputStr = [self.searchField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        NSArray *fields = [inputStr componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-        
-        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"name" withString:fields.firstObject];
-        self.searchURL = [self.searchURL stringByReplacingOccurrencesOfString:@"IDCardNo" withString:fields.lastObject];
-    }
-    
-    [self querySearchData];
+    } failure:^(NSError *error) {
+        [ProgressHUD dismiss];
+        [self showEmptyView];
+    }];
 }
 
 - (void)querySearchData
 {
     WLNetworkTool *networkTool = [WLNetworkTool sharedNetworkToolManager];
-    self.searchURL = @"http://223.100.2.221:8383/credit-webservice-app/restwebservice/app/dataquery/getPersonData/%E7%A7%A6%E9%A2%96/21010217443210023";
-//    self.searchURL = [self.searchURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+//    self.searchURL = @"http://223.100.2.221:8383/credit-webservice-app/restwebservice/app/dataquery/getPersonData/%E7%A7%A6%E9%A2%96/21010217443210023";
+    self.searchURL = [self.searchURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     [networkTool GET_queryWithURL:self.searchURL andParameters:nil success:^(id  _Nullable responseObject) {
         NSDictionary *result = (NSDictionary *)responseObject;
-        if (self.searchType == 0)
-        {
-            self.searchResultRowsData = [self constructLegalPeopleCellContentDict:result];
-            self.searchResulTableView.cellClass = [WLLegalPeopleSearchResultCell class];
-        }else if (self.searchType == 1)
-        {
-            self.searchResultRowsData = [self constructFocusPeopleCellContentDict:result];
-            self.searchResulTableView.cellClass = [WLFocusPeopleResultCell class];
-        }else if (self.searchType == 2)
-        {
-            self.searchResultRowsData = [self constructPersonCellContentDict:result];
-            self.searchResulTableView.cellClass = [WLPersonResultCell class];
-        }
+        self.searchResultRowsData = [self constructLegalPeopleCellContentDict:result];
+        self.searchResulTableView.cellClass = [WLLegalPeopleSearchResultCell class];
+//        if (self.searchType == 0)
+//        {
+//        }else if (self.searchType == 1)
+//        {
+//            self.searchResultRowsData = [self constructFocusPeopleCellContentDict:result];
+//            self.searchResulTableView.cellClass = [WLFocusPeopleResultCell class];
+//        }else if (self.searchType == 2)
+//        {
+//            self.searchResultRowsData = [self constructPersonCellContentDict:result];
+//            self.searchResulTableView.cellClass = [WLPersonResultCell class];
+//        }
 //        self.searchResultRowsData = [self constructCellContentDict:result];
 //        self.searchResulTableView.cellClass = [WLLegalPeopleSearchResultCell class];
         self.searchResulTableView.rowsData = self.searchResultRowsData;
@@ -419,14 +463,15 @@
     NSArray *legalPeople = dict[@"dataList"];
     NSMutableArray *constructingArr = [NSMutableArray array];
     
-    //    for (WLDoublePublicityDetailModel *detailModel in model.dataList)
-    for (int i = 0; i < 10; i++)
+    for (NSDictionary *dict in legalPeople)
     {
         NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
-        [constructingDict setObject:legalPeople[0][@"企业名称"] forKey:@"company"];
-        [constructingDict setObject:legalPeople[0][@"营业执照注册号"] forKey:@"signupNo"];
-        [constructingDict setObject:legalPeople[0][@"法定代表人"] forKey:@"legalPeople"];
-        [constructingDict setObject:legalPeople[0][@"机构地址"] forKey:@"address"];
+        [constructingDict setObject:[WLCommonTool getValue:dict Key:@"企业名称" default:@""] forKey:@"company"];
+        [constructingDict setObject:[WLCommonTool getValue:dict Key:@"营业执照注册号" default:@""] forKey:@"usercode"];
+        [constructingDict setObject:[WLCommonTool getValue:dict Key:@"信用标识码" default:@""] forKey:@"creditcode"];
+        [constructingDict setObject:[WLCommonTool getValue:dict Key:@"法定代表人" default:@""] forKey:@"legalPeople"];
+        [constructingDict setObject:[WLCommonTool getValue:dict Key:@"机构地址" default:@""] forKey:@"address"];
+
         [constructingArr addObject:constructingDict];
     }
     return constructingArr;

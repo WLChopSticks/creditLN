@@ -25,8 +25,9 @@
 #import <WLScrollView.h>
 #import "WLFocusPeopleController.h"
 #import "WLCreditInfoController.h"
+#import "WLBaseNavigationViewController.h"
 
-@interface WLExhibitonViewController ()<wlTableViewDelegate>
+@interface WLExhibitonViewController ()<wlTableViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) NSArray *functionBtns;
 @property (nonatomic, weak) UIView *topView;
@@ -158,6 +159,7 @@
     [leftView addSubview:searchLeftImageView];
     searchField.leftViewMode = UITextFieldViewModeAlways;
     searchField.leftView = leftView;
+    searchField.delegate = self;
     [containerView addSubview:searchField];
     
     [backImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -502,6 +504,15 @@
             break;
     }
     
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    
+    WLQueryCreditInfoViewController *vc = [[WLQueryCreditInfoViewController alloc]init];
+    WLBaseNavigationViewController *nav = [[WLBaseNavigationViewController alloc]initWithRootViewController:vc];
+    [self presentViewController:nav animated:NO completion:nil];
+    return NO;
 }
 
 - (void)policyMoreBtnDidClicking: (UIButton *)sender

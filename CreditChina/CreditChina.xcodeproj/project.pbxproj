@@ -38,6 +38,8 @@
 		9BB63AFB221C31D100132FB7 /* WLRewardAndPunishListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB63AF9221C31D100132FB7 /* WLRewardAndPunishListCell.xib */; };
 		9BB63AFE221C365800132FB7 /* WLFocusPeopleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63AFD221C365800132FB7 /* WLFocusPeopleController.m */; };
 		9BB63B01221C479C00132FB7 /* WLCreditInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */; };
+		9BB63B04221CFF1800132FB7 /* WLLegalDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B03221CFF1800132FB7 /* WLLegalDetailController.m */; };
+		9BB63B07221D06BC00132FB7 /* WLLegalDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B06221D06BC00132FB7 /* WLLegalDetailModel.m */; };
 		9BC20A2021FF1B8B00732DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */; };
 		9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A2221FF1B8B00732DE3 /* ViewController.m */; };
 		9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC20A2421FF1B8B00732DE3 /* Main.storyboard */; };
@@ -138,6 +140,10 @@
 		9BB63AFD221C365800132FB7 /* WLFocusPeopleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLFocusPeopleController.m; sourceTree = "<group>"; };
 		9BB63AFF221C479C00132FB7 /* WLCreditInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCreditInfoController.h; sourceTree = "<group>"; };
 		9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCreditInfoController.m; sourceTree = "<group>"; };
+		9BB63B02221CFF1800132FB7 /* WLLegalDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalDetailController.h; sourceTree = "<group>"; };
+		9BB63B03221CFF1800132FB7 /* WLLegalDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalDetailController.m; sourceTree = "<group>"; };
+		9BB63B05221D06BC00132FB7 /* WLLegalDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalDetailModel.h; sourceTree = "<group>"; };
+		9BB63B06221D06BC00132FB7 /* WLLegalDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalDetailModel.m; sourceTree = "<group>"; };
 		9BC20A1B21FF1B8B00732DE3 /* CreditChina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditChina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC20A1E21FF1B8B00732DE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -378,6 +384,10 @@
 				9B1AEBF52211440C007769EC /* 公示展示 */,
 				9B391751221675D400B7E8EF /* 新闻政策 */,
 				9BF69A1722129B6200AA41B1 /* 信用查询 */,
+				9BB63B02221CFF1800132FB7 /* WLLegalDetailController.h */,
+				9BB63B03221CFF1800132FB7 /* WLLegalDetailController.m */,
+				9BB63B05221D06BC00132FB7 /* WLLegalDetailModel.h */,
+				9BB63B06221D06BC00132FB7 /* WLLegalDetailModel.m */,
 				9BC20BC82201886D00732DE3 /* WLExhibitonViewController.h */,
 				9BC20BC92201886D00732DE3 /* WLExhibitonViewController.m */,
 				9B9117AB221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.h */,
@@ -735,6 +745,7 @@
 				9BC20BC7220187E400732DE3 /* WLProfileViewController.m in Sources */,
 				9B1AEC0622114AA4007769EC /* WLDoublePublicitysTableViewCell.m in Sources */,
 				9BC20C162202A7BC00732DE3 /* WLRelatedPolicyViewController.m in Sources */,
+				9BB63B07221D06BC00132FB7 /* WLLegalDetailModel.m in Sources */,
 				9BC20BCA2201886D00732DE3 /* WLExhibitonViewController.m in Sources */,
 				9BC20BC4220187D000732DE3 /* WLProfileCreditViewController.m in Sources */,
 				9BC20C0F2202A77A00732DE3 /* WLNewsViewController.m in Sources */,
@@ -746,6 +757,7 @@
 				9BC20A2E21FF1B8C00732DE3 /* main.m in Sources */,
 				9BC20BB82201804200732DE3 /* WLNewFeatureViewController.m in Sources */,
 				9BC20A2021FF1B8B00732DE3 /* AppDelegate.m in Sources */,
+				9BB63B04221CFF1800132FB7 /* WLLegalDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

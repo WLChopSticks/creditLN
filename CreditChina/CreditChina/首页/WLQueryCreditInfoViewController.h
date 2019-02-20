@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WLQueryCreditInfoViewController : WLBaseUIViewController
 
+@property (nonatomic, strong) NSString *searchURL;
+@property (nonatomic, strong) NSString *searchKey;
+
 @end
 
 NS_ASSUME_NONNULL_END
