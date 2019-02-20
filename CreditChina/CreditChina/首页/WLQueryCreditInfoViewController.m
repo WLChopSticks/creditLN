@@ -13,7 +13,7 @@
 #import "WLLegalPeopleSearchResultCell.h"
 #import "WLFocusPeopleResultCell.h"
 #import "WLPersonResultCell.h"
-#import "WLLegalDetailController.h"
+#import "WLLegalPeopleDetailController.h"
 
 @interface WLQueryCreditInfoViewController ()<wlTableViewDelegate, UITextFieldDelegate>
 
@@ -328,7 +328,7 @@
 -(void)wlTableView:(UITableView *)tableView didSelectCellAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dict = self.searchResultRowsData[indexPath.row];
-    WLLegalDetailController *vc = [[WLLegalDetailController alloc]init];
+    WLLegalPeopleDetailController *vc = [[WLLegalPeopleDetailController alloc]init];
     vc.usercode = dict[@"usercode"];
     vc.creditcode = dict[@"creditcode"];
     [self.navigationController pushViewController:vc animated:YES];

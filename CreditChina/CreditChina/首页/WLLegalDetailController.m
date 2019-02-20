@@ -8,6 +8,7 @@
 
 #import "WLLegalDetailController.h"
 #import <WLPlatform.h>
+#import "WLLegalDetailModel.h"
 
 @interface WLLegalDetailController ()
 
@@ -27,9 +28,20 @@
     [ProgressHUD show];
     [WLApiManager queryCompanyDetailUserCode:self.usercode andCreditNumber:self.creditcode success:^(id  _Nullable response) {
         [ProgressHUD dismiss];
+        NSDictionary *result = (NSDictionary *)response;
+        WLLegalDetailModel *model = [WLLegalDetailModel getEnterproseDetailModel:result];
+        NSLog(@"%@", model);
     } failure:^(NSError *error) {
         [ProgressHUD dismiss];
     }];
+}
+
+- (void)decorateTopView
+{
+    UILabel *company = [[UILabel alloc]init];
+    company.text = @"辽宁立科科技发展有限公司";
+    [self.view addSubview:company];
+    
 }
 
 /*
