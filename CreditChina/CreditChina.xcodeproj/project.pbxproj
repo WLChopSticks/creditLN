@@ -45,6 +45,8 @@
 		9BB63B0F221D70C300132FB7 /* WLLegalPeopleDetailDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B0E221D70C300132FB7 /* WLLegalPeopleDetailDisplayController.m */; };
 		9BB63B13221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B11221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.m */; };
 		9BB63B14221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB63B12221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.xib */; };
+		9BB63B18221DB3C900132FB7 /* WLLegalPeopleBusinessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B16221DB3C900132FB7 /* WLLegalPeopleBusinessCell.m */; };
+		9BB63B19221DB3C900132FB7 /* WLLegalPeopleBusinessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB63B17221DB3C900132FB7 /* WLLegalPeopleBusinessCell.xib */; };
 		9BC20A2021FF1B8B00732DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */; };
 		9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A2221FF1B8B00732DE3 /* ViewController.m */; };
 		9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC20A2421FF1B8B00732DE3 /* Main.storyboard */; };
@@ -157,6 +159,9 @@
 		9BB63B10221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalPeopleBasicInfoCell.h; sourceTree = "<group>"; };
 		9BB63B11221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalPeopleBasicInfoCell.m; sourceTree = "<group>"; };
 		9BB63B12221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLLegalPeopleBasicInfoCell.xib; sourceTree = "<group>"; };
+		9BB63B15221DB3C900132FB7 /* WLLegalPeopleBusinessCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalPeopleBusinessCell.h; sourceTree = "<group>"; };
+		9BB63B16221DB3C900132FB7 /* WLLegalPeopleBusinessCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalPeopleBusinessCell.m; sourceTree = "<group>"; };
+		9BB63B17221DB3C900132FB7 /* WLLegalPeopleBusinessCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLLegalPeopleBusinessCell.xib; sourceTree = "<group>"; };
 		9BC20A1B21FF1B8B00732DE3 /* CreditChina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditChina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC20A1E21FF1B8B00732DE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -489,6 +494,9 @@
 				9BB63B10221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.h */,
 				9BB63B11221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.m */,
 				9BB63B12221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.xib */,
+				9BB63B15221DB3C900132FB7 /* WLLegalPeopleBusinessCell.h */,
+				9BB63B16221DB3C900132FB7 /* WLLegalPeopleBusinessCell.m */,
+				9BB63B17221DB3C900132FB7 /* WLLegalPeopleBusinessCell.xib */,
 				9BF69A1822129BE100AA41B1 /* WLLegalPeopleSearchResultCell.h */,
 				9BF69A1922129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m */,
 				9BF69A1A22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib */,
@@ -653,6 +661,7 @@
 				9BB63B0C221D2D8700132FB7 /* WLLegalPeopleDetailController.xib in Resources */,
 				9B39179F2216F91600B7E8EF /* law_nation_20190215.json in Resources */,
 				9BFBCF1E22141D4A00319D2B /* WLPersonResultCell.xib in Resources */,
+				9BB63B19221DB3C900132FB7 /* WLLegalPeopleBusinessCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +777,7 @@
 				9BC20BC7220187E400732DE3 /* WLProfileViewController.m in Sources */,
 				9B1AEC0622114AA4007769EC /* WLDoublePublicitysTableViewCell.m in Sources */,
 				9BC20C162202A7BC00732DE3 /* WLRelatedPolicyViewController.m in Sources */,
+				9BB63B18221DB3C900132FB7 /* WLLegalPeopleBusinessCell.m in Sources */,
 				9BB63B13221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.m in Sources */,
 				9BB63B07221D06BC00132FB7 /* WLLegalDetailModel.m in Sources */,
 				9BC20BCA2201886D00732DE3 /* WLExhibitonViewController.m in Sources */,

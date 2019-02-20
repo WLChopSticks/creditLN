@@ -10,6 +10,7 @@
 #import "WLTableView.h"
 #import <WLPlatform.h>
 #import "WLLegalPeopleBasicInfoCell.h"
+#import "WLLegalPeopleBusinessCell.h"
 
 @interface WLLegalPeopleDetailDisplayController ()
 
@@ -28,13 +29,26 @@
 - (void)decorateUI
 {
     WLTableView *tableView = [[WLTableView alloc]init];
-    
-    tableView.cellClass = [WLLegalPeopleBasicInfoCell class];
-    [tableView registNibForCell:@"WLLegalPeopleBasicInfoCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
     NSArray *dataArr;
     if (self.block.xytype == 1)
     {
-        dataArr = [self fillBasicInfoCell];
+        
+    }
+    switch (self.block.xytype)
+    {
+        case 1:
+            dataArr = [self fillBasicInfoCell];
+            tableView.cellClass = [WLLegalPeopleBasicInfoCell class];
+            [tableView registNibForCell:@"WLLegalPeopleBasicInfoCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
+            break;
+        case 2:
+            dataArr = [self fillBusinessInfoCell];
+            tableView.cellClass = [WLLegalPeopleBusinessCell class];
+            [tableView registNibForCell:@"WLLegalPeopleBusinessCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
+            break;
+            
+        default:
+            break;
     }
     if (dataArr != nil)
     {
@@ -67,6 +81,26 @@
             [dictM setObject:[indexSetData.latestReviewDate componentsSeparatedByString:@" "].firstObject forKey:@"latestReviewDate"];
             [dataM addObject:dictM];
             
+        }
+    }
+    
+    return dataM;
+}
+
+- (NSArray *)fillBusinessInfoCell
+{
+    NSMutableArray *dataM = [NSMutableArray array];
+    NSArray *indexSets = self.block.indexedSets;
+    for (WLEnterpriseIndexSet *indexSet in indexSets)
+    {
+        for (WLEnterpriseIndexSetData *indexSetData in indexSet.indexedSetData)
+        {
+            NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+            [dictM setObject:indexSetData.company forKey:@"company"];
+            [dictM setObject:indexSetData.signupNo forKey:@"signupNo"];
+            [dictM setObject:indexSetData.ASYear forKey:@"ASYear"];
+            [dictM setObject:indexSetData.ASResult forKey:@"ASResult"];
+            [dataM addObject:dictM];
         }
     }
     

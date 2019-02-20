@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="WLLegalPeopleBusinessCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="沈阳天启有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NQ-3K-oud">
+                        <rect key="frame" x="16" y="11" width="131" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册号:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAD-Pi-4E1">
+                        <rect key="frame" x="16" y="35.5" width="44" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="232312" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivL-X5-iFg">
+                        <rect key="frame" x="81" y="35.5" width="45.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年检年度:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbZ-P7-dov">
+                        <rect key="frame" x="16" y="56.5" width="57" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2007" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Ps-s8b">
+                        <rect key="frame" x="81" y="56.5" width="31.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年检结果:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qm-jJ-San">
+                        <rect key="frame" x="141.5" y="56.5" width="57" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="予以年检" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqV-05-G3e">
+                        <rect key="frame" x="206.5" y="56.5" width="53.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ivL-X5-iFg" firstAttribute="centerY" secondItem="qAD-Pi-4E1" secondAttribute="centerY" id="BsJ-eb-gfI"/>
+                    <constraint firstItem="5Qm-jJ-San" firstAttribute="centerY" secondItem="O3l-Ps-s8b" secondAttribute="centerY" id="KDo-rZ-Yro"/>
+                    <constraint firstItem="dbZ-P7-dov" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="M49-ST-DYb"/>
+                    <constraint firstItem="EqV-05-G3e" firstAttribute="centerY" secondItem="5Qm-jJ-San" secondAttribute="centerY" id="N1b-dz-p89"/>
+                    <constraint firstItem="qAD-Pi-4E1" firstAttribute="top" secondItem="6NQ-3K-oud" secondAttribute="bottom" constant="5" id="Qhw-9T-XyO"/>
+                    <constraint firstItem="EqV-05-G3e" firstAttribute="leading" secondItem="5Qm-jJ-San" secondAttribute="trailing" constant="8" id="UUB-pT-ZaB"/>
+                    <constraint firstItem="O3l-Ps-s8b" firstAttribute="centerY" secondItem="dbZ-P7-dov" secondAttribute="centerY" id="X27-Vp-xzA"/>
+                    <constraint firstItem="O3l-Ps-s8b" firstAttribute="leading" secondItem="dbZ-P7-dov" secondAttribute="trailing" constant="8" id="Z9S-pP-3yx"/>
+                    <constraint firstItem="6NQ-3K-oud" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="aCL-Ew-Exw"/>
+                    <constraint firstItem="6NQ-3K-oud" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="bAz-f2-0Mp"/>
+                    <constraint firstItem="qAD-Pi-4E1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="kQP-W9-33R"/>
+                    <constraint firstItem="5Qm-jJ-San" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="10" id="kTL-Mi-pRm"/>
+                    <constraint firstItem="dbZ-P7-dov" firstAttribute="top" secondItem="qAD-Pi-4E1" secondAttribute="bottom" constant="5" id="oGC-nU-oI2"/>
+                    <constraint firstItem="ivL-X5-iFg" firstAttribute="leading" secondItem="O3l-Ps-s8b" secondAttribute="leading" id="vCp-9V-r77"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="ASResult" destination="EqV-05-G3e" id="OF4-te-Tyz"/>
+                <outlet property="ASYear" destination="O3l-Ps-s8b" id="D6a-l0-Veb"/>
+                <outlet property="company" destination="6NQ-3K-oud" id="oXd-fm-VQQ"/>
+                <outlet property="signupNo" destination="ivL-X5-iFg" id="l4c-D5-Rju"/>
+            </connections>
+            <point key="canvasLocation" x="129.59999999999999" y="169.11544227886057"/>
+        </tableViewCell>
+    </objects>
+</document>

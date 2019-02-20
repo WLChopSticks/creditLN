@@ -33,6 +33,10 @@
              @"validStartDate":@"有效起始日期",
              @"validEndDate":@"有效作废日期",
              @"latestReviewDate":@"最新复审日期",
+             @"company":@"企业名称",
+             @"signupNo":@"注册号",
+             @"ASYear":@"年检年度",
+             @"ASResult":@"年检结果",
              };
 }
 @end

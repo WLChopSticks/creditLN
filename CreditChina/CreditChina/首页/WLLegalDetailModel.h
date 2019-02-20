@@ -35,6 +35,7 @@
 @end
 
 @interface WLEnterpriseIndexSetData : NSObject
+//基本信息
 @property (nonatomic, strong) NSString *note;
 @property (nonatomic, strong) NSString *organiseName;
 @property (nonatomic, strong) NSString *organiseCode;
@@ -45,6 +46,11 @@
 @property (nonatomic, strong) NSString *validStartDate;
 @property (nonatomic, strong) NSString *validEndDate;
 @property (nonatomic, strong) NSString *latestReviewDate;
+//业务信息
+@property (nonatomic, strong) NSString *company;
+@property (nonatomic, strong) NSString *signupNo;
+@property (nonatomic, strong) NSString *ASYear;//AS(annual survey)
+@property (nonatomic, strong) NSString *ASResult;
 @end
 
 @interface WLEnterpriseIndexSet : NSObject
