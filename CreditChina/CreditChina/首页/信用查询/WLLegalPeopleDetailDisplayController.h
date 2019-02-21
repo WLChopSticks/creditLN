@@ -7,14 +7,20 @@
 //
 
 #import "WLBaseUIViewController.h"
+#import <WLPlatform.h>
+#import <WLBaseTableViewCell.h>
 #import "WLLegalDetailModel.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@interface WLLegalPeopleInfoSourceCell : WLBaseTableViewCell
+
+@end
 
 @interface WLLegalPeopleDetailDisplayController : WLBaseUIViewController
 
 @property (nonatomic, strong) WLEnterpriseDetailBlock *block;
+@property (nonatomic, assign) CGFloat lastHeight;
+@property (nonatomic, assign) CGFloat actualHeight;
 
 @end
 
-NS_ASSUME_NONNULL_END
+

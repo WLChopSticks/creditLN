@@ -285,6 +285,7 @@
     WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
     categoryTable.categoryType = @"1";
     categoryTable.titles = @[@"国家",@"省级"];
+    categoryTable.isTitlesEqualWidth = YES;
     WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc10.showType = @"1";
     vc10.newsType = @"1";
@@ -342,6 +343,7 @@
     WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
     categoryTable.titles = @[@"国家",@"省级",@"市级"];
     categoryTable.categoryType = @"1";
+    categoryTable.isTitlesEqualWidth = YES;
     WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc10.showType = @"2";
     vc10.policyType = @"1";

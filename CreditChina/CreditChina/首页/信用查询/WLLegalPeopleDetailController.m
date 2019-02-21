@@ -35,6 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
     [self decorateUI];
     [self queryData];
 }
@@ -148,15 +149,25 @@
         make.left.right.bottom.equalTo(self.scrollBackView);
         
     }];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updateCategoryTableHeight:) name:@"LegalPeopleInfoDetailCellChanged" object:nil];
 }
 
 -(void)segmentedPageViewControllerDidEndDeceleratingWithPageIndex:(NSInteger)index
 {
     WLLegalPeopleDetailDisplayController *currentVC =(WLLegalPeopleDetailDisplayController *) self.categoryTable.segmentedPageViewController.currentPageViewController;
-    CGFloat height = [self getVCHeightWithBlock:currentVC.block];
+    CGFloat vcHeight = 0;
+    if (currentVC.lastHeight > 0)
+    {
+        vcHeight = currentVC.lastHeight;
+    }else
+    {
+        vcHeight = [self getVCHeightWithBlock:currentVC.block];
+    }
+
     // 修改下边距约束
     [self.categoryTable.view mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(height);
+        make.height.mas_equalTo(vcHeight);
     }];
 
     // 更新约束
@@ -166,27 +177,82 @@
 
 }
 
+- (void)updateCategoryTableHeight: (NSNotification *)notice
+{
+    //LegalPeopleInfoDetailCellChanged
+    NSDictionary *userInfo = notice.userInfo;
+    CGFloat cellHeight = [userInfo[@"heightChanged"] floatValue];
+    WLLegalPeopleDetailDisplayController *currentVC =(WLLegalPeopleDetailDisplayController *) self.categoryTable.segmentedPageViewController.currentPageViewController;
+    
+    CGFloat categoryHeight;
+    if (currentVC.actualHeight < currentVC.lastHeight)
+    {
+        categoryHeight = currentVC.actualHeight;
+    }else
+    {
+        categoryHeight = currentVC.lastHeight;
+    }
+    
+    if ([userInfo[@"isExpand"]boolValue])
+    {
+        categoryHeight += cellHeight;
+    }else
+    {
+        categoryHeight -= cellHeight;
+    }
+    
+    currentVC.actualHeight = categoryHeight;
+    
+    if (categoryHeight < Screen_Height - 200)
+    {
+        
+        categoryHeight = Screen_Height - 200;
+    }
+    
+    currentVC.lastHeight = categoryHeight;
+    
+    categoryHeight += 40;//categoryview height
+    
+    // 修改下边距约束
+    [self.categoryTable.view mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(categoryHeight);
+    }];
+    
+    // 更新约束
+    [UIView animateWithDuration:0.25 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+
 - (CGFloat)getVCHeightWithBlock: (WLEnterpriseDetailBlock *)block
 {
     NSInteger type = block.xytype;
     NSInteger cellCount = 0;
     NSInteger cellHeight = 0;
-    for (WLEnterpriseIndexSet *indexSet in block.indexedSets)
+    cellHeight = block.indexedSets.count * 40;
+    WLLegalPeopleDetailDisplayController *currentVC =(WLLegalPeopleDetailDisplayController *) self.categoryTable.segmentedPageViewController.currentPageViewController;
+    currentVC.actualHeight = cellHeight;
+//    for (WLEnterpriseIndexSet *indexSet in block.indexedSets)
+//    {
+//        cellCount += indexSet.indexedSetDataCount;
+//    }
+//    switch (type)
+//    {
+//        case 1:
+//            cellHeight = cellCount * 140;
+//            break;
+//        case 2:
+//            cellHeight = cellCount * 80;
+//            break;
+//
+//        default:
+//            break;
+//    }
+    if (cellHeight < Screen_Height - 200)
     {
-        cellCount += indexSet.indexedSetDataCount;
+        cellHeight = Screen_Height - 200;
     }
-    switch (type)
-    {
-        case 1:
-            cellHeight = cellCount * 140;
-            break;
-        case 2:
-            cellHeight = cellCount * 80;
-            break;
-            
-        default:
-            break;
-    }
+    currentVC.lastHeight = cellHeight;
     
     return cellHeight + 40;
 }

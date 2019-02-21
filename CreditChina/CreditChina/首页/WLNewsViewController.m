@@ -96,7 +96,7 @@
     NSString *counterpart = @"xzxdrmc";
     NSString *page = @"1";
     NSString *pageSize = @"10";
-    [URL appendString:[NSString stringWithFormat:@"/%@",@"1"]];
+    [URL appendString:[NSString stringWithFormat:@"/%@",@"2"]];
     [URL appendString:[NSString stringWithFormat:@"/%@",counterpart]];
     [URL appendString:[NSString stringWithFormat:@"/%@",page]];
     [URL appendString:[NSString stringWithFormat:@"/%@",pageSize]];

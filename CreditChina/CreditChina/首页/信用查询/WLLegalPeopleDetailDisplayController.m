@@ -8,11 +8,117 @@
 
 #import "WLLegalPeopleDetailDisplayController.h"
 #import "WLTableView.h"
-#import <WLPlatform.h>
 #import "WLLegalPeopleBasicInfoCell.h"
 #import "WLLegalPeopleBusinessCell.h"
 
-@interface WLLegalPeopleDetailDisplayController ()
+@interface WLLegalPeopleInfoSourceCell ()
+
+@property (nonatomic, weak) UILabel *source;
+@property (nonatomic, weak) WLTableView *detailTable;
+@property (nonatomic, assign) NSInteger detailCellHeight;
+@property (nonatomic, assign) NSString *type;
+@property (nonatomic, assign) BOOL isExpand;
+
+@end
+@implementation WLLegalPeopleInfoSourceCell
+
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self)
+    {
+        UILabel *source = [[UILabel alloc]init];
+        self.source = source;
+        [self addSubview:source];
+        
+        WLTableView *detailTable = [[WLTableView alloc]init];
+        self.detailTable = detailTable;
+        detailTable.wltableView.scrollEnabled = NO;
+        [self addSubview:detailTable];
+        
+        [source mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self).offset(10);
+            make.left.equalTo(self).offset(10);
+            make.height.mas_equalTo(20);
+        }];
+        
+        [detailTable mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(source.mas_bottom).offset(9);
+            make.left.right.equalTo(self);
+            make.bottom.equalTo(self.mas_bottom);
+        }];
+        
+    }
+    
+    return self;
+}
+
+-(void)fillCellContent:(NSDictionary *)contentDict withTableView:(UITableView *)tableView
+{
+    self.source.text = contentDict[@"source"];
+    self.detailTable.cellClass = contentDict[@"cellClass"];
+    if (contentDict[@"nibName"])
+    {
+        [self.detailTable registNibForCell:contentDict[@"nibName"] inBundel:[NSBundle mainBundle] orBundleName:@""];
+    }
+    self.detailTable.rowsData = contentDict[@"dataArr"];
+    
+    self.type = contentDict[@"type"];
+    switch ([contentDict[@"type"]integerValue])
+    {
+        case 1:
+            self.detailCellHeight = 140;
+            break;
+        case 2:
+            self.detailCellHeight = 80;
+            break;
+            
+        default:
+            break;
+    }
+}
+
+-(void)setIsExpand:(BOOL)isExpand
+{
+    _isExpand = isExpand;
+    
+    NSMutableDictionary *userInfoDict = [NSMutableDictionary dictionary];
+    [userInfoDict setObject:[NSNumber numberWithBool:isExpand] forKey:@"isExpand"];
+    [userInfoDict setObject:[NSNumber numberWithInteger:self.detailTable.rowsData.count * self.detailCellHeight] forKey:@"heightChanged"];
+    [userInfoDict setObject:self.type forKey:@"type"];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"LegalPeopleInfoDetailCellChanged" object:nil userInfo:userInfoDict];
+}
+
++(CGFloat)tableView:(UITableView *)tableView rowHeightAtIndexPath:(NSIndexPath *)indexPath withContentDict:(NSDictionary *)dict
+{
+    
+    WLLegalPeopleInfoSourceCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if (cell.isExpand)
+    {
+        CGFloat detailCellHeight = 0;
+        switch ([dict[@"type"]integerValue])
+        {
+            case 1:
+                detailCellHeight = 140;
+                break;
+            case 2:
+                detailCellHeight = 80;
+                break;
+                
+            default:
+                break;
+        }
+
+        return cell.detailTable.rowsData.count * detailCellHeight + 40;
+    }
+
+    return 40;
+}
+
+@end
+
+@interface WLLegalPeopleDetailDisplayController ()<wlTableViewDelegate, UITableViewDelegate>
 
 @property (nonatomic, weak) WLTableView *tableView;
 
@@ -30,36 +136,50 @@
 {
     WLTableView *tableView = [[WLTableView alloc]init];
     tableView.wltableView.scrollEnabled = NO;
-    NSArray *dataArr;
-    if (self.block.xytype == 1)
-    {
-        
-    }
-    switch (self.block.xytype)
-    {
-        case 1:
-            dataArr = [self fillBasicInfoCell];
-            tableView.cellClass = [WLLegalPeopleBasicInfoCell class];
-            [tableView registNibForCell:@"WLLegalPeopleBasicInfoCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
-            break;
-        case 2:
-            dataArr = [self fillBusinessInfoCell];
-            tableView.cellClass = [WLLegalPeopleBusinessCell class];
-            [tableView registNibForCell:@"WLLegalPeopleBusinessCell" inBundel:[NSBundle mainBundle] orBundleName:@""];
-            break;
-            
-        default:
-            break;
-    }
-    if (dataArr != nil)
-    {
-        tableView.rowsData = dataArr;
-    }
+    tableView.delegate = self;
+
+    tableView.cellClass = [WLLegalPeopleInfoSourceCell class];
+    tableView.rowsData = [self getSourceDepartmentAndTheirData];
     
     [self.view addSubview:tableView];
     [tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+}
+
+- (NSArray *)getSourceDepartmentAndTheirData
+{
+    NSMutableArray *sources = [NSMutableArray array];
+    for (WLEnterpriseIndexSet *indexSet in self.block.indexedSets)
+    {
+        NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+        [dictM setObject:indexSet.indexedSetInfo.departmentname forKey:@"source"];
+        [dictM setObject:[NSString stringWithFormat:@"%ld",(long)self.block.xytype]forKey:@"type"];
+        NSArray *dataArr;
+        switch (self.block.xytype)
+        {
+            case 1:
+                dataArr = [self fillBasicInfoCell];
+                [dictM setObject:[WLLegalPeopleBasicInfoCell class] forKey:@"cellClass"];
+                [dictM setObject:@"WLLegalPeopleBasicInfoCell" forKey:@"nibName"];
+                break;
+            case 2:
+                dataArr = [self fillBusinessInfoCell];
+                [dictM setObject:[WLLegalPeopleBusinessCell class] forKey:@"cellClass"];
+                [dictM setObject:@"WLLegalPeopleBusinessCell" forKey:@"nibName"];
+                break;
+                
+            default:
+                break;
+        }
+        if (dataArr != nil)
+        {
+            [dictM setObject:dataArr forKey:@"dataArr"];
+        }
+        [sources addObject: dictM];
+    }
+    
+    return sources;
 }
 
 - (NSArray *)fillBasicInfoCell
@@ -107,6 +227,19 @@
     
     return dataM;
 }
+
+- (void)wlTableView:(UITableView *)tableView didSelectCellAtIndexPath:(NSIndexPath *)indexPath
+{
+    WLLegalPeopleInfoSourceCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.isExpand = !cell.isExpand;
+    
+
+    [tableView beginUpdates];
+    [tableView endUpdates];
+    
+}
+
+
 
 /*
 #pragma mark - Navigation
