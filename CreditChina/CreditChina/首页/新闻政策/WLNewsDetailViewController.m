@@ -206,6 +206,8 @@
 
 @property (nonatomic, strong) NSDictionary *titleDict;
 
+@property (nonatomic, assign) BOOL webViewLoaded;
+
 @end
 
 @implementation WLNewsDetailViewController
@@ -234,7 +236,9 @@
     backScroll.estimatedRowHeight = 100;
     
     [backScroll mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+//        make.edges.equalTo(self.view);
+        make.top.left.right.equalTo(self.view);
+        make.bottom.equalTo(self.view).offset(-40);
     }];
     
     [backScroll registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -341,7 +345,7 @@
     }];
     
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrameNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillshowNotification:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHideNotification:) name:UIKeyboardWillHideNotification object:nil];
 }
 
@@ -365,7 +369,7 @@
     self.titleDict = dictM;
 }
 
-- (void)keyboardWillChangeFrameNotification:(NSNotification *)notification {
+- (void)keyboardWillshowNotification:(NSNotification *)notification {
     
     // 获取键盘基本信息（动画时长与键盘高度）
     NSDictionary *userInfo = [notification userInfo];
@@ -397,14 +401,19 @@
 
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
-    [ProgressHUD dismiss];
-    [webView evaluateJavaScript:@"document.getElementById(\"testDiv\").offsetTop"completionHandler:^(id _Nullable result,NSError * _Nullable error) {
-        //获取页面高度，并重置webview的frame
-        CGFloat lastHeight = [result doubleValue];
-        webView.frame = CGRectMake(14, 0, Screen_Width - 28, lastHeight);
-        self.webHeight = lastHeight;
-        [self.backScroll beginUpdates];
-        [self.backScroll endUpdates]; }];
+    if (!self.webViewLoaded)
+    {
+        [ProgressHUD dismiss];
+        [webView evaluateJavaScript:@"document.getElementById(\"testDiv\").offsetTop"completionHandler:^(id _Nullable result,NSError * _Nullable error) {
+            //获取页面高度，并重置webview的frame
+            CGFloat lastHeight = [result doubleValue];
+            webView.frame = CGRectMake(14, 0, Screen_Width - 28, lastHeight);
+            self.webHeight = lastHeight;
+            [self.backScroll beginUpdates];
+            [self.backScroll endUpdates]; }];
+        self.webViewLoaded = YES;
+    }
+    
     
 }
 
@@ -469,19 +478,19 @@
     return 200;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    // 判断webView所在的cell是否可见，如果可见就layout
-    NSArray *cells = self.backScroll.visibleCells;
-    for (UITableViewCell *cell in cells)
-    {
-        if ([cell isKindOfClass:[WLNewsDetailContentCell class]])
-        {
-            WLNewsDetailContentCell *webCell = (WLNewsDetailContentCell *)cell;
-            [webCell.webView setNeedsLayout];
-        }
-    }
-}
+//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    // 判断webView所在的cell是否可见，如果可见就layout
+//    NSArray *cells = self.backScroll.visibleCells;
+//    for (UITableViewCell *cell in cells)
+//    {
+//        if ([cell isKindOfClass:[WLNewsDetailContentCell class]])
+//        {
+//            WLNewsDetailContentCell *webCell = (WLNewsDetailContentCell *)cell;
+//            [webCell.webView setNeedsLayout];
+//        }
+//    }
+//}
 
 
 - (NSString *)replaceImageSrcURL: (NSString *)originString
