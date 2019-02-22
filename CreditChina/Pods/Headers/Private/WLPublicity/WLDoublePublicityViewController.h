@@ -1,1 +1,1 @@
-../../../../../WLPublicity/WLPublicity/Classes/WLDoublePublicityViewController.h
+../../../../../WLPublicity/WLPublicity/Classes/双公示/WLDoublePublicityViewController.h

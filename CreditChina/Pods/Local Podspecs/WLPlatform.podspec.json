@@ -19,6 +19,9 @@
     "ios": "8.0"
   },
   "source_files": "WLPlatform/Classes/**/*",
+  "xcconfig": {
+    "HEADER_SEARCH_PATHS": "${SDKROOT}/usr/include/libxml2"
+  },
   "dependencies": {
     "Masonry": [
 
