@@ -49,9 +49,7 @@
 		9BC20BC4220187D000732DE3 /* WLProfileCreditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20BC3220187D000732DE3 /* WLProfileCreditViewController.m */; };
 		9BC20BC7220187E400732DE3 /* WLProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20BC6220187E400732DE3 /* WLProfileViewController.m */; };
 		9BC20BCA2201886D00732DE3 /* WLExhibitonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20BC92201886D00732DE3 /* WLExhibitonViewController.m */; };
-		9BC20C0C2202A76600732DE3 /* WLCreditReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C0B2202A76600732DE3 /* WLCreditReportViewController.m */; };
 		9BC20C0F2202A77A00732DE3 /* WLNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C0E2202A77A00732DE3 /* WLNewsViewController.m */; };
-		9BC20C132202A79C00732DE3 /* WLCreditPromiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C122202A79C00732DE3 /* WLCreditPromiseViewController.m */; };
 		9BC20C162202A7BC00732DE3 /* WLRelatedPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C152202A7BC00732DE3 /* WLRelatedPolicyViewController.m */; };
 		9BC20C192202A7E300732DE3 /* WLQueryCreditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C182202A7E300732DE3 /* WLQueryCreditInfoViewController.m */; };
 		9BC20C3422031D4500732DE3 /* WLUserFocusTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C3322031D4500732DE3 /* WLUserFocusTableController.m */; };
@@ -156,12 +154,8 @@
 		9BC20BC6220187E400732DE3 /* WLProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLProfileViewController.m; sourceTree = "<group>"; };
 		9BC20BC82201886D00732DE3 /* WLExhibitonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLExhibitonViewController.h; sourceTree = "<group>"; };
 		9BC20BC92201886D00732DE3 /* WLExhibitonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLExhibitonViewController.m; sourceTree = "<group>"; };
-		9BC20C0A2202A76600732DE3 /* WLCreditReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCreditReportViewController.h; sourceTree = "<group>"; };
-		9BC20C0B2202A76600732DE3 /* WLCreditReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCreditReportViewController.m; sourceTree = "<group>"; };
 		9BC20C0D2202A77A00732DE3 /* WLNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLNewsViewController.h; sourceTree = "<group>"; };
 		9BC20C0E2202A77A00732DE3 /* WLNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLNewsViewController.m; sourceTree = "<group>"; };
-		9BC20C112202A79C00732DE3 /* WLCreditPromiseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCreditPromiseViewController.h; sourceTree = "<group>"; };
-		9BC20C122202A79C00732DE3 /* WLCreditPromiseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCreditPromiseViewController.m; sourceTree = "<group>"; };
 		9BC20C142202A7BC00732DE3 /* WLRelatedPolicyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLRelatedPolicyViewController.h; sourceTree = "<group>"; };
 		9BC20C152202A7BC00732DE3 /* WLRelatedPolicyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLRelatedPolicyViewController.m; sourceTree = "<group>"; };
 		9BC20C172202A7E300732DE3 /* WLQueryCreditInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLQueryCreditInfoViewController.h; sourceTree = "<group>"; };
@@ -227,13 +221,6 @@
 				8E0A1888FD01D43C53A7F67A /* Pods-CreditChina.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		9B1AEBF52211440C007769EC /* 公示展示 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "公示展示";
 			sourceTree = "<group>";
 		};
 		9B391751221675D400B7E8EF /* 新闻政策 */ = {
@@ -335,7 +322,6 @@
 		9BC20A6522001EAA00732DE3 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
-				9B1AEBF52211440C007769EC /* 公示展示 */,
 				9B391751221675D400B7E8EF /* 新闻政策 */,
 				9BF69A1722129B6200AA41B1 /* 信用查询 */,
 				9BB63B02221CFF1800132FB7 /* WLLegalDetailController.h */,
@@ -349,14 +335,10 @@
 				9B9117AE22195F290069F619 /* WLNewsTabCell.h */,
 				9B9117AF22195F290069F619 /* WLNewsTabCell.m */,
 				9B9117B022195F290069F619 /* WLNewsTabCell.xib */,
-				9BC20C0A2202A76600732DE3 /* WLCreditReportViewController.h */,
-				9BC20C0B2202A76600732DE3 /* WLCreditReportViewController.m */,
 				9BC20C0D2202A77A00732DE3 /* WLNewsViewController.h */,
 				9BC20C0E2202A77A00732DE3 /* WLNewsViewController.m */,
 				9BB63AFC221C365800132FB7 /* WLFocusPeopleController.h */,
 				9BB63AFD221C365800132FB7 /* WLFocusPeopleController.m */,
-				9BC20C112202A79C00732DE3 /* WLCreditPromiseViewController.h */,
-				9BC20C122202A79C00732DE3 /* WLCreditPromiseViewController.m */,
 				9BC20C142202A7BC00732DE3 /* WLRelatedPolicyViewController.h */,
 				9BC20C152202A7BC00732DE3 /* WLRelatedPolicyViewController.m */,
 				9BC20C172202A7E300732DE3 /* WLQueryCreditInfoViewController.h */,
@@ -685,7 +667,6 @@
 				9B9117A922192B150069F619 /* WLExhibitionMessageCell.m in Sources */,
 				9BFBCF1D22141D4A00319D2B /* WLPersonResultCell.m in Sources */,
 				9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */,
-				9BC20C0C2202A76600732DE3 /* WLCreditReportViewController.m in Sources */,
 				9BB63AFE221C365800132FB7 /* WLFocusPeopleController.m in Sources */,
 				9BC20C3422031D4500732DE3 /* WLUserFocusTableController.m in Sources */,
 				9B9117AD221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m in Sources */,
@@ -706,7 +687,6 @@
 				9BB63B0F221D70C300132FB7 /* WLLegalPeopleDetailDisplayController.m in Sources */,
 				9BB63B0B221D2D8700132FB7 /* WLLegalPeopleDetailController.m in Sources */,
 				9BF69A1B22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m in Sources */,
-				9BC20C132202A79C00732DE3 /* WLCreditPromiseViewController.m in Sources */,
 				9BC20BC1220187B400732DE3 /* WLUserFocusViewController.m in Sources */,
 				9BC20A2E21FF1B8C00732DE3 /* main.m in Sources */,
 				9BC20BB82201804200732DE3 /* WLNewFeatureViewController.m in Sources */,

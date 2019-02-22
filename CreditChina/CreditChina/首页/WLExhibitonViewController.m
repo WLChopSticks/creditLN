@@ -7,8 +7,6 @@
 //
 
 #import "WLExhibitonViewController.h"
-#import "WLRewardsAndPunishExampleViewController.h"
-#import "WLCreditReportViewController.h"
 #import "WLNewsViewController.h"
 #import "WLCreditPromiseViewController.h"
 #import "WLRelatedPolicyViewController.h"
@@ -423,10 +421,8 @@
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
             segVC.titles = @[@"信用报告公示",@"信用报告制度"];
-            WLCreditReportViewController *vc1 = [[WLCreditReportViewController alloc]init];
-            vc1.publicityOrSystem = @"1";
-            WLCreditReportViewController *vc2 = [[WLCreditReportViewController alloc]init];
-            vc2.publicityOrSystem = @"2";
+            UIViewController *vc1 = [[CTMediator sharedInstance]CreditReport_aViewController:@"1"];
+            UIViewController *vc2 = [[CTMediator sharedInstance]CreditReport_aViewController:@"2"];
             segVC.controllers = @[vc1,vc2];
             segVC.title = @"信用报告";
             [self.navigationController pushViewController:segVC animated:YES];
@@ -443,10 +439,9 @@
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
             segVC.titles = @[@"守信激励案例",@"失信惩戒案例"];
-            WLRewardsAndPunishExampleViewController *vc1 = [[WLRewardsAndPunishExampleViewController alloc]init];
-            vc1.exampleType = @"1";
-            WLRewardsAndPunishExampleViewController *vc2 = [[WLRewardsAndPunishExampleViewController alloc]init];
-            vc2.exampleType = @"2";
+            segVC.isTitlesEqualWidth = YES;
+            UIViewController *vc1 = [[CTMediator sharedInstance]RewardsAndPunishExampleController:@"1"];
+            UIViewController *vc2 = [[CTMediator sharedInstance]RewardsAndPunishExampleController:@"2"];
             segVC.controllers = @[vc1,vc2];
             segVC.title = @"联合奖惩案例";
             [self.navigationController pushViewController:segVC animated:YES];
@@ -454,9 +449,9 @@
         }
         case 5:
         {
-            WLCreditPromiseViewController *vc = [[WLCreditPromiseViewController alloc]init];
+//            WLCreditPromiseViewController *vc = [[WLCreditPromiseViewController alloc]init];
+            UIViewController *vc = [[CTMediator sharedInstance]CreditPromise_aViewController];
             [self.navigationController pushViewController:vc animated:YES];
-            
             //            UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
             //            [self presentViewController:vc animated:YES completion:nil];
             break;
