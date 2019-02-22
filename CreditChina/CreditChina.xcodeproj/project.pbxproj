@@ -18,24 +18,12 @@
 		9B39179D2216F91600B7E8EF /* news_nation_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B3917982216F91600B7E8EF /* news_nation_20190215.json */; };
 		9B39179E2216F91600B7E8EF /* law_city_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B3917992216F91600B7E8EF /* law_city_20190215.json */; };
 		9B39179F2216F91600B7E8EF /* law_nation_20190215.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B39179A2216F91600B7E8EF /* law_nation_20190215.json */; };
-		9B9117A922192B150069F619 /* WLExhibitionMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9117A722192B150069F619 /* WLExhibitionMessageCell.m */; };
-		9B9117AA22192B150069F619 /* WLExhibitionMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9117A822192B150069F619 /* WLExhibitionMessageCell.xib */; };
 		9B9117AD221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9117AC221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m */; };
 		9B9117B122195F290069F619 /* WLNewsTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9117AF22195F290069F619 /* WLNewsTabCell.m */; };
 		9B9117B222195F290069F619 /* WLNewsTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9117B022195F290069F619 /* WLNewsTabCell.xib */; };
 		9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */; };
 		9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */; };
-		9BB63AFE221C365800132FB7 /* WLFocusPeopleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63AFD221C365800132FB7 /* WLFocusPeopleController.m */; };
 		9BB63B01221C479C00132FB7 /* WLCreditInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */; };
-		9BB63B04221CFF1800132FB7 /* WLLegalDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B03221CFF1800132FB7 /* WLLegalDetailController.m */; };
-		9BB63B07221D06BC00132FB7 /* WLLegalDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B06221D06BC00132FB7 /* WLLegalDetailModel.m */; };
-		9BB63B0B221D2D8700132FB7 /* WLLegalPeopleDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B09221D2D8700132FB7 /* WLLegalPeopleDetailController.m */; };
-		9BB63B0C221D2D8700132FB7 /* WLLegalPeopleDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB63B0A221D2D8700132FB7 /* WLLegalPeopleDetailController.xib */; };
-		9BB63B0F221D70C300132FB7 /* WLLegalPeopleDetailDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B0E221D70C300132FB7 /* WLLegalPeopleDetailDisplayController.m */; };
-		9BB63B13221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B11221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.m */; };
-		9BB63B14221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB63B12221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.xib */; };
-		9BB63B18221DB3C900132FB7 /* WLLegalPeopleBusinessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B16221DB3C900132FB7 /* WLLegalPeopleBusinessCell.m */; };
-		9BB63B19221DB3C900132FB7 /* WLLegalPeopleBusinessCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB63B17221DB3C900132FB7 /* WLLegalPeopleBusinessCell.xib */; };
 		9BC20A2021FF1B8B00732DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */; };
 		9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A2221FF1B8B00732DE3 /* ViewController.m */; };
 		9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC20A2421FF1B8B00732DE3 /* Main.storyboard */; };
@@ -51,14 +39,9 @@
 		9BC20BCA2201886D00732DE3 /* WLExhibitonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20BC92201886D00732DE3 /* WLExhibitonViewController.m */; };
 		9BC20C0F2202A77A00732DE3 /* WLNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C0E2202A77A00732DE3 /* WLNewsViewController.m */; };
 		9BC20C162202A7BC00732DE3 /* WLRelatedPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C152202A7BC00732DE3 /* WLRelatedPolicyViewController.m */; };
-		9BC20C192202A7E300732DE3 /* WLQueryCreditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C182202A7E300732DE3 /* WLQueryCreditInfoViewController.m */; };
 		9BC20C3422031D4500732DE3 /* WLUserFocusTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C3322031D4500732DE3 /* WLUserFocusTableController.m */; };
-		9BF69A1B22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF69A1922129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m */; };
-		9BF69A1C22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BF69A1A22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib */; };
-		9BFBCF1822141A7300319D2B /* WLFocusPeopleResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFBCF1622141A7300319D2B /* WLFocusPeopleResultCell.m */; };
-		9BFBCF1922141A7300319D2B /* WLFocusPeopleResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BFBCF1722141A7300319D2B /* WLFocusPeopleResultCell.xib */; };
-		9BFBCF1D22141D4A00319D2B /* WLPersonResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFBCF1B22141D4A00319D2B /* WLPersonResultCell.m */; };
-		9BFBCF1E22141D4A00319D2B /* WLPersonResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BFBCF1C22141D4A00319D2B /* WLPersonResultCell.xib */; };
+		9BEF2D6A221FC0E20012F33D /* WLExhibitionMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BEF2D69221FC0E20012F33D /* WLExhibitionMessageCell.xib */; };
+		9BEF2D6D221FC0FA0012F33D /* WLExhibitionMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEF2D6B221FC0FA0012F33D /* WLExhibitionMessageCell.m */; };
 		9BFBCF7022145ADB00319D2B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFBCF6F22145ADA00319D2B /* AVFoundation.framework */; };
 		9BFBCF7222145AE100319D2B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFBCF7122145AE000319D2B /* CoreData.framework */; };
 		9BFBCF7422145AE700319D2B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFBCF7322145AE600319D2B /* AssetsLibrary.framework */; };
@@ -98,9 +81,6 @@
 		9B3917982216F91600B7E8EF /* news_nation_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_nation_20190215.json; sourceTree = "<group>"; };
 		9B3917992216F91600B7E8EF /* law_city_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = law_city_20190215.json; sourceTree = "<group>"; };
 		9B39179A2216F91600B7E8EF /* law_nation_20190215.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = law_nation_20190215.json; sourceTree = "<group>"; };
-		9B9117A622192B150069F619 /* WLExhibitionMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLExhibitionMessageCell.h; sourceTree = "<group>"; };
-		9B9117A722192B150069F619 /* WLExhibitionMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLExhibitionMessageCell.m; sourceTree = "<group>"; };
-		9B9117A822192B150069F619 /* WLExhibitionMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLExhibitionMessageCell.xib; sourceTree = "<group>"; };
 		9B9117AB221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLNewsAndPolicyShowInExhibitionController.h; sourceTree = "<group>"; };
 		9B9117AC221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLNewsAndPolicyShowInExhibitionController.m; sourceTree = "<group>"; };
 		9B9117AE22195F290069F619 /* WLNewsTabCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLNewsTabCell.h; sourceTree = "<group>"; };
@@ -109,25 +89,8 @@
 		9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kaiti_GB2312.ttf; sourceTree = "<group>"; };
 		9BA009F422068D4900D1FFD9 /* WLDoublePublicityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLDoublePublicityModel.h; sourceTree = "<group>"; };
 		9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDoublePublicityModel.m; sourceTree = "<group>"; };
-		9BB63AFC221C365800132FB7 /* WLFocusPeopleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLFocusPeopleController.h; sourceTree = "<group>"; };
-		9BB63AFD221C365800132FB7 /* WLFocusPeopleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLFocusPeopleController.m; sourceTree = "<group>"; };
 		9BB63AFF221C479C00132FB7 /* WLCreditInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCreditInfoController.h; sourceTree = "<group>"; };
 		9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCreditInfoController.m; sourceTree = "<group>"; };
-		9BB63B02221CFF1800132FB7 /* WLLegalDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalDetailController.h; sourceTree = "<group>"; };
-		9BB63B03221CFF1800132FB7 /* WLLegalDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalDetailController.m; sourceTree = "<group>"; };
-		9BB63B05221D06BC00132FB7 /* WLLegalDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalDetailModel.h; sourceTree = "<group>"; };
-		9BB63B06221D06BC00132FB7 /* WLLegalDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalDetailModel.m; sourceTree = "<group>"; };
-		9BB63B08221D2D8700132FB7 /* WLLegalPeopleDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalPeopleDetailController.h; sourceTree = "<group>"; };
-		9BB63B09221D2D8700132FB7 /* WLLegalPeopleDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalPeopleDetailController.m; sourceTree = "<group>"; };
-		9BB63B0A221D2D8700132FB7 /* WLLegalPeopleDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLLegalPeopleDetailController.xib; sourceTree = "<group>"; };
-		9BB63B0D221D70C300132FB7 /* WLLegalPeopleDetailDisplayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalPeopleDetailDisplayController.h; sourceTree = "<group>"; };
-		9BB63B0E221D70C300132FB7 /* WLLegalPeopleDetailDisplayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalPeopleDetailDisplayController.m; sourceTree = "<group>"; };
-		9BB63B10221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalPeopleBasicInfoCell.h; sourceTree = "<group>"; };
-		9BB63B11221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalPeopleBasicInfoCell.m; sourceTree = "<group>"; };
-		9BB63B12221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLLegalPeopleBasicInfoCell.xib; sourceTree = "<group>"; };
-		9BB63B15221DB3C900132FB7 /* WLLegalPeopleBusinessCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalPeopleBusinessCell.h; sourceTree = "<group>"; };
-		9BB63B16221DB3C900132FB7 /* WLLegalPeopleBusinessCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalPeopleBusinessCell.m; sourceTree = "<group>"; };
-		9BB63B17221DB3C900132FB7 /* WLLegalPeopleBusinessCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLLegalPeopleBusinessCell.xib; sourceTree = "<group>"; };
 		9BC20A1B21FF1B8B00732DE3 /* CreditChina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditChina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC20A1E21FF1B8B00732DE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -158,19 +121,11 @@
 		9BC20C0E2202A77A00732DE3 /* WLNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLNewsViewController.m; sourceTree = "<group>"; };
 		9BC20C142202A7BC00732DE3 /* WLRelatedPolicyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLRelatedPolicyViewController.h; sourceTree = "<group>"; };
 		9BC20C152202A7BC00732DE3 /* WLRelatedPolicyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLRelatedPolicyViewController.m; sourceTree = "<group>"; };
-		9BC20C172202A7E300732DE3 /* WLQueryCreditInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLQueryCreditInfoViewController.h; sourceTree = "<group>"; };
-		9BC20C182202A7E300732DE3 /* WLQueryCreditInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLQueryCreditInfoViewController.m; sourceTree = "<group>"; };
 		9BC20C3222031D4500732DE3 /* WLUserFocusTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLUserFocusTableController.h; sourceTree = "<group>"; };
 		9BC20C3322031D4500732DE3 /* WLUserFocusTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLUserFocusTableController.m; sourceTree = "<group>"; };
-		9BF69A1822129BE100AA41B1 /* WLLegalPeopleSearchResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLegalPeopleSearchResultCell.h; sourceTree = "<group>"; };
-		9BF69A1922129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLLegalPeopleSearchResultCell.m; sourceTree = "<group>"; };
-		9BF69A1A22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLLegalPeopleSearchResultCell.xib; sourceTree = "<group>"; };
-		9BFBCF1522141A7300319D2B /* WLFocusPeopleResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLFocusPeopleResultCell.h; sourceTree = "<group>"; };
-		9BFBCF1622141A7300319D2B /* WLFocusPeopleResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLFocusPeopleResultCell.m; sourceTree = "<group>"; };
-		9BFBCF1722141A7300319D2B /* WLFocusPeopleResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLFocusPeopleResultCell.xib; sourceTree = "<group>"; };
-		9BFBCF1A22141D4A00319D2B /* WLPersonResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLPersonResultCell.h; sourceTree = "<group>"; };
-		9BFBCF1B22141D4A00319D2B /* WLPersonResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLPersonResultCell.m; sourceTree = "<group>"; };
-		9BFBCF1C22141D4A00319D2B /* WLPersonResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLPersonResultCell.xib; sourceTree = "<group>"; };
+		9BEF2D69221FC0E20012F33D /* WLExhibitionMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WLExhibitionMessageCell.xib; sourceTree = "<group>"; };
+		9BEF2D6B221FC0FA0012F33D /* WLExhibitionMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLExhibitionMessageCell.m; sourceTree = "<group>"; };
+		9BEF2D6C221FC0FA0012F33D /* WLExhibitionMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLExhibitionMessageCell.h; sourceTree = "<group>"; };
 		9BFBCF6F22145ADA00319D2B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9BFBCF7122145AE000319D2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9BFBCF7322145AE600319D2B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -227,8 +182,17 @@
 			isa = PBXGroup;
 			children = (
 				9B3917522216769700B7E8EF /* json_files */,
+				9BC20C0D2202A77A00732DE3 /* WLNewsViewController.h */,
+				9BC20C0E2202A77A00732DE3 /* WLNewsViewController.m */,
+				9BC20C142202A7BC00732DE3 /* WLRelatedPolicyViewController.h */,
+				9BC20C152202A7BC00732DE3 /* WLRelatedPolicyViewController.m */,
 				9B39176222167C1E00B7E8EF /* WLNewsDetailViewController.h */,
 				9B39176322167C1E00B7E8EF /* WLNewsDetailViewController.m */,
+				9B9117AB221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.h */,
+				9B9117AC221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m */,
+				9B9117AE22195F290069F619 /* WLNewsTabCell.h */,
+				9B9117AF22195F290069F619 /* WLNewsTabCell.m */,
+				9B9117B022195F290069F619 /* WLNewsTabCell.xib */,
 			);
 			path = "新闻政策";
 			sourceTree = "<group>";
@@ -323,28 +287,13 @@
 			isa = PBXGroup;
 			children = (
 				9B391751221675D400B7E8EF /* 新闻政策 */,
-				9BF69A1722129B6200AA41B1 /* 信用查询 */,
-				9BB63B02221CFF1800132FB7 /* WLLegalDetailController.h */,
-				9BB63B03221CFF1800132FB7 /* WLLegalDetailController.m */,
-				9BB63B05221D06BC00132FB7 /* WLLegalDetailModel.h */,
-				9BB63B06221D06BC00132FB7 /* WLLegalDetailModel.m */,
 				9BC20BC82201886D00732DE3 /* WLExhibitonViewController.h */,
 				9BC20BC92201886D00732DE3 /* WLExhibitonViewController.m */,
-				9B9117AB221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.h */,
-				9B9117AC221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m */,
-				9B9117AE22195F290069F619 /* WLNewsTabCell.h */,
-				9B9117AF22195F290069F619 /* WLNewsTabCell.m */,
-				9B9117B022195F290069F619 /* WLNewsTabCell.xib */,
-				9BC20C0D2202A77A00732DE3 /* WLNewsViewController.h */,
-				9BC20C0E2202A77A00732DE3 /* WLNewsViewController.m */,
-				9BB63AFC221C365800132FB7 /* WLFocusPeopleController.h */,
-				9BB63AFD221C365800132FB7 /* WLFocusPeopleController.m */,
-				9BC20C142202A7BC00732DE3 /* WLRelatedPolicyViewController.h */,
-				9BC20C152202A7BC00732DE3 /* WLRelatedPolicyViewController.m */,
-				9BC20C172202A7E300732DE3 /* WLQueryCreditInfoViewController.h */,
-				9BC20C182202A7E300732DE3 /* WLQueryCreditInfoViewController.m */,
 				9BB63AFF221C479C00132FB7 /* WLCreditInfoController.h */,
 				9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */,
+				9BEF2D69221FC0E20012F33D /* WLExhibitionMessageCell.xib */,
+				9BEF2D6C221FC0FA0012F33D /* WLExhibitionMessageCell.h */,
+				9BEF2D6B221FC0FA0012F33D /* WLExhibitionMessageCell.m */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -393,36 +342,6 @@
 				9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */,
 			);
 			path = resources;
-			sourceTree = "<group>";
-		};
-		9BF69A1722129B6200AA41B1 /* 信用查询 */ = {
-			isa = PBXGroup;
-			children = (
-				9BB63B0D221D70C300132FB7 /* WLLegalPeopleDetailDisplayController.h */,
-				9BB63B0E221D70C300132FB7 /* WLLegalPeopleDetailDisplayController.m */,
-				9BB63B08221D2D8700132FB7 /* WLLegalPeopleDetailController.h */,
-				9BB63B09221D2D8700132FB7 /* WLLegalPeopleDetailController.m */,
-				9BB63B0A221D2D8700132FB7 /* WLLegalPeopleDetailController.xib */,
-				9BB63B10221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.h */,
-				9BB63B11221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.m */,
-				9BB63B12221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.xib */,
-				9BB63B15221DB3C900132FB7 /* WLLegalPeopleBusinessCell.h */,
-				9BB63B16221DB3C900132FB7 /* WLLegalPeopleBusinessCell.m */,
-				9BB63B17221DB3C900132FB7 /* WLLegalPeopleBusinessCell.xib */,
-				9BF69A1822129BE100AA41B1 /* WLLegalPeopleSearchResultCell.h */,
-				9BF69A1922129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m */,
-				9BF69A1A22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib */,
-				9BFBCF1522141A7300319D2B /* WLFocusPeopleResultCell.h */,
-				9BFBCF1622141A7300319D2B /* WLFocusPeopleResultCell.m */,
-				9BFBCF1722141A7300319D2B /* WLFocusPeopleResultCell.xib */,
-				9BFBCF1A22141D4A00319D2B /* WLPersonResultCell.h */,
-				9BFBCF1B22141D4A00319D2B /* WLPersonResultCell.m */,
-				9BFBCF1C22141D4A00319D2B /* WLPersonResultCell.xib */,
-				9B9117A622192B150069F619 /* WLExhibitionMessageCell.h */,
-				9B9117A722192B150069F619 /* WLExhibitionMessageCell.m */,
-				9B9117A822192B150069F619 /* WLExhibitionMessageCell.xib */,
-			);
-			path = "信用查询";
 			sourceTree = "<group>";
 		};
 		DDCCA9A590C475E30E67E230 /* Frameworks */ = {
@@ -552,24 +471,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC20A2B21FF1B8C00732DE3 /* LaunchScreen.storyboard in Resources */,
-				9BB63B14221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.xib in Resources */,
-				9BFBCF1922141A7300319D2B /* WLFocusPeopleResultCell.xib in Resources */,
 				9B39179B2216F91600B7E8EF /* law_province_20190215.json in Resources */,
 				9B1AE9EC220FE430007769EC /* QueryApiList.plist in Resources */,
 				9B39179C2216F91600B7E8EF /* news_province_20190215.json in Resources */,
 				9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */,
 				9B39179D2216F91600B7E8EF /* news_nation_20190215.json in Resources */,
-				9BF69A1C22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.xib in Resources */,
 				9BC20A2821FF1B8C00732DE3 /* Assets.xcassets in Resources */,
 				9B391759221676B200B7E8EF /* json格式说明.docx in Resources */,
 				9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */,
 				9B39179E2216F91600B7E8EF /* law_city_20190215.json in Resources */,
 				9B9117B222195F290069F619 /* WLNewsTabCell.xib in Resources */,
-				9B9117AA22192B150069F619 /* WLExhibitionMessageCell.xib in Resources */,
-				9BB63B0C221D2D8700132FB7 /* WLLegalPeopleDetailController.xib in Resources */,
+				9BEF2D6A221FC0E20012F33D /* WLExhibitionMessageCell.xib in Resources */,
 				9B39179F2216F91600B7E8EF /* law_nation_20190215.json in Resources */,
-				9BFBCF1E22141D4A00319D2B /* WLPersonResultCell.xib in Resources */,
-				9BB63B19221DB3C900132FB7 /* WLLegalPeopleBusinessCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,34 +577,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B9117A922192B150069F619 /* WLExhibitionMessageCell.m in Sources */,
-				9BFBCF1D22141D4A00319D2B /* WLPersonResultCell.m in Sources */,
 				9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */,
-				9BB63AFE221C365800132FB7 /* WLFocusPeopleController.m in Sources */,
+				9BEF2D6D221FC0FA0012F33D /* WLExhibitionMessageCell.m in Sources */,
 				9BC20C3422031D4500732DE3 /* WLUserFocusTableController.m in Sources */,
 				9B9117AD221943EB0069F619 /* WLNewsAndPolicyShowInExhibitionController.m in Sources */,
 				9B39176422167C1E00B7E8EF /* WLNewsDetailViewController.m in Sources */,
-				9BC20C192202A7E300732DE3 /* WLQueryCreditInfoViewController.m in Sources */,
 				9BB63B01221C479C00132FB7 /* WLCreditInfoController.m in Sources */,
-				9BFBCF1822141A7300319D2B /* WLFocusPeopleResultCell.m in Sources */,
 				9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */,
 				9BC20BC7220187E400732DE3 /* WLProfileViewController.m in Sources */,
 				9BC20C162202A7BC00732DE3 /* WLRelatedPolicyViewController.m in Sources */,
-				9BB63B18221DB3C900132FB7 /* WLLegalPeopleBusinessCell.m in Sources */,
-				9BB63B13221DA62900132FB7 /* WLLegalPeopleBasicInfoCell.m in Sources */,
-				9BB63B07221D06BC00132FB7 /* WLLegalDetailModel.m in Sources */,
 				9BC20BCA2201886D00732DE3 /* WLExhibitonViewController.m in Sources */,
 				9BC20BC4220187D000732DE3 /* WLProfileCreditViewController.m in Sources */,
 				9BC20C0F2202A77A00732DE3 /* WLNewsViewController.m in Sources */,
 				9B9117B122195F290069F619 /* WLNewsTabCell.m in Sources */,
-				9BB63B0F221D70C300132FB7 /* WLLegalPeopleDetailDisplayController.m in Sources */,
-				9BB63B0B221D2D8700132FB7 /* WLLegalPeopleDetailController.m in Sources */,
-				9BF69A1B22129BE100AA41B1 /* WLLegalPeopleSearchResultCell.m in Sources */,
 				9BC20BC1220187B400732DE3 /* WLUserFocusViewController.m in Sources */,
 				9BC20A2E21FF1B8C00732DE3 /* main.m in Sources */,
 				9BC20BB82201804200732DE3 /* WLNewFeatureViewController.m in Sources */,
 				9BC20A2021FF1B8B00732DE3 /* AppDelegate.m in Sources */,
-				9BB63B04221CFF1800132FB7 /* WLLegalDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

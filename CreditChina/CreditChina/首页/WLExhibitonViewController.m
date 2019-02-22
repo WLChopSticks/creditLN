@@ -8,7 +8,6 @@
 
 #import "WLExhibitonViewController.h"
 #import "WLNewsViewController.h"
-#import "WLCreditPromiseViewController.h"
 #import "WLRelatedPolicyViewController.h"
 #import "WLQueryCreditInfoViewController.h"
 #import "WLSegmentTableViewController.h"
@@ -449,7 +448,6 @@
         }
         case 5:
         {
-//            WLCreditPromiseViewController *vc = [[WLCreditPromiseViewController alloc]init];
             UIViewController *vc = [[CTMediator sharedInstance]CreditPromise_aViewController];
             [self.navigationController pushViewController:vc animated:YES];
             //            UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
@@ -488,7 +486,8 @@
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     
-    WLQueryCreditInfoViewController *vc = [[WLQueryCreditInfoViewController alloc]init];
+//    WLQueryCreditInfoViewController *vc = [[WLQueryCreditInfoViewController alloc]init];
+    UIViewController *vc = [[CTMediator sharedInstance]QueryCreditInfo_aViewController];
     WLBaseNavigationViewController *nav = [[WLBaseNavigationViewController alloc]initWithRootViewController:vc];
     [self presentViewController:nav animated:NO completion:nil];
     return NO;
