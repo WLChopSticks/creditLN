@@ -17,6 +17,7 @@ PODS:
   - CTMediator (25)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
+  - MJRefresh (3.1.15.7)
   - ProgressHUD (2.51)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
@@ -25,6 +26,7 @@ PODS:
   - SDWebImage/Core (4.4.4)
   - WLControls (0.1.0):
     - Masonry
+    - MJRefresh
     - SDCycleScrollView
   - WLLogin (0.1.0)
   - WLLogin_Category (0.1.0):
@@ -61,6 +63,7 @@ SPEC REPOS:
     - CTMediator
     - Masonry
     - MJExtension
+    - MJRefresh
     - ProgressHUD
     - SDCycleScrollView
     - SDWebImage
@@ -88,10 +91,11 @@ SPEC CHECKSUMS:
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
-  WLControls: 400e5cefb5386991d8610cdc215c31685e65313d
+  WLControls: 3c1fe9f39d9aec6a5607c0e3fe01d844e1f36c50
   WLLogin: 7b1bb7b179900734110f6ae08277643c2daaee31
   WLLogin_Category: 337c48a0f0b013cd67b27e6641be08fd3c7f2451
   WLNews: 0a8841b9259ab220978a3ce6594cf2092a5ac088
