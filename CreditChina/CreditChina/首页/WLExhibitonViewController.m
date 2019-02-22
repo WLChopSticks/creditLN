@@ -20,6 +20,7 @@
 #import <WLPlatform.h>
 #import <WLTableView.h>
 #import <CTMediator+Login.h>
+#import <CTMediator+Publicity.h>
 #import "WLExhibitionMessageCell.h"
 #import "WLNewsAndPolicyShowInExhibitionController.h"
 #import <WLScrollView.h>
@@ -415,11 +416,13 @@
         case 0:
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+            segVC.isTitlesEqualWidth = YES;
             segVC.titles = @[@"行政许可",@"行政处罚"];
-            WLDoublePublicityViewController *vc1 = [[WLDoublePublicityViewController alloc]init];
-            vc1.doublePubliciryType = @"2";
-            WLDoublePublicityViewController *vc2 = [[WLDoublePublicityViewController alloc]init];
-            vc2.doublePubliciryType = @"1";
+            UIViewController *vc1 = [[CTMediator sharedInstance]DoublePublicity_aViewController:@"2"];
+//            [self presentViewController:vc animated:YES completion:nil];
+//            WLDoublePublicityViewController *vc1 = [[WLDoublePublicityViewController alloc]init];
+//            vc1.doublePubliciryType = @"2";
+            UIViewController *vc2 = [[CTMediator sharedInstance]DoublePublicity_aViewController:@"1"];
             segVC.controllers = @[vc1,vc2];
             segVC.title = @"双公示展示";
             [self.navigationController pushViewController:segVC animated:YES];
@@ -475,8 +478,9 @@
         {
             WLCreditPromiseViewController *vc = [[WLCreditPromiseViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
-//            UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
-//            [self presentViewController:vc animated:YES completion:nil];
+            
+            //            UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
+            //            [self presentViewController:vc animated:YES completion:nil];
             break;
         }
         case 6:

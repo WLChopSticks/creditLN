@@ -34,6 +34,9 @@ PODS:
     - Masonry
     - MJExtension
     - ProgressHUD
+  - WLPublicity (0.1.0)
+  - WLPublicity_Category (0.1.0):
+    - CTMediator
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -45,6 +48,8 @@ DEPENDENCIES:
   - WLLogin (from `../WLLogin`)
   - WLLogin_Category (from `../WLLogin_Category`)
   - WLPlatform (from `../WLLib/WLPlatform`)
+  - WLPublicity (from `../WLPublicity`)
+  - WLPublicity_Category (from `../WLPublicity_Category`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -65,6 +70,10 @@ EXTERNAL SOURCES:
     :path: "../WLLogin_Category"
   WLPlatform:
     :path: "../WLLib/WLPlatform"
+  WLPublicity:
+    :path: "../WLPublicity"
+  WLPublicity_Category:
+    :path: "../WLPublicity_Category"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -78,7 +87,9 @@ SPEC CHECKSUMS:
   WLLogin: 7b1bb7b179900734110f6ae08277643c2daaee31
   WLLogin_Category: 337c48a0f0b013cd67b27e6641be08fd3c7f2451
   WLPlatform: 7df6082f09b9712a4556196cd2f4a34d81882462
+  WLPublicity: 07c94f15742de025d6cf31c5006c81c159ccdd36
+  WLPublicity_Category: 70c12b47d2b16bad8ea2668b29136a2e46cb412c
 
-PODFILE CHECKSUM: f605672909cdfe646e6b1b99df1a608b18fd114d
+PODFILE CHECKSUM: 0c6124d9d8ee3b9b478f43d953b279e640490abd
 
 COCOAPODS: 1.6.0.rc.1
