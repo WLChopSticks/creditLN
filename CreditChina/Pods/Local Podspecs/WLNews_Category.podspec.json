@@ -1,0 +1,27 @@
+{
+  "name": "WLNews_Category",
+  "version": "0.1.0",
+  "summary": "A short description of WLNews_Category.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/WLChopsticks/WLNews_Category",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "WLChopsticks": "wanglei_sy56@163.com"
+  },
+  "source": {
+    "git": "https://github.com/WLChopsticks/WLNews_Category.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "WLNews_Category/Classes/**/*",
+  "resource_bundles": {
+    "WLNews_Category": [
+      "WLNews_Category/Assets/*"
+    ]
+  }
+}

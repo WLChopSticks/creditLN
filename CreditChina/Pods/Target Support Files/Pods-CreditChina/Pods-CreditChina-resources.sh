@@ -100,12 +100,16 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLControls/WLControls.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLLogin/WLLogin.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLNews/WLNews.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLNews_Category/WLNews_Category.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLPublicity/WLPublicity.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLControls/WLControls.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLLogin/WLLogin.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLNews/WLNews.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLNews_Category/WLNews_Category.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/WLPublicity/WLPublicity.bundle"
 fi
 

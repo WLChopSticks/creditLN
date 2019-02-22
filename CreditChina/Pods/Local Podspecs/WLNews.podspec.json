@@ -1,0 +1,30 @@
+{
+  "name": "WLNews",
+  "version": "0.1.0",
+  "summary": "A short description of WLNews.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/WLChopsticks/WLNews",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "WLChopsticks": "wanglei_sy56@163.com"
+  },
+  "source": {
+    "git": "https://github.com/WLChopsticks/WLNews.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "WLNews/Classes/**/*",
+  "resource_bundles": {
+    "WLNews": [
+      "WLNews/Assets/*"
+    ]
+  },
+  "xcconfig": {
+    "HEADER_SEARCH_PATHS": "${SDKROOT}/usr/include/libxml2"
+  }
+}

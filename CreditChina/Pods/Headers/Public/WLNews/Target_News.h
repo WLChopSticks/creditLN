@@ -1,0 +1,1 @@
+../../../../../WLNews/WLNews/Classes/Targets/Target_News.h

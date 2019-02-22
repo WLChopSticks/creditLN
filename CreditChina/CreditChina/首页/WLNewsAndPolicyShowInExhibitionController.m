@@ -65,7 +65,7 @@
     newsCollection.pagingEnabled = YES;
     [self.view addSubview:newsCollection];
     
-    [newsCollection registerNib:[UINib nibWithNibName:@"WLNewsTabCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:newsTabCell];
+    [newsCollection registerNib:[UINib nibWithNibName:@"WLNewsTabCell" bundle:[WLCommonTool getBundleWithBundleName:@"WLNews"]] forCellWithReuseIdentifier:newsTabCell];
     
     [newsCollection mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);

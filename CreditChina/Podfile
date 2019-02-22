@@ -13,6 +13,9 @@ pod 'WLLogin', :path => '../WLLogin'
 pod 'WLPublicity_Category', :path => '../WLPublicity_Category'
 pod 'WLPublicity', :path => '../WLPublicity'
 
+pod 'WLNews_Category', :path => '../WLNews_Category'
+pod 'WLNews', :path => '../WLNews'
+
 pod 'Masonry'
 pod 'ProgressHUD'
 pod 'MJExtension'

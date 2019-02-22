@@ -29,6 +29,8 @@ PODS:
   - WLLogin (0.1.0)
   - WLLogin_Category (0.1.0):
     - CTMediator
+  - WLNews (0.1.0)
+  - WLNews_Category (0.1.0)
   - WLPlatform (0.1.0):
     - AFNetworking
     - Masonry
@@ -47,6 +49,8 @@ DEPENDENCIES:
   - WLControls (from `../WLControls/WLControls`)
   - WLLogin (from `../WLLogin`)
   - WLLogin_Category (from `../WLLogin_Category`)
+  - WLNews (from `../WLNews`)
+  - WLNews_Category (from `../WLNews_Category`)
   - WLPlatform (from `../WLLib/WLPlatform`)
   - WLPublicity (from `../WLPublicity`)
   - WLPublicity_Category (from `../WLPublicity_Category`)
@@ -68,6 +72,10 @@ EXTERNAL SOURCES:
     :path: "../WLLogin"
   WLLogin_Category:
     :path: "../WLLogin_Category"
+  WLNews:
+    :path: "../WLNews"
+  WLNews_Category:
+    :path: "../WLNews_Category"
   WLPlatform:
     :path: "../WLLib/WLPlatform"
   WLPublicity:
@@ -86,10 +94,12 @@ SPEC CHECKSUMS:
   WLControls: 400e5cefb5386991d8610cdc215c31685e65313d
   WLLogin: 7b1bb7b179900734110f6ae08277643c2daaee31
   WLLogin_Category: 337c48a0f0b013cd67b27e6641be08fd3c7f2451
+  WLNews: 0a8841b9259ab220978a3ce6594cf2092a5ac088
+  WLNews_Category: f78e0a9125a553bc6217d9c708dca60e69aa33db
   WLPlatform: fd0e0b68c3033b8cf56e929c73453e8807a3e27e
   WLPublicity: 07c94f15742de025d6cf31c5006c81c159ccdd36
   WLPublicity_Category: 70c12b47d2b16bad8ea2668b29136a2e46cb412c
 
-PODFILE CHECKSUM: 0c6124d9d8ee3b9b478f43d953b279e640490abd
+PODFILE CHECKSUM: d20e18bb554c14ee8728e6e24d897ac0f292624f
 
 COCOAPODS: 1.6.0.rc.1

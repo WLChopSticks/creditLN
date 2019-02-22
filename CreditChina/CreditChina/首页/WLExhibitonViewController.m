@@ -15,6 +15,7 @@
 #import <WLTableView.h>
 #import <CTMediator+Login.h>
 #import <CTMediator+Publicity.h>
+#import <CTMediator+News.h>
 #import "WLExhibitionMessageCell.h"
 #import "WLNewsAndPolicyShowInExhibitionController.h"
 #import "WLFocusPeopleController.h"
@@ -379,10 +380,13 @@
     WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
     segVC.title = @"新闻资讯";
     segVC.titles = @[@"国内动态",@"省内动态"];
-    WLNewsViewController *vc1 = [[WLNewsViewController alloc]init];
-    vc1.newsSource = @"1";
-    WLNewsViewController *vc2 = [[WLNewsViewController alloc]init];
-    vc2.newsSource = @"2";
+    segVC.isTitlesEqualWidth = YES;
+    UIViewController *vc1 = [[CTMediator sharedInstance]News_aViewController:@"1"];
+    UIViewController *vc2 = [[CTMediator sharedInstance]News_aViewController:@"2"];
+//    WLNewsViewController *vc1 = [[WLNewsViewController alloc]init];
+//    vc1.newsSource = @"1";
+//    WLNewsViewController *vc2 = [[WLNewsViewController alloc]init];
+//    vc2.newsSource = @"2";
     segVC.controllers = @[vc1,vc2];
     [self.navigationController pushViewController:segVC animated:YES];
 }
