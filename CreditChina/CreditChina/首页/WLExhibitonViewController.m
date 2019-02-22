@@ -7,7 +7,6 @@
 //
 
 #import "WLExhibitonViewController.h"
-#import "WLDoublePublicityViewController.h"
 #import "WLRewardsAndPunishListViewController.h"
 #import "WLRewardsAndPunishExampleViewController.h"
 #import "WLCreditReportViewController.h"
@@ -15,7 +14,6 @@
 #import "WLCreditPromiseViewController.h"
 #import "WLRelatedPolicyViewController.h"
 #import "WLQueryCreditInfoViewController.h"
-#import <SDCycleScrollView.h>
 #import "WLSegmentTableViewController.h"
 #import <WLPlatform.h>
 #import <WLTableView.h>
@@ -23,7 +21,6 @@
 #import <CTMediator+Publicity.h>
 #import "WLExhibitionMessageCell.h"
 #import "WLNewsAndPolicyShowInExhibitionController.h"
-#import <WLScrollView.h>
 #import "WLFocusPeopleController.h"
 #import "WLCreditInfoController.h"
 #import "WLBaseNavigationViewController.h"
@@ -124,20 +121,6 @@
     [self decorateCreditMessageView:creditMessageView];
     [self decorateNewsInfoView:newsView];
     [self decoratePolicyInfoView:policyView];
-    
-    
-    
-    //        SDCycleScrollView *topView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(10, CGRectGetMaxY(functionView.frame) + 20, Screen_Width-20, Screen_Height * 0.25) delegate:self placeholderImage:[UIImage imageNamed:@"temp"]];
-    //        NSArray *imagesURLStrings = @[
-    //                                      @"https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a4b3d7085dee3d6d2293d48b252b5910/0e2442a7d933c89524cd5cd4d51373f0830200ea.jpg",
-    //                                      @"https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=a41eb338dd33c895a62bcb3bb72e47c2/5fdf8db1cb134954a2192ccb524e9258d1094a1e.jpg",
-    //                                      @"http://c.hiphotos.baidu.com/image/w%3D400/sign=c2318ff84334970a4773112fa5c8d1c0/b7fd5266d0160924c1fae5ccd60735fae7cd340d.jpg"
-    //                                      ];
-    //        topView.imageURLStringsGroup = imagesURLStrings;
-    //        [self.view addSubview:topView];
-    
-    
-    
 }
 
 - (void)decorateTopView: (UIView *)containerView
@@ -419,9 +402,6 @@
             segVC.isTitlesEqualWidth = YES;
             segVC.titles = @[@"行政许可",@"行政处罚"];
             UIViewController *vc1 = [[CTMediator sharedInstance]DoublePublicity_aViewController:@"2"];
-//            [self presentViewController:vc animated:YES completion:nil];
-//            WLDoublePublicityViewController *vc1 = [[WLDoublePublicityViewController alloc]init];
-//            vc1.doublePubliciryType = @"2";
             UIViewController *vc2 = [[CTMediator sharedInstance]DoublePublicity_aViewController:@"1"];
             segVC.controllers = @[vc1,vc2];
             segVC.title = @"双公示展示";
