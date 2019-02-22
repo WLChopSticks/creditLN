@@ -7,7 +7,6 @@
 //
 
 #import "WLExhibitonViewController.h"
-#import "WLRewardsAndPunishListViewController.h"
 #import "WLRewardsAndPunishExampleViewController.h"
 #import "WLCreditReportViewController.h"
 #import "WLNewsViewController.h"
@@ -412,10 +411,9 @@
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
             segVC.titles = @[@"红名单",@"黑名单"];
-            WLRewardsAndPunishListViewController *vc1 = [[WLRewardsAndPunishListViewController alloc]init];
-            vc1.redAndBlackType = @"1";
-            WLRewardsAndPunishListViewController *vc2 = [[WLRewardsAndPunishListViewController alloc]init];
-            vc2.redAndBlackType = @"2";
+            segVC.isTitlesEqualWidth = YES;
+            UIViewController *vc1 = [[CTMediator sharedInstance]RewardsAndPunishList_aViewController:@"1"];
+            UIViewController *vc2 = [[CTMediator sharedInstance]RewardsAndPunishList_aViewController:@"2"];
             segVC.controllers = @[vc1,vc2];
             segVC.title = @"联合奖惩(红黑名单)";
             [self.navigationController pushViewController:segVC animated:YES];
