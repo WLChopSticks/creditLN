@@ -11,6 +11,7 @@
 #import "WLPofileCreditGradeView.h"
 #import <WLTableView.h>
 #import "WLProfileCreditGradeBenifitCell.h"
+#import <WLCircleAnimationView.h>
 
 #define FunctionBtnViewHeight 300
 
@@ -24,6 +25,8 @@
 
 @property (nonatomic, strong) NSArray *benefitArray;
 @property (nonatomic, strong) NSArray *functionBtns;
+
+@property (nonatomic, weak) WLCircleAnimationView *animationView;
 
 @end
 
@@ -39,6 +42,13 @@
 {
     [super viewWillDisappear: animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];;
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.animationView.score = 650;
 }
 
 - (void)viewDidLoad {
@@ -104,6 +114,11 @@
     [containerView addSubview:backView];
     backView.backgroundColor = [UIColor greenColor];
     
+    [backView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(containerView);
+        make.bottom.equalTo(containerView).offset(-20);
+    }];
+    
     UIButton *knowCreditGrade = [[UIButton alloc]init];
     [containerView addSubview:knowCreditGrade];
     [knowCreditGrade setTitle:@"了解信用分" forState:UIControlStateNormal];
@@ -120,15 +135,28 @@
         make.width.mas_equalTo(90);
     }];
     
+    
+    UIView *circleContainer = [[UIView alloc]init];
+    [containerView addSubview:circleContainer];
+    
+    [circleContainer mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(containerView.mas_centerY).offset(0);
+        make.centerX.equalTo(containerView.mas_centerX);
+        make.width.height.mas_equalTo(Screen_Width * 0.5);
+    }];
+    
+    CGFloat width = Screen_Width * 0.5;
+    CGFloat height = width;
+    WLCircleAnimationView *animateView = [[WLCircleAnimationView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+    animateView.backgroundColor = [UIColor purpleColor];
+    animateView.backGroundView = backView;
+    [circleContainer addSubview:animateView];
+    self.animationView = animateView;
+    
     UIView *gradeView = [[UIView alloc]init];
     [containerView addSubview:gradeView];
     gradeView.backgroundColor = [UIColor yellowColor];
     
-    
-    [backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(containerView);
-        make.bottom.equalTo(containerView).offset(-20);
-    }];
     [gradeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(containerView.mas_left).offset(20);
         make.right.equalTo(containerView.mas_right).offset(-20);
@@ -311,12 +339,12 @@
         
         functionBtn.frame = CGRectMake(x, y, width, height);
         
-        functionBtn.titleEdgeInsets = UIEdgeInsetsMake(10, -functionBtn.imageView.frame.size.width, -functionBtn.imageView.frame.size.height, 0);
+        functionBtn.titleEdgeInsets = UIEdgeInsetsMake(10, -functionBtn.imageView.width, -functionBtn.imageView.height, 0);
         functionBtn.imageEdgeInsets = UIEdgeInsetsMake(-functionBtn.titleLabel.intrinsicContentSize.height, 0, 0, -functionBtn.titleLabel.intrinsicContentSize.width);
         
         [containerView addSubview:functionBtn];
         
-        UIView *bottomBorder = [[UIView alloc]initWithFrame:CGRectMake(0, functionBtn.frame.size.height, functionBtn.frame.size.width, 0.5)];
+        UIView *bottomBorder = [[UIView alloc]initWithFrame:CGRectMake(0, functionBtn.height, functionBtn.width, 0.5)];
         bottomBorder.backgroundColor = [UIColor lightGrayColor];
         [functionBtn addSubview:bottomBorder];
         
