@@ -12,6 +12,7 @@
 #import <WLTableView.h>
 #import "WLProfileCreditGradeBenifitCell.h"
 
+#define FunctionBtnViewHeight 300
 
 @interface WLProfileCreditViewController ()<wlTableViewDelegate>
 
@@ -22,6 +23,7 @@
 @property (nonatomic, weak) WLPofileCreditGradeView *addition;
 
 @property (nonatomic, strong) NSArray *benefitArray;
+@property (nonatomic, strong) NSArray *functionBtns;
 
 @end
 
@@ -81,17 +83,18 @@
     }];
     
     UIView *functionBtnView = [[UIView alloc]init];
-    functionBtnView.backgroundColor = [UIColor blueColor];
+    functionBtnView.backgroundColor = [UIColor whiteColor];
     [bgView addSubview:functionBtnView];
     [functionBtnView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(messageView.mas_bottom).offset(10);
         make.left.right.equalTo(backScroll);
-        make.height.mas_equalTo(300);
+        make.height.mas_equalTo(FunctionBtnViewHeight);
         make.bottom.equalTo(bgView.mas_bottom);
     }];
     
     [self decorateTopView:topView];
     [self decorateMiddleMessageView:messageView];
+    [self decorateFunctionButtonsView:functionBtnView];
     
 }
 
@@ -100,6 +103,22 @@
     UIImageView *backView = [[UIImageView alloc]init];
     [containerView addSubview:backView];
     backView.backgroundColor = [UIColor greenColor];
+    
+    UIButton *knowCreditGrade = [[UIButton alloc]init];
+    [containerView addSubview:knowCreditGrade];
+    [knowCreditGrade setTitle:@"了解信用分" forState:UIControlStateNormal];
+    [knowCreditGrade setBackgroundColor:[UIColor whiteColor]];
+    knowCreditGrade.titleLabel.font = [UIFont systemFontOfSize:13];
+    [knowCreditGrade setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [WLCommonTool makeViewShowingWithRoundCorner:knowCreditGrade andRadius:10];
+    [knowCreditGrade addTarget:self action:@selector(knowCreditGradeBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [knowCreditGrade mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(containerView.mas_top).offset(20);
+        make.right.equalTo(containerView.mas_right).offset(-10);
+        make.height.mas_equalTo(20);
+        make.width.mas_equalTo(90);
+    }];
     
     UIView *gradeView = [[UIView alloc]init];
     [containerView addSubview:gradeView];
@@ -265,6 +284,58 @@
     
 }
 
+- (void)decorateFunctionButtonsView: (UIView *)containerView
+{
+    for (int i = 0; i < self.functionBtns.count; i++)
+    {
+        UIButton *functionBtn = [[UIButton alloc]init];
+        
+        NSDictionary *dict = self.functionBtns[i];
+        [functionBtn setTitle:dict[@"title"] forState:UIControlStateNormal];
+        [functionBtn setImage:[UIImage imageNamed:dict[@"image"]] forState:UIControlStateNormal];
+        functionBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+        [functionBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        
+        functionBtn.tag = i;
+        [functionBtn addTarget:self action:@selector(functionBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
+        int width = Screen_Width * 0.25;
+        int height = FunctionBtnViewHeight / 3;
+        int x = i % 4 == 0 ? 0 : Screen_Width * 0.25 * (i % 4);
+        int y = i / 4 * height;
+        
+        if (i >= 8)
+        {
+            width = Screen_Width * 0.5 - 1;
+            x = i % 2  == 0 ? 0 : width * (i % 2);
+        }
+        
+        functionBtn.frame = CGRectMake(x, y, width, height);
+        
+        functionBtn.titleEdgeInsets = UIEdgeInsetsMake(10, -functionBtn.imageView.frame.size.width, -functionBtn.imageView.frame.size.height, 0);
+        functionBtn.imageEdgeInsets = UIEdgeInsetsMake(-functionBtn.titleLabel.intrinsicContentSize.height, 0, 0, -functionBtn.titleLabel.intrinsicContentSize.width);
+        
+        [containerView addSubview:functionBtn];
+        
+        UIView *bottomBorder = [[UIView alloc]initWithFrame:CGRectMake(0, functionBtn.frame.size.height, functionBtn.frame.size.width, 0.5)];
+        bottomBorder.backgroundColor = [UIColor lightGrayColor];
+        [functionBtn addSubview:bottomBorder];
+        
+        UIView *rightBorder = [[UIView alloc]initWithFrame:CGRectMake(functionBtn.frame.size.width, 0, 0.5, functionBtn.frame.size.height)];
+        rightBorder.backgroundColor = [UIColor lightGrayColor];
+        [functionBtn addSubview:rightBorder];
+    }
+}
+
+- (void)functionBtnDidClicking: (UIButton *)sender
+{
+    NSLog(@"点击了功能按钮%ld", (long)sender.tag);
+}
+
+- (void)knowCreditGradeBtnDidClicking: (UIButton *)sender
+{
+    NSLog(@"点击了了解信用分按钮%ld", (long)sender.tag);
+}
+
 -(NSArray *)benefitArray
 {
     if (!_benefitArray)
@@ -276,6 +347,26 @@
     }
     
     return _benefitArray;
+}
+
+-(NSArray *)functionBtns
+{
+    if (_functionBtns == nil)
+    {
+        NSMutableArray *arrTem = [NSMutableArray arrayWithCapacity:8];
+        [arrTem addObject:@{@"image":@"doublePublicity", @"title":@"基本信息"}];
+        [arrTem addObject:@{@"image":@"lhjc", @"title":@"资格证书"}];
+        [arrTem addObject:@{@"image":@"xybg", @"title":@"获得奖项"}];
+        [arrTem addObject:@{@"image":@"zdrq", @"title":@"获得称号"}];
+        [arrTem addObject:@{@"image":@"dxal", @"title":@"榜上有名红"}];
+        [arrTem addObject:@{@"image":@"xycn", @"title":@"榜上有名黑"}];
+        [arrTem addObject:@{@"image":@"yyss", @"title":@"行政许可"}];
+        [arrTem addObject:@{@"image":@"xyxf", @"title":@"行政处罚"}];
+        [arrTem addObject:@{@"image":@"yyss", @"title":@"投资任职图谱"}];
+        [arrTem addObject:@{@"image":@"xyxf", @"title":@"历史关联企业"}];
+        _functionBtns = [NSArray arrayWithArray:arrTem];
+    }
+    return _functionBtns;
 }
 
 
