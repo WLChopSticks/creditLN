@@ -14,6 +14,7 @@
 		9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */; };
 		9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */; };
 		9BB63B01221C479C00132FB7 /* WLCreditInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */; };
+		9BBE620F2220DB2D00641C20 /* WLPofileCreditGradeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE620E2220DB2D00641C20 /* WLPofileCreditGradeView.m */; };
 		9BC20A2021FF1B8B00732DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */; };
 		9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A2221FF1B8B00732DE3 /* ViewController.m */; };
 		9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC20A2421FF1B8B00732DE3 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		9BEF2D6A221FC0E20012F33D /* WLExhibitionMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BEF2D69221FC0E20012F33D /* WLExhibitionMessageCell.xib */; };
 		9BEF2D6D221FC0FA0012F33D /* WLExhibitionMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEF2D6B221FC0FA0012F33D /* WLExhibitionMessageCell.m */; };
 		9BEF2DBC221FCEDD0012F33D /* WLNewsAndPolicyShowInExhibitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEF2DBB221FCEDD0012F33D /* WLNewsAndPolicyShowInExhibitionController.m */; };
+		9BFA524A2220E2C70094670A /* WLProfileCreditGradeBenifitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA52492220E2C70094670A /* WLProfileCreditGradeBenifitCell.m */; };
 		9BFBCF7022145ADB00319D2B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFBCF6F22145ADA00319D2B /* AVFoundation.framework */; };
 		9BFBCF7222145AE100319D2B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFBCF7122145AE000319D2B /* CoreData.framework */; };
 		9BFBCF7422145AE700319D2B /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFBCF7322145AE600319D2B /* AssetsLibrary.framework */; };
@@ -67,6 +69,8 @@
 		9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDoublePublicityModel.m; sourceTree = "<group>"; };
 		9BB63AFF221C479C00132FB7 /* WLCreditInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCreditInfoController.h; sourceTree = "<group>"; };
 		9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCreditInfoController.m; sourceTree = "<group>"; };
+		9BBE620D2220DB2D00641C20 /* WLPofileCreditGradeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLPofileCreditGradeView.h; sourceTree = "<group>"; };
+		9BBE620E2220DB2D00641C20 /* WLPofileCreditGradeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLPofileCreditGradeView.m; sourceTree = "<group>"; };
 		9BC20A1B21FF1B8B00732DE3 /* CreditChina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditChina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC20A1E21FF1B8B00732DE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 		9BEF2D6C221FC0FA0012F33D /* WLExhibitionMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLExhibitionMessageCell.h; sourceTree = "<group>"; };
 		9BEF2DBA221FCEDD0012F33D /* WLNewsAndPolicyShowInExhibitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLNewsAndPolicyShowInExhibitionController.h; sourceTree = "<group>"; };
 		9BEF2DBB221FCEDD0012F33D /* WLNewsAndPolicyShowInExhibitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLNewsAndPolicyShowInExhibitionController.m; sourceTree = "<group>"; };
+		9BFA52482220E2C70094670A /* WLProfileCreditGradeBenifitCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLProfileCreditGradeBenifitCell.h; sourceTree = "<group>"; };
+		9BFA52492220E2C70094670A /* WLProfileCreditGradeBenifitCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLProfileCreditGradeBenifitCell.m; sourceTree = "<group>"; };
 		9BFBCF6F22145ADA00319D2B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9BFBCF7122145AE000319D2B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9BFBCF7322145AE600319D2B /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -266,6 +272,10 @@
 			children = (
 				9BC20BC2220187D000732DE3 /* WLProfileCreditViewController.h */,
 				9BC20BC3220187D000732DE3 /* WLProfileCreditViewController.m */,
+				9BBE620D2220DB2D00641C20 /* WLPofileCreditGradeView.h */,
+				9BBE620E2220DB2D00641C20 /* WLPofileCreditGradeView.m */,
+				9BFA52482220E2C70094670A /* WLProfileCreditGradeBenifitCell.h */,
+				9BFA52492220E2C70094670A /* WLProfileCreditGradeBenifitCell.m */,
 			);
 			path = "个人信用管理";
 			sourceTree = "<group>";
@@ -526,12 +536,14 @@
 				9BB63B01221C479C00132FB7 /* WLCreditInfoController.m in Sources */,
 				9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */,
 				9BC20BC7220187E400732DE3 /* WLProfileViewController.m in Sources */,
+				9BFA524A2220E2C70094670A /* WLProfileCreditGradeBenifitCell.m in Sources */,
 				9BC20BCA2201886D00732DE3 /* WLExhibitonViewController.m in Sources */,
 				9BC20BC4220187D000732DE3 /* WLProfileCreditViewController.m in Sources */,
 				9BC20BC1220187B400732DE3 /* WLUserFocusViewController.m in Sources */,
 				9BC20A2E21FF1B8C00732DE3 /* main.m in Sources */,
 				9BC20BB82201804200732DE3 /* WLNewFeatureViewController.m in Sources */,
 				9BC20A2021FF1B8B00732DE3 /* AppDelegate.m in Sources */,
+				9BBE620F2220DB2D00641C20 /* WLPofileCreditGradeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

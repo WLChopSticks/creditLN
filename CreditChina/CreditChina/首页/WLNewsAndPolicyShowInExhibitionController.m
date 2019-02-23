@@ -103,7 +103,7 @@
         [constructingDict setObject:content == nil ? @"" : content forKey:@"abstract"];
         [constructingDict setObject:detailNews[@"content"] forKey:@"content"];
         [constructingDict setObject:detailNews[@"date"] forKey:@"time"];
-        [constructingDict setObject:detailNews[@"column"]forKey:@"type"];
+        [constructingDict setObject:detailNews[@"column"]forKey:@"source"];
         NSString *picString = detailNews[@"pictures"];
         if (picString.length > 0)
         {
