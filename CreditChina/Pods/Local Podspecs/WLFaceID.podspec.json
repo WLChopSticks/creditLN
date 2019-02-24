@@ -1,0 +1,28 @@
+{
+  "name": "WLFaceID",
+  "version": "0.1.0",
+  "summary": "A short description of WLFaceID.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/WLChopsticks/WLFaceID",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "WLChopsticks": "wanglei_sy56@163.com"
+  },
+  "source": {
+    "git": "https://github.com/WLChopsticks/WLFaceID.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "WLFaceID/Classes/**/*",
+  "vendored_frameworks": "WLFaceID/Classes/*.framework",
+  "resource_bundles": {
+    "WLFaceID": [
+      "WLFaceID/Assets/*"
+    ]
+  }
+}

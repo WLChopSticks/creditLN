@@ -28,6 +28,7 @@ PODS:
     - Masonry
     - MJRefresh
     - SDCycleScrollView
+  - WLFaceID (0.1.0)
   - WLLogin (0.1.0)
   - WLLogin_Category (0.1.0):
     - CTMediator
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - ProgressHUD
   - SDCycleScrollView (~> 1.75)
   - WLControls (from `../WLControls/WLControls`)
+  - WLFaceID (from `../WLFaceID`)
   - WLLogin (from `../WLLogin`)
   - WLLogin_Category (from `../WLLogin_Category`)
   - WLNews (from `../WLNews`)
@@ -71,6 +73,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   WLControls:
     :path: "../WLControls/WLControls"
+  WLFaceID:
+    :path: "../WLFaceID"
   WLLogin:
     :path: "../WLLogin"
   WLLogin_Category:
@@ -96,6 +100,7 @@ SPEC CHECKSUMS:
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
   WLControls: 3c1fe9f39d9aec6a5607c0e3fe01d844e1f36c50
+  WLFaceID: 81920c77c07519cca2e12a5637546eb7734c74c2
   WLLogin: 7b1bb7b179900734110f6ae08277643c2daaee31
   WLLogin_Category: 337c48a0f0b013cd67b27e6641be08fd3c7f2451
   WLNews: 0a8841b9259ab220978a3ce6594cf2092a5ac088
@@ -104,6 +109,6 @@ SPEC CHECKSUMS:
   WLPublicity: 07c94f15742de025d6cf31c5006c81c159ccdd36
   WLPublicity_Category: 70c12b47d2b16bad8ea2668b29136a2e46cb412c
 
-PODFILE CHECKSUM: d20e18bb554c14ee8728e6e24d897ac0f292624f
+PODFILE CHECKSUM: a56caefec606f7069d8f4027ecc2549950002b5d
 
 COCOAPODS: 1.6.0.rc.1

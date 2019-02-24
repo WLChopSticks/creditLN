@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		9B1AE9EC220FE430007769EC /* QueryApiList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B1AE9EB220FE430007769EC /* QueryApiList.plist */; };
+		9B2C24692222C8D7001B61DA /* ArcSoftFaceEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2C24682222C8D7001B61DA /* ArcSoftFaceEngine.framework */; };
+		9B2C246B2222C8EF001B61DA /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2C246A2222C8EF001B61DA /* libstdc++.6.0.9.tbd */; };
 		9B39176822169D8400B7E8EF /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B39176722169D8400B7E8EF /* libxml2.2.tbd */; };
 		9B39177722169F6500B7E8EF /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B39177622169F6500B7E8EF /* libxml2.tbd */; };
 		9B3917952216E10B00B7E8EF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3917942216E10B00B7E8EF /* WebKit.framework */; };
+		9B7001D92222FCA400AA464B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7001D82222FCA400AA464B /* CoreMotion.framework */; };
 		9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */; };
 		9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */; };
 		9BB63B01221C479C00132FB7 /* WLCreditInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */; };
 		9BBE620F2220DB2D00641C20 /* WLPofileCreditGradeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE620E2220DB2D00641C20 /* WLPofileCreditGradeView.m */; };
-		9BC20A2021FF1B8B00732DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */; };
+		9BC20A2021FF1B8B00732DE3 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A1F21FF1B8B00732DE3 /* AppDelegate.mm */; };
 		9BC20A2321FF1B8B00732DE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A2221FF1B8B00732DE3 /* ViewController.m */; };
 		9BC20A2621FF1B8B00732DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC20A2421FF1B8B00732DE3 /* Main.storyboard */; };
 		9BC20A2821FF1B8C00732DE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BC20A2721FF1B8C00732DE3 /* Assets.xcassets */; };
@@ -61,9 +64,12 @@
 /* Begin PBXFileReference section */
 		8E0A1888FD01D43C53A7F67A /* Pods-CreditChina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CreditChina.release.xcconfig"; path = "Target Support Files/Pods-CreditChina/Pods-CreditChina.release.xcconfig"; sourceTree = "<group>"; };
 		9B1AE9EB220FE430007769EC /* QueryApiList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QueryApiList.plist; sourceTree = "<group>"; };
+		9B2C24682222C8D7001B61DA /* ArcSoftFaceEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ArcSoftFaceEngine.framework; sourceTree = "<group>"; };
+		9B2C246A2222C8EF001B61DA /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		9B39176722169D8400B7E8EF /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		9B39177622169F6500B7E8EF /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		9B3917942216E10B00B7E8EF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		9B7001D82222FCA400AA464B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kaiti_GB2312.ttf; sourceTree = "<group>"; };
 		9BA009F422068D4900D1FFD9 /* WLDoublePublicityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLDoublePublicityModel.h; sourceTree = "<group>"; };
 		9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDoublePublicityModel.m; sourceTree = "<group>"; };
@@ -73,7 +79,7 @@
 		9BBE620E2220DB2D00641C20 /* WLPofileCreditGradeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLPofileCreditGradeView.m; sourceTree = "<group>"; };
 		9BC20A1B21FF1B8B00732DE3 /* CreditChina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditChina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC20A1E21FF1B8B00732DE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9BC20A1F21FF1B8B00732DE3 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		9BC20A2121FF1B8B00732DE3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9BC20A2221FF1B8B00732DE3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9BC20A2521FF1B8B00732DE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +126,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B7001D92222FCA400AA464B /* CoreMotion.framework in Frameworks */,
+				9B2C246B2222C8EF001B61DA /* libstdc++.6.0.9.tbd in Frameworks */,
+				9B2C24692222C8D7001B61DA /* ArcSoftFaceEngine.framework in Frameworks */,
 				9B3917952216E10B00B7E8EF /* WebKit.framework in Frameworks */,
 				9B39177722169F6500B7E8EF /* libxml2.tbd in Frameworks */,
 				9B39176822169D8400B7E8EF /* libxml2.2.tbd in Frameworks */,
@@ -156,6 +165,21 @@
 				8E0A1888FD01D43C53A7F67A /* Pods-CreditChina.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9B2C24672222C8A3001B61DA /* 人脸识别 */ = {
+			isa = PBXGroup;
+			children = (
+				9B2C24822222C972001B61DA /* ui */,
+			);
+			path = "人脸识别";
+			sourceTree = "<group>";
+		};
+		9B2C24822222C972001B61DA /* ui */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 		9BA009F322068D1D00D1FFD9 /* Model */ = {
@@ -197,14 +221,16 @@
 				9BC20A6522001EAA00732DE3 /* 首页 */,
 				9BC20BCB22018BBB00732DE3 /* 用户关注管理 */,
 				9BC20BB52201801A00732DE3 /* 新特性 */,
+				9B2C24672222C8A3001B61DA /* 人脸识别 */,
 				9BC20BCC22018BD000732DE3 /* 个人信用管理 */,
 				9BC20BCE2201918B00732DE3 /* resources */,
 				9BC20BCD22018BE000732DE3 /* 个人 */,
 				9BC20A1E21FF1B8B00732DE3 /* AppDelegate.h */,
-				9BC20A1F21FF1B8B00732DE3 /* AppDelegate.m */,
+				9BC20A1F21FF1B8B00732DE3 /* AppDelegate.mm */,
 				9BC20A2121FF1B8B00732DE3 /* ViewController.h */,
 				9BC20A2221FF1B8B00732DE3 /* ViewController.m */,
 				9BC20A2421FF1B8B00732DE3 /* Main.storyboard */,
+				9B2C24682222C8D7001B61DA /* ArcSoftFaceEngine.framework */,
 				9BC20A2721FF1B8C00732DE3 /* Assets.xcassets */,
 				9BC20A2921FF1B8C00732DE3 /* LaunchScreen.storyboard */,
 				9BC20A2C21FF1B8C00732DE3 /* Info.plist */,
@@ -300,6 +326,8 @@
 		DDCCA9A590C475E30E67E230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B7001D82222FCA400AA464B /* CoreMotion.framework */,
+				9B2C246A2222C8EF001B61DA /* libstdc++.6.0.9.tbd */,
 				9B3917942216E10B00B7E8EF /* WebKit.framework */,
 				9B39177622169F6500B7E8EF /* libxml2.tbd */,
 				9B39176722169D8400B7E8EF /* libxml2.2.tbd */,
@@ -483,6 +511,7 @@
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/ProgressHUD/ProgressHUD/ProgressHUD/ProgressHUD.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/WLControls/WLControls.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/WLFaceID/WLFaceID.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/WLLogin/WLLogin.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/WLNews/WLNews.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/WLNews_Category/WLNews_Category.bundle",
@@ -495,6 +524,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ProgressHUD.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WLControls.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WLFaceID.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WLLogin.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WLNews.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WLNews_Category.bundle",
@@ -542,7 +572,7 @@
 				9BC20BC1220187B400732DE3 /* WLUserFocusViewController.m in Sources */,
 				9BC20A2E21FF1B8C00732DE3 /* main.m in Sources */,
 				9BC20BB82201804200732DE3 /* WLNewFeatureViewController.m in Sources */,
-				9BC20A2021FF1B8B00732DE3 /* AppDelegate.m in Sources */,
+				9BC20A2021FF1B8B00732DE3 /* AppDelegate.mm in Sources */,
 				9BBE620F2220DB2D00641C20 /* WLPofileCreditGradeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -719,8 +749,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FL27D9E52C;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CreditChina",
+				);
 				INFOPLIST_FILE = CreditChina/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wanglei.CreditChina.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -735,8 +770,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FL27D9E52C;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CreditChina",
+				);
 				INFOPLIST_FILE = CreditChina/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wanglei.CreditChina.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
