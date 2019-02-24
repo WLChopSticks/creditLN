@@ -136,8 +136,8 @@
     [logo2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(containerView.mas_centerX).offset(-0);
         make.top.equalTo(containerView.mas_top).offset(20);
+        make.width.mas_equalTo(30);
         make.height.mas_equalTo(30);
-        make.height.mas_equalTo(50);
     }];
     [logo1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(logo2.mas_left);
