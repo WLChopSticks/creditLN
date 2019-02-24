@@ -4,6 +4,8 @@
 <dict>
 	<key>host</key>
 	<string>http://223.100.2.221:8383</string>
+	<key>host1</key>
+	<string>http://47.104.85.148:8080</string>
 	<key>hosts</key>
 	<array>
 		<string>formal,http://47.104.107.196:18070</string>
@@ -27,5 +29,21 @@
 	<string>{host}/credit-webservice-app/restwebservice/app/datacase/getdatacase/{datacasename}/{datacasesubjectsname}/{typecode}/{page}/{pagesize}</string>
 	<key>getblackshow</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/datareportings/getblackshow/{querytype}/{creditname}/{page}/{pagesize}</string>
+	<key>getCaptcha</key>
+	<string>{host1}/gzjk/sendShortMessage.action</string>
+	<key>getLoginWithCaptcha</key>
+	<string>{host1}/gzjk/quicklogin_quicklogin.action</string>
+	<key>getFilledProfileInfo</key>
+	<string>{host1}/gzjk/updateUser.action</string>
+	<key>getAddedFaceId</key>
+	<string>{host1}/gzjk/quicklogin_check.action</string>
+	<key>getLoginFaceId</key>
+	<string>{host1}/gzjk/quickloginByface.action</string>
+	<key>getAddedpushinfo</key>
+	<string>{host1}/gzjk/addPushClientEquipment.action</string>
+	<key>getInsertNewsRemark</key>
+	<string>{host1}/gzjk/insertPl.action</string>
+	<key>getNewsRemarks</key>
+	<string>{host1}/gzjk/querypl.action</string>
 </dict>
 </plist>

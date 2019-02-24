@@ -13,7 +13,6 @@
 #import "WLSegmentTableViewController.h"
 #import <WLPlatform.h>
 #import <WLTableView.h>
-#import <CTMediator+Login.h>
 #import <CTMediator+Publicity.h>
 #import <CTMediator+News.h>
 #import "WLExhibitionMessageCell.h"
@@ -383,10 +382,6 @@
     segVC.isTitlesEqualWidth = YES;
     UIViewController *vc1 = [[CTMediator sharedInstance]News_aViewController:@"1"];
     UIViewController *vc2 = [[CTMediator sharedInstance]News_aViewController:@"2"];
-//    WLNewsViewController *vc1 = [[WLNewsViewController alloc]init];
-//    vc1.newsSource = @"1";
-//    WLNewsViewController *vc2 = [[WLNewsViewController alloc]init];
-//    vc2.newsSource = @"2";
     segVC.controllers = @[vc1,vc2];
     [self.navigationController pushViewController:segVC animated:YES];
 }
@@ -454,8 +449,7 @@
         {
             UIViewController *vc = [[CTMediator sharedInstance]CreditPromise_aViewController];
             [self.navigationController pushViewController:vc animated:YES];
-            //            UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
-            //            [self presentViewController:vc animated:YES completion:nil];
+            
             break;
         }
         case 6:

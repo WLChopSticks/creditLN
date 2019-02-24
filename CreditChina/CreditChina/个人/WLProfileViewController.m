@@ -12,11 +12,14 @@
 #import "WLImageTitleAccessCell.h"
 #import <objc/runtime.h>
 #import "WLProfileHeaderCell.h"
+#import <CTMediator+Login.h>
 
 @interface WLProfileViewController ()<wlTableViewDelegate>
 
 @property (nonatomic, strong) WLTableView *tableView;
 @property (nonatomic, strong) NSArray *rowsData;
+
+@property (nonatomic, weak) UILabel *profileLabel;
 
 @end
 
@@ -28,6 +31,12 @@
 //    self.navigationController.navigationBar.hidden = YES;
     [self decorateUI];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self updateUserDisplayName];
 }
 
 - (void)decorateUI
@@ -49,8 +58,12 @@
     profileImageView.image = [UIImage imageNamed:@"profileImage"];
     [profileView addSubview:profileImageView];
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(profilrViewDidClicking:)];
+    [profileView addGestureRecognizer:tapGesture];
+    
     UILabel *profileLabel = [[UILabel alloc]init];
     profileLabel.text = @"登录/注册";
+    self.profileLabel = profileLabel;
     [profileView addSubview:profileLabel];
     
     [profileView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -98,39 +111,22 @@
     }];
 }
 
-
-//-(UITableViewCell *)wltableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    WLBaseTableViewCell *cell;
-//    if (indexPath.row == 0)
-//    {
-//        Class class = [WLProfileHeaderCell class];
-//        
-//        NSString *className = [NSString stringWithUTF8String:class_getName(class)];
-//        
-//        cell = [tableView dequeueReusableCellWithIdentifier:className forIndexPath:indexPath];
-//        self.tableView.cellClass = class;
-//        [cell fillCellContent:self.rowsData[indexPath.row] withTableView:tableView];
-//        
-//    }else
-//    {
-//        Class class = [WLImageTitleAccessCell class];
-//        self.tableView.cellClass = class;
-//        NSString *className = [NSString stringWithUTF8String:class_getName(class)];
-//        
-//        cell = [tableView dequeueReusableCellWithIdentifier:className forIndexPath:indexPath];
-//        
-//        [cell fillCellContent:self.rowsData[indexPath.row] withTableView:tableView];
-//    }
-//
-//    
-//    return cell;
-//}
-
--(void)viewWillAppear:(BOOL)animated
+- (void)profilrViewDidClicking: (UIGestureRecognizer *)gesture
 {
-    [super viewWillAppear:animated];
-    
+    NSLog(@"点击了");
+    UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)updateUserDisplayName
+{
+    WLUserInfoModel *model = [WLUserInfoModel sharedModel];
+    if (model.user_name.length > 0) {
+        self.profileLabel.text = model.user_name;
+    }else
+    {
+        self.profileLabel.text = @"登录/注册";
+    }
 }
 
 /*
