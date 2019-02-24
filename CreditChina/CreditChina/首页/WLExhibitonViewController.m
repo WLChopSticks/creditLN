@@ -125,6 +125,51 @@
     backImage.image = [UIImage imageNamed:@"2"];
     [containerView addSubview:backImage];
     
+    UIImageView *logo1 = [[UIImageView alloc]init];
+    logo1.image = [UIImage imageNamed:@"logo2"];
+    logo1.contentMode = UIViewContentModeScaleAspectFit;
+    [containerView addSubview:logo1];
+    UIImageView *logo2 = [[UIImageView alloc]init];
+    logo2.contentMode = UIViewContentModeScaleAspectFit;
+    logo2.image = [UIImage imageNamed:@"logo1"];
+    [containerView addSubview:logo2];
+    [logo2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(containerView.mas_centerX).offset(-0);
+        make.top.equalTo(containerView.mas_top).offset(20);
+        make.height.mas_equalTo(30);
+        make.height.mas_equalTo(50);
+    }];
+    [logo1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(logo2.mas_left);
+        make.centerY.equalTo(logo2.mas_centerY);
+        make.height.mas_equalTo(22);
+        make.width.mas_equalTo(22);
+    }];
+    
+    UIButton *copyRightBtn = [[UIButton alloc]init];
+    [copyRightBtn setImage:[UIImage imageNamed:@"!"] forState:UIControlStateNormal];
+    [copyRightBtn addTarget:self action:@selector(copyRightBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
+    [containerView addSubview:copyRightBtn];
+    
+    [copyRightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(containerView.mas_left).offset(20);
+        make.centerY.equalTo(logo2.mas_centerY);
+        make.height.mas_equalTo(22);
+        make.width.mas_equalTo(22);
+    }];
+    
+    UIButton *profileBtn = [[UIButton alloc]init];
+    [profileBtn setImage:[UIImage imageNamed:@"profile"] forState:UIControlStateNormal];
+    [profileBtn addTarget:self action:@selector(profileBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
+    [containerView addSubview:profileBtn];
+    
+    [profileBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(containerView.mas_right).offset(-20);
+        make.centerY.equalTo(logo2.mas_centerY);
+        make.height.mas_equalTo(22);
+        make.width.mas_equalTo(22);
+    }];
+    
     UITextField *searchField = [[UITextField alloc]init];
     searchField.borderStyle = UITextBorderStyleRoundedRect;
     NSString *holderText = @"请输入企业名,人名,品牌等关键字";
@@ -509,6 +554,17 @@
 -(void)wlTableView:(UITableView *)tableView didSelectCellAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"@d");
+}
+
+- (void)copyRightBtnDidClicking: (UIButton *)sender
+{
+    NSLog(@"1");
+}
+
+- (void)profileBtnDidClicking: (UIButton *)sender
+{
+    NSLog(@"1");
+    [self.tabBarController setSelectedIndex:3];
 }
 
 -(NSArray *)functionBtns
