@@ -248,6 +248,8 @@
 		9AF3770FFD4A081182459E1CDB7C9DB7 /* WLBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ED6A543354E316663CBCD5916A249A /* WLBaseTableViewCell.m */; };
 		9B343883F082BF15DB5B07B293A1750A /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0CA836F21EFD78809003F85913E0D /* AFHTTPSessionManager.m */; };
 		9B450A6E3E3C80E540BD735545C88EE5 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BCD467D617B6F9584E708BEB98F209 /* SDWebImageCompat.m */; };
+		9BB382BA22241719002DDD18 /* WLFocusPeopleListController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BB382B822241719002DDD18 /* WLFocusPeopleListController.h */; };
+		9BB382BB22241719002DDD18 /* WLFocusPeopleListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB382B922241719002DDD18 /* WLFocusPeopleListController.m */; };
 		9BDD8422B59353017C73394A9D6EDF8A /* WLNewsTabCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F26813543F18151B1D0FA11496BDEC /* WLNewsTabCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9BED4DBA2223C92600476B1D /* WLRewardsAndPunishExampleModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BED4DB82223C92600476B1D /* WLRewardsAndPunishExampleModel.h */; };
 		9BED4DBB2223C92600476B1D /* WLRewardsAndPunishExampleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BED4DB92223C92600476B1D /* WLRewardsAndPunishExampleModel.m */; };
@@ -948,6 +950,8 @@
 		9B3D1A148B21C0947075542318FC1DAD /* UIImage+ForceDecode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ForceDecode.h"; path = "SDWebImage/UIImage+ForceDecode.h"; sourceTree = "<group>"; };
 		9B71EEBD26304301D1082CF34A9852C7 /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
 		9B725E491D8FA3B00B62BDCF4C32E7E7 /* WLLogin_Category-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WLLogin_Category-dummy.m"; sourceTree = "<group>"; };
+		9BB382B822241719002DDD18 /* WLFocusPeopleListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLFocusPeopleListController.h; sourceTree = "<group>"; };
+		9BB382B922241719002DDD18 /* WLFocusPeopleListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLFocusPeopleListController.m; sourceTree = "<group>"; };
 		9BED4DB82223C92600476B1D /* WLRewardsAndPunishExampleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLRewardsAndPunishExampleModel.h; sourceTree = "<group>"; };
 		9BED4DB92223C92600476B1D /* WLRewardsAndPunishExampleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLRewardsAndPunishExampleModel.m; sourceTree = "<group>"; };
 		9C45A6BA484D9F5784A599E9D83A9C8D /* WLRewardsAndPunishDetailController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WLRewardsAndPunishDetailController.h; sourceTree = "<group>"; };
@@ -2207,6 +2211,8 @@
 			children = (
 				9A4A580CC3CA58DCF1602ED0FE1B8DB5 /* WLFocusPeopleController.h */,
 				4DE61C977515303BC0A5377AA131A5CE /* WLFocusPeopleController.m */,
+				9BB382B822241719002DDD18 /* WLFocusPeopleListController.h */,
+				9BB382B922241719002DDD18 /* WLFocusPeopleListController.m */,
 			);
 			name = "重点人群";
 			path = "WLPublicity/Classes/重点人群";
@@ -2712,6 +2718,7 @@
 				66E4F66F6C7D19706C21F97C8121AFB4 /* UIButton+AFNetworking.h in Headers */,
 				7C2EA3131444E4FC36EDAF006A8E08A4 /* UIImage+AFNetworking.h in Headers */,
 				50FA7FB55AB0B6EE328F078F83953B88 /* UIImageView+AFNetworking.h in Headers */,
+				9BB382BA22241719002DDD18 /* WLFocusPeopleListController.h in Headers */,
 				1514DD47DD0EFE7D6ABFC27EE743D12C /* UIKit+AFNetworking.h in Headers */,
 				E7A29FD264197E966B2F75F2F7844D48 /* UIProgressView+AFNetworking.h in Headers */,
 				EC2E9780DD5B6574F32FB0E097459CFC /* UIRefreshControl+AFNetworking.h in Headers */,
@@ -3628,6 +3635,7 @@
 				0FCDBD23A36B2852D5F959AF817C6BAB /* UIProgressView+AFNetworking.m in Sources */,
 				7849CA8886BF558557A9248D6BDB02CC /* UIRefreshControl+AFNetworking.m in Sources */,
 				296EF40D064952BAF86099E7AFC4BBDB /* UIWebView+AFNetworking.m in Sources */,
+				9BB382BB22241719002DDD18 /* WLFocusPeopleListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4069,6 +4077,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WLPublicity";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Target Support Files/WLPublicity/ResourceBundle-WLPublicity-WLPublicity-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = WLPublicity;
@@ -4085,6 +4094,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WLControls";
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "Target Support Files/WLControls/ResourceBundle-WLControls-WLControls-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = WLControls;
@@ -4141,6 +4151,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WLPublicity";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Target Support Files/WLPublicity/ResourceBundle-WLPublicity-WLPublicity-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = WLPublicity;
@@ -4482,6 +4493,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/WLPublicity_Category/WLPublicity_Category-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
@@ -4505,6 +4517,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/WLPublicity_Category/WLPublicity_Category-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
@@ -4529,6 +4542,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/WLPlatform/WLPlatform-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
@@ -4576,6 +4590,7 @@
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				ENABLE_BITCODE = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/WLPlatform/WLPlatform-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
@@ -4868,6 +4883,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/WLControls";
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "Target Support Files/WLControls/ResourceBundle-WLControls-WLControls-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = WLControls;

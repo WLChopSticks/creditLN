@@ -442,6 +442,7 @@
             segVC.isTitlesEqualWidth = YES;
             segVC.titles = @[@"行政许可",@"行政处罚"];
             segVC.showHeadSearchBar = YES;
+            segVC.searchField.placeholder = @"请输入要搜索的法人名称";
             UIViewController *vc1 = [[CTMediator sharedInstance]DoublePublicity_aViewController:@"2"];
             UIViewController *vc2 = [[CTMediator sharedInstance]DoublePublicity_aViewController:@"1"];
             segVC.controllers = @[vc1,vc2];
