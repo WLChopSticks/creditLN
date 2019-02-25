@@ -24,11 +24,11 @@ PODS:
   - SDWebImage (4.4.4):
     - SDWebImage/Core (= 4.4.4)
   - SDWebImage/Core (4.4.4)
+  - WHToast (0.0.2)
   - WLControls (0.1.0):
     - Masonry
     - MJRefresh
     - SDCycleScrollView
-  - WLFaceID (0.1.0)
   - WLLogin (0.1.0)
   - WLLogin_Category (0.1.0):
     - CTMediator
@@ -39,6 +39,7 @@ PODS:
     - Masonry
     - MJExtension
     - ProgressHUD
+    - WHToast
   - WLPublicity (0.1.0)
   - WLPublicity_Category (0.1.0):
     - CTMediator
@@ -50,7 +51,6 @@ DEPENDENCIES:
   - ProgressHUD
   - SDCycleScrollView (~> 1.75)
   - WLControls (from `../WLControls/WLControls`)
-  - WLFaceID (from `../WLFaceID`)
   - WLLogin (from `../WLLogin`)
   - WLLogin_Category (from `../WLLogin_Category`)
   - WLNews (from `../WLNews`)
@@ -69,12 +69,11 @@ SPEC REPOS:
     - ProgressHUD
     - SDCycleScrollView
     - SDWebImage
+    - WHToast
 
 EXTERNAL SOURCES:
   WLControls:
     :path: "../WLControls/WLControls"
-  WLFaceID:
-    :path: "../WLFaceID"
   WLLogin:
     :path: "../WLLogin"
   WLLogin_Category:
@@ -99,16 +98,16 @@ SPEC CHECKSUMS:
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
+  WHToast: b5b1c6c2a178b2e848e7416fd25ca6b25c7babf8
   WLControls: 3c1fe9f39d9aec6a5607c0e3fe01d844e1f36c50
-  WLFaceID: 81920c77c07519cca2e12a5637546eb7734c74c2
   WLLogin: 7b1bb7b179900734110f6ae08277643c2daaee31
   WLLogin_Category: 337c48a0f0b013cd67b27e6641be08fd3c7f2451
   WLNews: 0a8841b9259ab220978a3ce6594cf2092a5ac088
   WLNews_Category: f78e0a9125a553bc6217d9c708dca60e69aa33db
-  WLPlatform: fd0e0b68c3033b8cf56e929c73453e8807a3e27e
+  WLPlatform: ca4f49bd4cc7efb046defe49fd166823dc95df83
   WLPublicity: 07c94f15742de025d6cf31c5006c81c159ccdd36
   WLPublicity_Category: 70c12b47d2b16bad8ea2668b29136a2e46cb412c
 
-PODFILE CHECKSUM: a56caefec606f7069d8f4027ecc2549950002b5d
+PODFILE CHECKSUM: 2b99839699e0671967be79838d3a1112dbf7aecf
 
 COCOAPODS: 1.6.0.rc.1

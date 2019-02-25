@@ -14,8 +14,6 @@
 #import "WLProfileHeaderCell.h"
 #import <CTMediator+Login.h>
 
-#import <FaceViewController.h>
-
 @interface WLProfileViewController ()<wlTableViewDelegate>
 
 @property (nonatomic, strong) WLTableView *tableView;
@@ -116,12 +114,12 @@
 - (void)profilrViewDidClicking: (UIGestureRecognizer *)gesture
 {
     NSLog(@"点击了");
-//    UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
-//    [self presentViewController:vc animated:YES completion:nil];
+    UIViewController *vc = [[CTMediator sharedInstance]Login_aViewController];
+    [self presentViewController:vc animated:YES completion:nil];
     
-    FaceViewController *vc = [[FaceViewController alloc]init];
-    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-    [self presentViewController:nav animated:YES completion:nil];
+//    FaceViewController *vc = [[FaceViewController alloc]init];
+//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+//    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)updateUserDisplayName

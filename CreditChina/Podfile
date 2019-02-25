@@ -9,7 +9,7 @@ pod 'WLPlatform', :path => '../WLLib/WLPlatform'
 pod 'WLControls', :path => '../WLControls/WLControls'
 pod 'WLLogin_Category', :path => '../WLLogin_Category'
 pod 'WLLogin', :path => '../WLLogin'
-pod 'WLFaceID', :path => '../WLFaceID'
+#pod 'WLFaceID', :path => '../WLFaceID'
 
 pod 'WLPublicity_Category', :path => '../WLPublicity_Category'
 pod 'WLPublicity', :path => '../WLPublicity'
