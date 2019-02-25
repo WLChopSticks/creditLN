@@ -121,7 +121,7 @@
 		44A35F60C7C3F51E182954E17214C916 /* MJRefreshComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 257DD257410C275B759113079ECC72D5 /* MJRefreshComponent.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		44F598879360024BC1D47BB1CED519C1 /* WLDoublePublicityViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F713B278D31D642D34B1E91E7BCF20 /* WLDoublePublicityViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		452F8F885F6BB6377772140484F31C7F /* WLBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BAE78990684B8267B7777CCBAEC53F7 /* WLBaseTableView.m */; };
-		46CA7DEC1529C7B0D8AAC8F63A05A825 /* Tartget_RewardsAndPunishExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 67B43F8513B4E374AE47B417D1A3AEC7 /* Tartget_RewardsAndPunishExample.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		46CA7DEC1529C7B0D8AAC8F63A05A825 /* Target_RewardsAndPunishExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 67B43F8513B4E374AE47B417D1A3AEC7 /* Target_RewardsAndPunishExample.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		46CEB1366EB543A6484E3D26A55C3E5E /* WLCreditReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9712C3BAD8195F106AE05F1C07F9965F /* WLCreditReportViewController.m */; };
 		475F93E2E1831E2DE89F075BA0C82C92 /* WLFocusPeopleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE61C977515303BC0A5377AA131A5CE /* WLFocusPeopleController.m */; };
 		47A6F2FA5669108FAF49A6291AA4D216 /* WLLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB29E67549D6CDCE7BEC4815DE6A8124 /* WLLoginViewController.m */; };
@@ -240,7 +240,7 @@
 		9289D2036DEAA74FADE31B0158B8FB28 /* MJRefreshBackFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6188E9FDBF619D288488AF6E30795AC0 /* MJRefreshBackFooter.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		92FC6AB4BF2726C977759F948EE3F0D5 /* WLChartRatioTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 455C5C98C1794E3F58DCED2C92CF4F98 /* WLChartRatioTableViewCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		96DB2AB39DFEB82319EF630730FDE4FD /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E959FA12D97C0F95D711F805CFC0F83 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		974E5C32AD127805E6ADD7C3769D8FB1 /* Tartget_RewardsAndPunishExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C6AD5181EB0E543DA458DEF43A748 /* Tartget_RewardsAndPunishExample.m */; };
+		974E5C32AD127805E6ADD7C3769D8FB1 /* Target_RewardsAndPunishExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C6AD5181EB0E543DA458DEF43A748 /* Target_RewardsAndPunishExample.m */; };
 		981A6E1FA58AF85E270E51986119F6F2 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 153F03CAFE65068CE73999109DACB1DF /* UIImage+MultiFormat.m */; };
 		99F84B61014234D36AEA51F83BCAE908 /* NSData+ImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = B2BD3AA5293345B10CC2D76D5A0E1A84 /* NSData+ImageContentType.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9A3C1DA057ADB062D1C4791FF206B356 /* WLPersonResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09566CC483DBC168D0311960B01E98D6 /* WLPersonResultCell.xib */; };
@@ -249,6 +249,9 @@
 		9B343883F082BF15DB5B07B293A1750A /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF0CA836F21EFD78809003F85913E0D /* AFHTTPSessionManager.m */; };
 		9B450A6E3E3C80E540BD735545C88EE5 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BCD467D617B6F9584E708BEB98F209 /* SDWebImageCompat.m */; };
 		9BDD8422B59353017C73394A9D6EDF8A /* WLNewsTabCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 23F26813543F18151B1D0FA11496BDEC /* WLNewsTabCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9BED4DBA2223C92600476B1D /* WLRewardsAndPunishExampleModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BED4DB82223C92600476B1D /* WLRewardsAndPunishExampleModel.h */; };
+		9BED4DBB2223C92600476B1D /* WLRewardsAndPunishExampleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BED4DB92223C92600476B1D /* WLRewardsAndPunishExampleModel.m */; };
+		9BED4DBC2223C92600476B1D /* WLRewardsAndPunishExampleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BED4DB92223C92600476B1D /* WLRewardsAndPunishExampleModel.m */; };
 		9C975BC05EC24BC379F8D93A88D84E12 /* WLImageTitleContentTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9FFC0884905A90A4BED7C3A8AB2FEF /* WLImageTitleContentTimeCell.m */; };
 		9CB4DA49D1FE9DF979E15A084158BCBB /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA60C5458D9FEEC09599E0835DFD426 /* TADotView.m */; };
 		9D5B450BCD3E4C1E6D1B9A81A7E75304 /* Target_CreditReport.m in Sources */ = {isa = PBXBuildFile; fileRef = F551F14FB3F7EFD6322910B6786C9149 /* Target_CreditReport.m */; };
@@ -844,7 +847,7 @@
 		669AF10C25DCE227FFB5AA8078FF46D5 /* WLCreditPromiseViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WLCreditPromiseViewController.m; sourceTree = "<group>"; };
 		6700393F0FA8839515DC033C70F43FC1 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
 		676BBEAC8FC6B6D6301FC0413C575BC9 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
-		67B43F8513B4E374AE47B417D1A3AEC7 /* Tartget_RewardsAndPunishExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Tartget_RewardsAndPunishExample.h; sourceTree = "<group>"; };
+		67B43F8513B4E374AE47B417D1A3AEC7 /* Target_RewardsAndPunishExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Target_RewardsAndPunishExample.h; sourceTree = "<group>"; };
 		68EAF0FE3A287440D6D62CE1EEB30CFF /* WLFocusPeopleResultCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = WLFocusPeopleResultCell.xib; path = WLPublicity/Assets/WLFocusPeopleResultCell.xib; sourceTree = "<group>"; };
 		6AAA12B220BDA20AB07235A729542835 /* WLLegalPeopleBusinessCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = WLLegalPeopleBusinessCell.xib; path = WLPublicity/Assets/WLLegalPeopleBusinessCell.xib; sourceTree = "<group>"; };
 		6BA6CF7FB6D25498F7D06442850F02A7 /* whtoast_error.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = whtoast_error.png; path = WHToast/wtoast_icon/whtoast_error.png; sourceTree = "<group>"; };
@@ -945,8 +948,10 @@
 		9B3D1A148B21C0947075542318FC1DAD /* UIImage+ForceDecode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ForceDecode.h"; path = "SDWebImage/UIImage+ForceDecode.h"; sourceTree = "<group>"; };
 		9B71EEBD26304301D1082CF34A9852C7 /* SDWebImageOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageOperation.h; path = SDWebImage/SDWebImageOperation.h; sourceTree = "<group>"; };
 		9B725E491D8FA3B00B62BDCF4C32E7E7 /* WLLogin_Category-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WLLogin_Category-dummy.m"; sourceTree = "<group>"; };
+		9BED4DB82223C92600476B1D /* WLRewardsAndPunishExampleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLRewardsAndPunishExampleModel.h; sourceTree = "<group>"; };
+		9BED4DB92223C92600476B1D /* WLRewardsAndPunishExampleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLRewardsAndPunishExampleModel.m; sourceTree = "<group>"; };
 		9C45A6BA484D9F5784A599E9D83A9C8D /* WLRewardsAndPunishDetailController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WLRewardsAndPunishDetailController.h; sourceTree = "<group>"; };
-		9C5C6AD5181EB0E543DA458DEF43A748 /* Tartget_RewardsAndPunishExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Tartget_RewardsAndPunishExample.m; sourceTree = "<group>"; };
+		9C5C6AD5181EB0E543DA458DEF43A748 /* Target_RewardsAndPunishExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Target_RewardsAndPunishExample.m; sourceTree = "<group>"; };
 		9C84846BA91C36E5C832ED8C3F939791 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 		9D0513ABF8088730CCB38C78F23C1F9D /* TADotView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TADotView.h; path = SDCycleScrollView/Lib/SDCycleScrollView/PageControl/TADotView.h; sourceTree = "<group>"; };
 		9D0E84E92B0B69D19534CAB8384C73D7 /* WLRewardAndPunishListCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WLRewardAndPunishListCell.h; sourceTree = "<group>"; };
@@ -1784,8 +1789,8 @@
 				8572842A51EDE89723DFABCEE42E3BC9 /* Target_QueryCreditInfo.m */,
 				632FF408D23A97C3934AC3C1A788A6D1 /* Target_RewardsAndPunishList.h */,
 				5C6A0652C61BAC3AAB733C3B3B25480B /* Target_RewardsAndPunishList.m */,
-				67B43F8513B4E374AE47B417D1A3AEC7 /* Tartget_RewardsAndPunishExample.h */,
-				9C5C6AD5181EB0E543DA458DEF43A748 /* Tartget_RewardsAndPunishExample.m */,
+				67B43F8513B4E374AE47B417D1A3AEC7 /* Target_RewardsAndPunishExample.h */,
+				9C5C6AD5181EB0E543DA458DEF43A748 /* Target_RewardsAndPunishExample.m */,
 			);
 			name = Targets;
 			path = WLPublicity/Classes/Targets;
@@ -2344,6 +2349,8 @@
 				D0D2BBDC57B40AF78D1E245FB76E1B19 /* WLRewardsAndPunishExampleViewController.m */,
 				6093839B739E2D29FEC4E26DB7C96F9E /* WLRewardsAndPunishListViewController.h */,
 				5E03948F3B3954E96EA3AE3DBEF7C753 /* WLRewardsAndPunishListViewController.m */,
+				9BED4DB82223C92600476B1D /* WLRewardsAndPunishExampleModel.h */,
+				9BED4DB92223C92600476B1D /* WLRewardsAndPunishExampleModel.m */,
 			);
 			name = "联合奖惩";
 			path = "WLPublicity/Classes/联合奖惩";
@@ -2504,7 +2511,7 @@
 				07C36B73B0530B9B3CC98A80FEC58D73 /* Target_Publicity.h in Headers */,
 				1762A79CF2E27B2644CADA6BA735255F /* Target_QueryCreditInfo.h in Headers */,
 				3568F40F19CE2629A40D70B31B9E2417 /* Target_RewardsAndPunishList.h in Headers */,
-				46CA7DEC1529C7B0D8AAC8F63A05A825 /* Tartget_RewardsAndPunishExample.h in Headers */,
+				46CA7DEC1529C7B0D8AAC8F63A05A825 /* Target_RewardsAndPunishExample.h in Headers */,
 				92FC6AB4BF2726C977759F948EE3F0D5 /* WLChartRatioTableViewCell.h in Headers */,
 				CDAEEFA83A7039BEE04161EF6DDE90FC /* WLCreditPromiseViewController.h in Headers */,
 				CF3C83FC55BA18A35F0AEDE05188E6A9 /* WLCreditReportViewController.h in Headers */,
@@ -2515,6 +2522,7 @@
 				4DC7B81ED7FD0B626F45391A2B8A0848 /* WLFocusPeopleResultCell.h in Headers */,
 				642B0BD4D3F3F89388DAAA2E46D0A74A /* WLLegalDetailController.h in Headers */,
 				440B62C7FF27C34AC3244E41FB32D825 /* WLLegalDetailModel.h in Headers */,
+				9BED4DBA2223C92600476B1D /* WLRewardsAndPunishExampleModel.h in Headers */,
 				326A85B162AB0D538F43C73B629F8A97 /* WLLegalPeopleBasicInfoCell.h in Headers */,
 				B1A3FB90F79420BB4AB31A86FEE41BD7 /* WLLegalPeopleBusinessCell.h in Headers */,
 				3D43A00549AEB07E5FF2673B356A3832 /* WLLegalPeopleDetailController.h in Headers */,
@@ -3485,6 +3493,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BED4DBC2223C92600476B1D /* WLRewardsAndPunishExampleModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3568,9 +3577,10 @@
 				13B4F2068C5D058FFDE955FE5A118F27 /* Target_Publicity.m in Sources */,
 				2AF24C5789FFB4204682C2A0A26E9EF4 /* Target_QueryCreditInfo.m in Sources */,
 				4E3BF1F3B932F4ADC0DD88D2D2AA29F4 /* Target_RewardsAndPunishList.m in Sources */,
-				974E5C32AD127805E6ADD7C3769D8FB1 /* Tartget_RewardsAndPunishExample.m in Sources */,
+				974E5C32AD127805E6ADD7C3769D8FB1 /* Target_RewardsAndPunishExample.m in Sources */,
 				52CD042B1507B352283F56E199F6C226 /* WLChartRatioTableViewCell.m in Sources */,
 				56AC0D15B0C8911F62B842D942231EA1 /* WLCreditPromiseViewController.m in Sources */,
+				9BED4DBB2223C92600476B1D /* WLRewardsAndPunishExampleModel.m in Sources */,
 				46CEB1366EB543A6484E3D26A55C3E5E /* WLCreditReportViewController.m in Sources */,
 				5064807C56A84D97F583B1289AC186DB /* WLDoublePolicyDetailViewController.m in Sources */,
 				876C8859615AED7A2CCF0BEB3A2C340A /* WLDoublePublicitysTableViewCell.m in Sources */,

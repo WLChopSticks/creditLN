@@ -17,6 +17,8 @@
 	<string>{host}/credit-webservice-app/restwebservice/app/datareportings/getdatareportings</string>
 	<key>getpersonselect</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getpersonselet</string>
+	<key>getdatacaseDetail</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datacase/getdatacaseDetail/{datacasecode}/{userdepartmentname}/{datameasuresname}</string>
 	<key>getFocusPeople</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getFocusPeople/{typecode}/{zgrxm}/{zczsbh}/{page}/{pagesize}</string>
 	<key>getCompanyList</key>
