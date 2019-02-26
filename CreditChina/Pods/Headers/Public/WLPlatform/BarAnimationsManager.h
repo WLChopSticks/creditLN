@@ -1,0 +1,1 @@
+../../../../../WLLib/WLPlatform/WLPlatform/Classes/GGChartKit/GGGraphics/Animation/BarAnimationsManager.h

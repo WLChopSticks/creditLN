@@ -1,0 +1,1 @@
+../../../../../WLLib/WLPlatform/WLPlatform/Classes/GGChartKit/GGGraphics/CanvasAbstract/LineBarBackAbstract/QueryAbstract.h

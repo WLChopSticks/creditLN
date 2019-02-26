@@ -16,6 +16,8 @@
 		9B7001D92222FCA400AA464B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7001D82222FCA400AA464B /* CoreMotion.framework */; };
 		9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */; };
 		9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */; };
+		9BB382C222242B6D002DDD18 /* WLKnowCreditGradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB382C022242B6D002DDD18 /* WLKnowCreditGradeViewController.m */; };
+		9BB382C322242B6D002DDD18 /* WLKnowCreditGradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BB382C122242B6D002DDD18 /* WLKnowCreditGradeViewController.xib */; };
 		9BB63B01221C479C00132FB7 /* WLCreditInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */; };
 		9BBE620F2220DB2D00641C20 /* WLPofileCreditGradeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBE620E2220DB2D00641C20 /* WLPofileCreditGradeView.m */; };
 		9BC20A2021FF1B8B00732DE3 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20A1F21FF1B8B00732DE3 /* AppDelegate.mm */; };
@@ -73,6 +75,9 @@
 		9BA009F12205F20A00D1FFD9 /* kaiti_GB2312.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kaiti_GB2312.ttf; sourceTree = "<group>"; };
 		9BA009F422068D4900D1FFD9 /* WLDoublePublicityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLDoublePublicityModel.h; sourceTree = "<group>"; };
 		9BA009F522068D4900D1FFD9 /* WLDoublePublicityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDoublePublicityModel.m; sourceTree = "<group>"; };
+		9BB382BF22242B6D002DDD18 /* WLKnowCreditGradeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLKnowCreditGradeViewController.h; sourceTree = "<group>"; };
+		9BB382C022242B6D002DDD18 /* WLKnowCreditGradeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLKnowCreditGradeViewController.m; sourceTree = "<group>"; };
+		9BB382C122242B6D002DDD18 /* WLKnowCreditGradeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WLKnowCreditGradeViewController.xib; sourceTree = "<group>"; };
 		9BB63AFF221C479C00132FB7 /* WLCreditInfoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCreditInfoController.h; sourceTree = "<group>"; };
 		9BB63B00221C479C00132FB7 /* WLCreditInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCreditInfoController.m; sourceTree = "<group>"; };
 		9BBE620D2220DB2D00641C20 /* WLPofileCreditGradeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLPofileCreditGradeView.h; sourceTree = "<group>"; };
@@ -302,6 +307,9 @@
 				9BBE620E2220DB2D00641C20 /* WLPofileCreditGradeView.m */,
 				9BFA52482220E2C70094670A /* WLProfileCreditGradeBenifitCell.h */,
 				9BFA52492220E2C70094670A /* WLProfileCreditGradeBenifitCell.m */,
+				9BB382BF22242B6D002DDD18 /* WLKnowCreditGradeViewController.h */,
+				9BB382C022242B6D002DDD18 /* WLKnowCreditGradeViewController.m */,
+				9BB382C122242B6D002DDD18 /* WLKnowCreditGradeViewController.xib */,
 			);
 			path = "个人信用管理";
 			sourceTree = "<group>";
@@ -452,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC20A2B21FF1B8C00732DE3 /* LaunchScreen.storyboard in Resources */,
+				9BB382C322242B6D002DDD18 /* WLKnowCreditGradeViewController.xib in Resources */,
 				9B1AE9EC220FE430007769EC /* QueryApiList.plist in Resources */,
 				9BA009F22205F20B00D1FFD9 /* kaiti_GB2312.ttf in Resources */,
 				9BC20A2821FF1B8C00732DE3 /* Assets.xcassets in Resources */,
@@ -570,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BEF2DBC221FCEDD0012F33D /* WLNewsAndPolicyShowInExhibitionController.m in Sources */,
+				9BB382C222242B6D002DDD18 /* WLKnowCreditGradeViewController.m in Sources */,
 				9BA009F622068D4900D1FFD9 /* WLDoublePublicityModel.m in Sources */,
 				9BEF2D6D221FC0FA0012F33D /* WLExhibitionMessageCell.m in Sources */,
 				9BC20C3422031D4500732DE3 /* WLUserFocusTableController.m in Sources */,

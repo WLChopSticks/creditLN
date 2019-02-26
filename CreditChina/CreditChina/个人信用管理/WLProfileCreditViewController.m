@@ -12,6 +12,7 @@
 #import <WLTableView.h>
 #import "WLProfileCreditGradeBenifitCell.h"
 #import <WLCircleAnimationView.h>
+#import "WLKnowCreditGradeViewController.h"
 
 #define FunctionBtnViewHeight 300
 
@@ -362,6 +363,9 @@
 - (void)knowCreditGradeBtnDidClicking: (UIButton *)sender
 {
     NSLog(@"点击了了解信用分按钮%ld", (long)sender.tag);
+    WLKnowCreditGradeViewController *vc = [[WLKnowCreditGradeViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(NSArray *)benefitArray
