@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - CTMediator (25)
+  - FLAnimatedImage (1.0.12)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
   - MJRefresh (3.1.15.7)
@@ -24,11 +25,17 @@ PODS:
   - SDWebImage (4.4.4):
     - SDWebImage/Core (= 4.4.4)
   - SDWebImage/Core (4.4.4)
+  - SDWebImage/GIF (4.4.4):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
   - WHToast (0.0.2)
   - WLControls (0.1.0):
+    - FLAnimatedImage
     - Masonry
     - MJRefresh
     - SDCycleScrollView
+    - SDWebImage
+    - SDWebImage/GIF
   - WLLogin (0.1.0)
   - WLLogin_Category (0.1.0):
     - CTMediator
@@ -63,6 +70,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - CTMediator
+    - FLAnimatedImage
     - Masonry
     - MJExtension
     - MJRefresh
@@ -92,6 +100,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
@@ -99,7 +108,7 @@ SPEC CHECKSUMS:
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
   WHToast: b5b1c6c2a178b2e848e7416fd25ca6b25c7babf8
-  WLControls: 3c1fe9f39d9aec6a5607c0e3fe01d844e1f36c50
+  WLControls: 215e828e7ae124fce7f521e37846fb03b179234b
   WLLogin: 7b1bb7b179900734110f6ae08277643c2daaee31
   WLLogin_Category: 337c48a0f0b013cd67b27e6641be08fd3c7f2451
   WLNews: 0a8841b9259ab220978a3ce6594cf2092a5ac088
