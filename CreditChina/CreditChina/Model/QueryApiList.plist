@@ -25,8 +25,12 @@
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getcompanylist/{querytype}/{querykey}/{page}/{pagesize}</string>
 	<key>getCompanyDetail</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getcompanydetail/{usercode}/{xybsm}</string>
+	<key>getBlackDetail</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getBlackDetail/{usercode}/{xybsm}</string>
+	<key>getRedData</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getRedData/{usercode}/{xybsm}</string>
 	<key>getPersonData</key>
-	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getPersonData/name/IDCardNo</string>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getPersonData/{name}/{idcard}</string>
 	<key>getdatacase</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/datacase/getdatacase/{datacasename}/{datacasesubjectsname}/{typecode}/{page}/{pagesize}</string>
 	<key>getblackshow</key>
