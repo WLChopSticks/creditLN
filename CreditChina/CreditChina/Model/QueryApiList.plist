@@ -11,10 +11,10 @@
 		<string>formal,http://47.104.107.196:18070</string>
 		<string>test,http://47.104.85.148:18070</string>
 	</array>
-	<key>AquireStationsOfCity</key>
-	<string>{host}/ckdhd/queryCsZd.action</string>
 	<key>getdatareportings</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/datareportings/getdatareportings</string>
+	<key>getdetails</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datareportings/getdetails/{queryType}/{id}</string>
 	<key>getpersonselect</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataquery/getpersonselet</string>
 	<key>getdatacaseDetail</key>
