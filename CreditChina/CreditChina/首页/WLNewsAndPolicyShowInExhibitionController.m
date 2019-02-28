@@ -11,7 +11,7 @@
 #import "WLExhibitionMessageCell.h"
 #import "WLNewsTabCell.h"
 #import <WLPlatform.h>
-#import "WLNewsDetailViewController.h"
+#import "WLNewsDetailController.h"
 
 
 #define ScreenWidth    [UIScreen mainScreen].bounds.size.width
@@ -97,7 +97,7 @@
         NSString *content = detailNews[@"content"];
         if (content.length > 0)
         {
-            NSArray *paragrphs = [WLCommonTool getHtmlTagContent:content withXpath:@"//p"];
+            NSArray *paragrphs = [WLCommonTool getHtmlTagContent:content withXpath:@"//p" needRawString:NO];
             content = paragrphs.firstObject;
         }
         [constructingDict setObject:content == nil ? @"" : content forKey:@"abstract"];
@@ -155,7 +155,7 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dict = self.dataArray[indexPath.row];
-    WLNewsDetailViewController *vc = [[WLNewsDetailViewController alloc]init];
+    WLNewsDetailController *vc = [[WLNewsDetailController alloc]init];
     vc.newsType = @"1";
     vc.content = dict;
     vc.contentBaseURL = [self getContentBaseURL:self.responseDict];
@@ -256,7 +256,7 @@
 -(void)wlTableView:(UITableView *)tableView didSelectCellAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *dict = self.dataArray[indexPath.row];
-    WLNewsDetailViewController *vc = [[WLNewsDetailViewController alloc]init];
+    WLNewsDetailController *vc = [[WLNewsDetailController alloc]init];
     vc.newsType = @"2";
     vc.content = dict;
     vc.contentBaseURL = [self getContentBaseURL:self.responseDict];

@@ -34,6 +34,8 @@
 		9BC20BC7220187E400732DE3 /* WLProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20BC6220187E400732DE3 /* WLProfileViewController.m */; };
 		9BC20BCA2201886D00732DE3 /* WLExhibitonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20BC92201886D00732DE3 /* WLExhibitonViewController.m */; };
 		9BC20C3422031D4500732DE3 /* WLUserFocusTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC20C3322031D4500732DE3 /* WLUserFocusTableController.m */; };
+		9BC9088E222518A70079909E /* newsDetail.js in Resources */ = {isa = PBXBuildFile; fileRef = 9BC9088C222518A70079909E /* newsDetail.js */; };
+		9BC9088F222518A70079909E /* newsDetail.css in Resources */ = {isa = PBXBuildFile; fileRef = 9BC9088D222518A70079909E /* newsDetail.css */; };
 		9BEF2D6A221FC0E20012F33D /* WLExhibitionMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BEF2D69221FC0E20012F33D /* WLExhibitionMessageCell.xib */; };
 		9BEF2D6D221FC0FA0012F33D /* WLExhibitionMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEF2D6B221FC0FA0012F33D /* WLExhibitionMessageCell.m */; };
 		9BEF2DBC221FCEDD0012F33D /* WLNewsAndPolicyShowInExhibitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BEF2DBB221FCEDD0012F33D /* WLNewsAndPolicyShowInExhibitionController.m */; };
@@ -110,6 +112,8 @@
 		9BC20BC92201886D00732DE3 /* WLExhibitonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLExhibitonViewController.m; sourceTree = "<group>"; };
 		9BC20C3222031D4500732DE3 /* WLUserFocusTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLUserFocusTableController.h; sourceTree = "<group>"; };
 		9BC20C3322031D4500732DE3 /* WLUserFocusTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLUserFocusTableController.m; sourceTree = "<group>"; };
+		9BC9088C222518A70079909E /* newsDetail.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = newsDetail.js; sourceTree = "<group>"; };
+		9BC9088D222518A70079909E /* newsDetail.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = newsDetail.css; sourceTree = "<group>"; };
 		9BEF2D69221FC0E20012F33D /* WLExhibitionMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WLExhibitionMessageCell.xib; sourceTree = "<group>"; };
 		9BEF2D6B221FC0FA0012F33D /* WLExhibitionMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLExhibitionMessageCell.m; sourceTree = "<group>"; };
 		9BEF2D6C221FC0FA0012F33D /* WLExhibitionMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLExhibitionMessageCell.h; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 		9BC20A1221FF1B8B00732DE3 = {
 			isa = PBXGroup;
 			children = (
+				9BC9088B222518A70079909E /* HTML */,
 				9BC20A1D21FF1B8B00732DE3 /* CreditChina */,
 				9BC20A3621FF1B8C00732DE3 /* CreditChinaTests */,
 				9BC20A4121FF1B8C00732DE3 /* CreditChinaUITests */,
@@ -331,6 +336,15 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		9BC9088B222518A70079909E /* HTML */ = {
+			isa = PBXGroup;
+			children = (
+				9BC9088C222518A70079909E /* newsDetail.js */,
+				9BC9088D222518A70079909E /* newsDetail.css */,
+			);
+			path = HTML;
+			sourceTree = "<group>";
+		};
 		DDCCA9A590C475E30E67E230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +473,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BC9088F222518A70079909E /* newsDetail.css in Resources */,
+				9BC9088E222518A70079909E /* newsDetail.js in Resources */,
 				9BC20A2B21FF1B8C00732DE3 /* LaunchScreen.storyboard in Resources */,
 				9BB382C322242B6D002DDD18 /* WLKnowCreditGradeViewController.xib in Resources */,
 				9B1AE9EC220FE430007769EC /* QueryApiList.plist in Resources */,
@@ -767,7 +783,7 @@
 			baseConfigurationReference = DD4A422AB8ECC4E7AD688F7F /* Pods-CreditChina.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8KDZJ5STQC;
 				ENABLE_BITCODE = NO;
@@ -780,7 +796,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lic.creditLiaoning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = credit_AdHoc;
+				PROVISIONING_PROFILE_SPECIFIER = credit_dev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
