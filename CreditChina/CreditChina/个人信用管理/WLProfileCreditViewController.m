@@ -13,6 +13,8 @@
 #import "WLProfileCreditGradeBenifitCell.h"
 #import <WLCircleAnimationView.h>
 #import "WLKnowCreditGradeViewController.h"
+#import "WLPersonalCreditModel.h"
+
 
 #define FunctionBtnViewHeight 300
 
@@ -28,6 +30,8 @@
 @property (nonatomic, strong) NSArray *functionBtns;
 
 @property (nonatomic, weak) WLCircleAnimationView *animationView;
+
+@property (nonatomic, strong) WLPersonalCreditModel *model;
 
 @end
 
@@ -49,13 +53,14 @@
 {
     [super viewDidAppear:animated];
     
-    self.animationView.score = 650;
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self decorateUI];
+    [self queryPersonalCreditData];
 }
 
 - (void)decorateUI
@@ -353,6 +358,31 @@
         rightBorder.backgroundColor = [UIColor lightGrayColor];
         [functionBtn addSubview:rightBorder];
     }
+}
+
+- (void)queryPersonalCreditData
+{
+    [ProgressHUD show];
+    [WLApiManager queryMonthReportData:nil failure:nil];
+    
+    return;
+    
+    
+    [WLApiManager queryPersonalCreditDataWithName:@"陈杰" andIDCard:@"210105196306150639" success:^(id  _Nullable response) {
+        [ProgressHUD dismiss];
+        NSDictionary *result = (NSDictionary *)response;
+        WLPersonalCreditModel *model = [WLPersonalCreditModel getModel:result];
+        self.model = model;
+        [self fillPageData];
+    } failure:^(NSError *error) {
+        [ProgressHUD dismiss];
+        [self showEmptyView];
+    }];
+}
+
+- (void)fillPageData
+{
+    self.animationView.score = self.model.person.surplus.integerValue;
 }
 
 - (void)functionBtnDidClicking: (UIButton *)sender

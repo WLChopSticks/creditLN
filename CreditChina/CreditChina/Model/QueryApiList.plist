@@ -35,6 +35,20 @@
 	<string>{host}/credit-webservice-app/restwebservice/app/datacase/getdatacase/{datacasename}/{datacasesubjectsname}/{typecode}/{page}/{pagesize}</string>
 	<key>getblackshow</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/datareportings/getblackshow/{querytype}/{creditname}/{page}/{pagesize}</string>
+	<key>getPersonNumDetail</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datapersonnum/getPersonNumDetail/{name}/{idcard}</string>
+	<key>getChartsData</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datashow/getChartsData/{begintime}/{endtime}/{userDepartmentCode}/{userfor}</string>
+	<key>getCityData</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datashow/getCityData</string>
+	<key>getMainPeopleData</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datashow/getMainPeopleData</string>
+	<key>getCreditMainData</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datashow/getCreditMainData</string>
+	<key>getCreditDataNum</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datashow/getCreditDataNum</string>
+	<key>getMonthReportData</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/datashow/getMonthReportData</string>
 	<key>getCaptcha</key>
 	<string>{host1}/gzjk/sendShortMessage.action</string>
 	<key>getLoginWithCaptcha</key>
