@@ -806,6 +806,7 @@
 			baseConfigurationReference = 8E0A1888FD01D43C53A7F67A /* Pods-CreditChina.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8KDZJ5STQC;
 				ENABLE_BITCODE = NO;
