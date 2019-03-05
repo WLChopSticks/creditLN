@@ -415,6 +415,7 @@
 - (void)creditMoreBtnDidClicking: (UIButton *)sender
 {
     WLCreditInfoController *vc = [[WLCreditInfoController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
     vc.title = @"信用信息";
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -422,6 +423,7 @@
 - (void)newsMoreBtnDidClicking: (UIButton *)sender
 {
     WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+    segVC.hidesBottomBarWhenPushed = YES;
     segVC.title = @"信用动态";
     segVC.titles = @[@"国内动态",@"省内动态"];
     segVC.isTitlesEqualWidth = YES;
@@ -440,6 +442,7 @@
         case 0:
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+            segVC.hidesBottomBarWhenPushed = YES;
             segVC.isTitlesEqualWidth = YES;
             segVC.titles = @[@"行政许可",@"行政处罚"];
             segVC.showHeadSearchBar = YES;
@@ -454,6 +457,7 @@
         case 1:
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+            segVC.hidesBottomBarWhenPushed = YES;
             segVC.titles = @[@"红名单",@"黑名单"];
             segVC.isTitlesEqualWidth = YES;
             UIViewController *vc1 = [[CTMediator sharedInstance]RewardsAndPunishList_aViewController:@"1"];
@@ -466,6 +470,7 @@
         case 2:
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+            segVC.hidesBottomBarWhenPushed = YES;
             segVC.titles = @[@"信用报告公示",@"信用报告制度"];
             UIViewController *vc1 = [[CTMediator sharedInstance]CreditReport_aViewController:@"1"];
             UIViewController *vc2 = [[CTMediator sharedInstance]CreditReport_aViewController:@"2"];
@@ -477,6 +482,7 @@
         case 3:
         {
             WLFocusPeopleController *vc = [[WLFocusPeopleController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
             vc.title = @"重点人群";
             [self.navigationController pushViewController:vc animated:YES];
             break;
@@ -484,6 +490,7 @@
         case 4:
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+            segVC.hidesBottomBarWhenPushed = YES;
             segVC.titles = @[@"守信激励案例",@"失信惩戒案例"];
             segVC.isTitlesEqualWidth = YES;
             UIViewController *vc1 = [[CTMediator sharedInstance]RewardsAndPunishExampleController:@"1"];
@@ -496,6 +503,7 @@
         case 5:
         {
             UIViewController *vc = [[CTMediator sharedInstance]CreditPromise_aViewController];
+            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
             
             break;
@@ -503,6 +511,7 @@
         case 6:
         {
             WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+            segVC.hidesBottomBarWhenPushed = YES;
             segVC.titles = @[@"国家政策",@"省内政策",@"市级政策"];
             segVC.title = @"政策法规";
             WLRelatedPolicyViewController *vc1 = [[WLRelatedPolicyViewController alloc]init];
@@ -519,6 +528,7 @@
         case 7:
         {
             WLQueryCreditInfoViewController *vc = [[WLQueryCreditInfoViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
@@ -542,6 +552,7 @@
 - (void)policyMoreBtnDidClicking: (UIButton *)sender
 {
     WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+    segVC.hidesBottomBarWhenPushed = YES;
     segVC.titles = @[@"国家政策",@"省内政策",@"市级政策"];
     segVC.title = @"政策法规";
     WLRelatedPolicyViewController *vc1 = [[WLRelatedPolicyViewController alloc]init];
