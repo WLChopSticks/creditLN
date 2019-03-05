@@ -136,7 +136,7 @@
     [logo2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(containerView.mas_centerX).offset(-0);
         make.top.equalTo(containerView.mas_top).offset(20);
-        make.width.mas_equalTo(30);
+        make.width.mas_equalTo(70);
         make.height.mas_equalTo(30);
     }];
     [logo1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -300,7 +300,7 @@
     leftimage.image = [UIImage imageNamed:@"star"];
     [containerView addSubview:leftimage];
     UILabel *viewTitle = [[UILabel alloc]init];
-    viewTitle.text = @"新闻资讯";
+    viewTitle.text = @"信用动态";
     [containerView addSubview:viewTitle];
     UIButton *moreBtn = [[UIButton alloc]init];
     [moreBtn setImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal];
@@ -309,7 +309,7 @@
     
     WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
     categoryTable.categoryType = @"1";
-    categoryTable.titles = @[@"国家",@"省级"];
+    categoryTable.titles = @[@"国内动态",@"省内动态"];
     categoryTable.isTitlesEqualWidth = YES;
     WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc10.showType = @"1";
@@ -322,7 +322,7 @@
 //    WLNewsAndPolicyShowInExhibitionController *vc40 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
 //    vc40.showType = @"1";
     categoryTable.controllers = @[vc10,vc20];
-    categoryTable.categoryWidth = 100;
+    categoryTable.categoryWidth = 150;
 
     [containerView addSubview:categoryTable.view];
     [self addChildViewController:categoryTable];
@@ -366,7 +366,7 @@
     [containerView addSubview:moreBtn];
 
     WLSegmentTableViewController *categoryTable = [[WLSegmentTableViewController alloc]init];
-    categoryTable.titles = @[@"国家",@"省级",@"市级"];
+    categoryTable.titles = @[@"国家政策",@"省内政策",@"市级政策"];
     categoryTable.categoryType = @"1";
     categoryTable.isTitlesEqualWidth = YES;
     WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
@@ -551,6 +551,7 @@
     WLRelatedPolicyViewController *vc3 = [[WLRelatedPolicyViewController alloc]init];
     vc3.policyType = @"3";
     segVC.controllers = @[vc1,vc2, vc3];
+    segVC.isTitlesEqualWidth = YES;
     [self.navigationController pushViewController:segVC animated:YES];
 }
 
@@ -577,7 +578,7 @@
         NSMutableArray *arrTem = [NSMutableArray arrayWithCapacity:8];
         [arrTem addObject:@{@"image":@"doublePublicity", @"title":@"双公示"}];
         [arrTem addObject:@{@"image":@"lhjc", @"title":@"联合奖惩"}];
-        [arrTem addObject:@{@"image":@"xybg", @"title":@"信用报告"}];
+        [arrTem addObject:@{@"image":@"xybg", @"title":@"信用报告公示"}];
         [arrTem addObject:@{@"image":@"zdrq", @"title":@"重点人群"}];
         [arrTem addObject:@{@"image":@"dxal", @"title":@"典型案例"}];
         [arrTem addObject:@{@"image":@"xycn", @"title":@"信用承诺"}];
