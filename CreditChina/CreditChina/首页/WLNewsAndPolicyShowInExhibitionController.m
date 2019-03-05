@@ -77,22 +77,32 @@
 
 - (void)queryNewsData
 {
-    [WLApiManager queryDataNewsDataType:self.newsType onlyImageNews:YES success:^(id  _Nullable response) {
+    [WLApiManager queryNewsAndPolyciWithDataType:self.newsType page:1 pageSize:@"50" success:^(id  _Nullable response) {
         self.responseDict = response;
         self.dataArray = [self constructNewsCellContentDict:response];
         [self.newsCollection reloadData];
     } failure:^(NSError *error) {
         
     }];
+    
 }
 
 - (NSArray *)constructNewsCellContentDict: (NSDictionary *)model
 {
     NSMutableArray *constructingArr = [NSMutableArray array];
-    NSArray *news = model[@"news"];
+    NSArray *news = model[@"dataList"];
     for (NSDictionary *detailNews in news)
     {
         NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
+        NSString *picString = [WLCommonTool getValue:detailNews Key:@"pic" default:@""];
+        if (picString.length > 0)
+        {
+            picString = [WLCommonTool replaceImageSrcURL:picString withHost:@"http://www.xyln.net"];
+            [constructingDict setObject:picString forKey:@"image"];
+        }else
+        {
+            continue;
+        }
         [constructingDict setObject:detailNews[@"title"] forKey:@"title"];
         NSString *content = detailNews[@"content"];
         if (content.length > 0)
@@ -100,16 +110,12 @@
             NSArray *paragrphs = [WLCommonTool getHtmlTagContent:content withXpath:@"//p" needRawString:NO];
             content = paragrphs.firstObject;
         }
+        [constructingDict setObject:detailNews[@"id"] forKey:@"id"];
         [constructingDict setObject:content == nil ? @"" : content forKey:@"abstract"];
         [constructingDict setObject:detailNews[@"content"] forKey:@"content"];
-        [constructingDict setObject:detailNews[@"date"] forKey:@"time"];
-        [constructingDict setObject:detailNews[@"column"]forKey:@"source"];
-        NSString *picString = detailNews[@"pictures"];
-        if (picString.length > 0)
-        {
-            picString = [WLCommonTool replaceImageSrcURL:picString withHost:@"http://www.xyln.net"];
-        }
-        [constructingDict setObject:picString forKey:@"image"];
+        [constructingDict setObject:detailNews[@"publishdate"] forKey:@"time"];
+        [constructingDict setObject:detailNews[@"columnname"]forKey:@"source"];
+
         [constructingArr addObject:constructingDict];
         
     }
@@ -226,7 +232,7 @@
 
 - (void)queryPolicyData
 {
-    [WLApiManager queryDataPolicyDataType:self.policyType success:^(id  _Nullable response) {
+    [WLApiManager queryNewsAndPolyciWithDataType:self.policyType page:1 pageSize:@"10" success:^(id  _Nullable response) {
         NSDictionary *result = (NSDictionary *)response;
         self.responseDict = result;
         self.dataArray = [self constructCellContentDict:result];
@@ -240,14 +246,15 @@
 - (NSArray *)constructCellContentDict: (NSDictionary *)model
 {
     NSMutableArray *constructingArr = [NSMutableArray array];
-    NSArray *news = model[@"news"];
+    NSArray *news = model[@"dataList"];
     for (NSDictionary *detailNews in news)
     {
         NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
         [constructingDict setObject:detailNews[@"title"] forKey:@"title"];
         [constructingDict setObject:detailNews[@"content"] forKey:@"content"];
-        [constructingDict setObject:detailNews[@"date"] forKey:@"updateTime"];
+        [constructingDict setObject:detailNews[@"publishdate"] forKey:@"time"];
         [constructingDict setObject:[NSNumber numberWithBool:NO] forKey:@"showDetailBtn"];
+        [constructingDict setObject:detailNews[@"columnname"] forKey:@"type"];
         [constructingArr addObject:constructingDict];
     }
     return constructingArr;

@@ -35,6 +35,8 @@
 	<string>{host}/credit-webservice-app/restwebservice/app/datacase/getdatacase/{datacasename}/{datacasesubjectsname}/{typecode}/{page}/{pagesize}</string>
 	<key>getblackshow</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/datareportings/getblackshow/{querytype}/{creditname}/{page}/{pagesize}</string>
+	<key>getNewData</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataNewQuery/getNewData/{type}/{page}/{pagesize}</string>
 	<key>getPersonNumDetail</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/datapersonnum/getPersonNumDetail/{name}/{idcard}</string>
 	<key>getChartsData</key>

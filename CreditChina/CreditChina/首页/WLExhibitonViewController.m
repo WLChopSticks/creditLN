@@ -313,10 +313,10 @@
     categoryTable.isTitlesEqualWidth = YES;
     WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc10.showType = @"1";
-    vc10.newsType = @"1";
+    vc10.newsType = @"799";
     WLNewsAndPolicyShowInExhibitionController *vc20 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc20.showType = @"1";
-    vc20.newsType = @"2";
+    vc20.newsType = @"798";
 //    WLNewsAndPolicyShowInExhibitionController *vc30 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
 //    vc30.showType = @"1";
 //    WLNewsAndPolicyShowInExhibitionController *vc40 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
@@ -371,13 +371,13 @@
     categoryTable.isTitlesEqualWidth = YES;
     WLNewsAndPolicyShowInExhibitionController *vc10 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc10.showType = @"2";
-    vc10.policyType = @"1";
+    vc10.policyType = @"800";
     WLNewsAndPolicyShowInExhibitionController *vc20 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc20.showType = @"2";
-    vc20.policyType = @"2";
+    vc20.policyType = @"801";
     WLNewsAndPolicyShowInExhibitionController *vc30 = [[WLNewsAndPolicyShowInExhibitionController alloc]init];
     vc30.showType = @"2";
-    vc30.policyType = @"3";
+    vc30.policyType = @"802";
     categoryTable.controllers = @[vc10,vc20,vc30];
     categoryTable.categoryWidth = 200;
     
@@ -422,11 +422,11 @@
 - (void)newsMoreBtnDidClicking: (UIButton *)sender
 {
     WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
-    segVC.title = @"新闻资讯";
+    segVC.title = @"信用动态";
     segVC.titles = @[@"国内动态",@"省内动态"];
     segVC.isTitlesEqualWidth = YES;
-    UIViewController *vc1 = [[CTMediator sharedInstance]News_aViewController:@"1"];
-    UIViewController *vc2 = [[CTMediator sharedInstance]News_aViewController:@"2"];
+    UIViewController *vc1 = [[CTMediator sharedInstance]News_aViewController:@"799"];
+    UIViewController *vc2 = [[CTMediator sharedInstance]News_aViewController:@"798"];
     segVC.controllers = @[vc1,vc2];
     [self.navigationController pushViewController:segVC animated:YES];
 }
@@ -545,11 +545,11 @@
     segVC.titles = @[@"国家政策",@"省内政策",@"市级政策"];
     segVC.title = @"政策法规";
     WLRelatedPolicyViewController *vc1 = [[WLRelatedPolicyViewController alloc]init];
-    vc1.policyType = @"1";
+    vc1.policyType = @"800";
     WLRelatedPolicyViewController *vc2 = [[WLRelatedPolicyViewController alloc]init];
-    vc2.policyType = @"2";
+    vc2.policyType = @"801";
     WLRelatedPolicyViewController *vc3 = [[WLRelatedPolicyViewController alloc]init];
-    vc3.policyType = @"3";
+    vc3.policyType = @"802";
     segVC.controllers = @[vc1,vc2, vc3];
     segVC.isTitlesEqualWidth = YES;
     [self.navigationController pushViewController:segVC animated:YES];
