@@ -37,6 +37,7 @@
 {
     [super viewWillAppear:animated];
     [self updateUserDisplayName];
+    [ProgressHUD dismiss];
 }
 
 - (void)decorateUI

@@ -40,7 +40,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:NO];;
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [ProgressHUD dismiss];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -363,11 +364,6 @@
 - (void)queryPersonalCreditData
 {
     [ProgressHUD show];
-    [WLApiManager queryMonthReportData:nil failure:nil];
-    
-    return;
-    
-    
     [WLApiManager queryPersonalCreditDataWithName:@"陈杰" andIDCard:@"210105196306150639" success:^(id  _Nullable response) {
         [ProgressHUD dismiss];
         NSDictionary *result = (NSDictionary *)response;

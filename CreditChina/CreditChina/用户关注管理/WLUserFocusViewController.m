@@ -8,7 +8,7 @@
 
 #import "WLUserFocusViewController.h"
 #import "WLSegmentTableViewController.h"
-#import <Masonry.h>
+#import <WLPlatform.h>
 #import "WLTableView.h"
 #import "WLUserFocusTableController.h"
 
@@ -22,6 +22,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self decorateUI];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [ProgressHUD show];
 }
 
 - (void)decorateUI
