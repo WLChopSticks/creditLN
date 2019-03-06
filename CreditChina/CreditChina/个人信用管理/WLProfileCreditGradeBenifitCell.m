@@ -53,7 +53,7 @@
 
 -(void)fillCellContent:(NSDictionary *)contentDict withTableView:(UITableView *)tableView
 {
-    self.image.image = [UIImage imageNamed:@""];
+    self.image.image = [UIImage imageNamed:contentDict[@"image"]];
     self.title.text = contentDict[@"title"];
     NSArray *contents = contentDict[@"contents"];
     int index = 0;

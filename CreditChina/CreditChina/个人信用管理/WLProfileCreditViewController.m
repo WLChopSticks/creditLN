@@ -82,7 +82,7 @@
     }];
     
     UIView *topView = [[UIView alloc]init];
-    topView.backgroundColor = [UIColor redColor];
+//    topView.backgroundColor = [UIColor redColor];
     [bgView addSubview:topView];
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(bgView.mas_top);
@@ -91,7 +91,7 @@
     }];
     
     UIView *messageView = [[UIView alloc]init];
-    messageView.backgroundColor = [UIColor greenColor];
+    messageView.backgroundColor = [UIColor whiteColor];
     [bgView addSubview:messageView];
     [messageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(topView.mas_bottom).offset(10);
@@ -119,6 +119,7 @@
 {
     UIImageView *backView = [[UIImageView alloc]init];
     [containerView addSubview:backView];
+    backView.image = [UIImage imageNamed:@"top_back"];
     backView.backgroundColor = [UIColor greenColor];
     
     [backView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -155,14 +156,16 @@
     CGFloat width = Screen_Width * 0.5;
     CGFloat height = width;
     WLCircleAnimationView *animateView = [[WLCircleAnimationView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
-    animateView.backgroundColor = [UIColor purpleColor];
+//    animateView.backgroundColor = [UIColor purpleColor];
     animateView.backGroundView = backView;
     [circleContainer addSubview:animateView];
     self.animationView = animateView;
     
-    UIView *gradeView = [[UIView alloc]init];
+    UIImageView *gradeView = [[UIImageView alloc]init];
+    gradeView.image = [UIImage imageNamed:@"creditMiddle"];
+    gradeView.contentMode = UIViewContentModeScaleAspectFill;
     [containerView addSubview:gradeView];
-    gradeView.backgroundColor = [UIColor yellowColor];
+//    gradeView.backgroundColor = [UIColor yellowColor];
     
     [gradeView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(containerView.mas_left).offset(20);
@@ -274,11 +277,11 @@
     [WLCommonTool makeViewShowingWithRoundCorner:container andRadius:10];
 
     UIImageView *topLeftImage = [[UIImageView alloc]init];
-    topLeftImage.backgroundColor = [UIColor redColor];
+    topLeftImage.image = [UIImage imageNamed:@"top_letf"];
     [container addSubview:topLeftImage];
     
     UIImageView *topRightImage = [[UIImageView alloc]init];
-    topRightImage.backgroundColor = [UIColor redColor];
+    topRightImage.image = [UIImage imageNamed:@"top_right"];
     [container addSubview:topRightImage];
     
     UILabel *topLabel = [[UILabel alloc]init];
@@ -301,13 +304,15 @@
     [topLeftImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(topLabel.mas_left).offset(-5);
         make.centerY.equalTo(topLabel.mas_centerY);
-        make.width.height.mas_equalTo(40);
+        make.width.mas_equalTo(40);
+        make.height.mas_equalTo(23);
     }];
     
     [topRightImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(topLabel.mas_right).offset(5);
         make.centerY.equalTo(topLabel.mas_centerY);
-        make.width.height.mas_equalTo(40);
+        make.width.mas_equalTo(40);
+        make.height.mas_equalTo(23);
     }];
     
     [benefitTable mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -399,9 +404,9 @@
     if (!_benefitArray)
     {
         _benefitArray = [NSArray arrayWithObjects:
-  @{@"image":@"",@"title":@"免去没必要花的钱",@"contents":@[@"图书借阅免押金"]},
-  @{@"image":@"",@"title":@"信用带来的折扣",@"contents":@[@"·公交出行奋勇刷卡打9折",@"·移动,联通,电信充100元话费只需支付95元",@"·公园景区,电影购票,健身娱乐购票打9.5折"]},
-  @{@"image":@"",@"title":@"信用带来的绿色通道",@"contents":@[@"·公积金办理可在绿色通道办理",@"·行政审批可在绿色通道办理"]}, nil];
+  @{@"image":@"credit1",@"title":@"免去没必要花的钱",@"contents":@[@"图书借阅免押金"]},
+  @{@"image":@"credit2",@"title":@"信用带来的折扣",@"contents":@[@"·公交出行奋勇刷卡打9折",@"·移动,联通,电信充100元话费只需支付95元",@"·公园景区,电影购票,健身娱乐购票打9.5折"]},
+  @{@"image":@"credit3",@"title":@"信用带来的绿色通道",@"contents":@[@"·公积金办理可在绿色通道办理",@"·行政审批可在绿色通道办理"]}, nil];
     }
     
     return _benefitArray;
