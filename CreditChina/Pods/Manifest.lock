@@ -14,6 +14,13 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - AMap2DMap (5.6.1):
+    - AMapFoundation (~> 1.4)
+  - AMapFoundation (1.5.6)
+  - AMapLocation (2.6.1):
+    - AMapFoundation (~> 1.4)
+  - AMapSearch (6.6.0):
+    - AMapFoundation (~> 1.4)
   - CTMediator (25)
   - FLAnimatedImage (1.0.12)
   - Masonry (1.1.0)
@@ -43,6 +50,9 @@ PODS:
   - WLNews_Category (0.1.0)
   - WLPlatform (0.1.0):
     - AFNetworking
+    - AMap2DMap
+    - AMapLocation
+    - AMapSearch
     - Masonry
     - MJExtension
     - ProgressHUD
@@ -69,6 +79,10 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - AMap2DMap
+    - AMapFoundation
+    - AMapLocation
+    - AMapSearch
     - CTMediator
     - FLAnimatedImage
     - Masonry
@@ -99,6 +113,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AMap2DMap: cac76bc057de18a1641f34df6b50bf5bc6b23571
+  AMapFoundation: 20fce2a12cd152e1092afdd04379cdac21932185
+  AMapLocation: cf024b53dc03663efb4ea4bcce27d4cce58bb97a
+  AMapSearch: def5983c8ca1a6d7430970046dc814f6e337621d
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -113,7 +131,7 @@ SPEC CHECKSUMS:
   WLLogin_Category: 337c48a0f0b013cd67b27e6641be08fd3c7f2451
   WLNews: 0a8841b9259ab220978a3ce6594cf2092a5ac088
   WLNews_Category: f78e0a9125a553bc6217d9c708dca60e69aa33db
-  WLPlatform: ca4f49bd4cc7efb046defe49fd166823dc95df83
+  WLPlatform: dbb031d811259bdd26ef89051a07ca591372e915
   WLPublicity: 07c94f15742de025d6cf31c5006c81c159ccdd36
   WLPublicity_Category: 70c12b47d2b16bad8ea2668b29136a2e46cb412c
 

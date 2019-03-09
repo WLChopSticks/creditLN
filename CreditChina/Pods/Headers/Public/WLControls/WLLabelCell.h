@@ -1,0 +1,1 @@
+../../../../../WLControls/WLControls/WLControls/Classes/WLCollectionView/WLLabelCell.h

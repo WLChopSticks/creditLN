@@ -14,6 +14,9 @@
 #import "WLExhibitonViewController.h"
 #import "WLBaseNavigationViewController.h"
 #import "WLBaseTabBarViewController.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
+
+#define GDMapKey @"f6fb1b58399cdf6bee035c6bbee526db"
 
 @interface AppDelegate ()
 
@@ -24,6 +27,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [AMapServices sharedServices].apiKey =GDMapKey;
+//    [[AMapServices sharedServices] setEnableHTTPS:YES];
+    
     self.window = [[UIWindow alloc]init];
     WLExhibitonViewController *exhibitionVC = [[WLExhibitonViewController alloc]init];
 //    exhibitionVC.title = @"信用辽宁(公众版)";
