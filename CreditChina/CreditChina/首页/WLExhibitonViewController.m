@@ -470,14 +470,15 @@
         }
         case 2:
         {
-            WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
-            segVC.hidesBottomBarWhenPushed = YES;
-            segVC.titles = @[@"信用报告公示",@"信用报告制度"];
+//            WLSegmentTableViewController *segVC = [[WLSegmentTableViewController alloc]init];
+//            segVC.hidesBottomBarWhenPushed = YES;
+//            segVC.titles = @[@"信用报告公示",@"信用报告制度"];
             UIViewController *vc1 = [[CTMediator sharedInstance]CreditReport_aViewController:@"1"];
-            UIViewController *vc2 = [[CTMediator sharedInstance]CreditReport_aViewController:@"2"];
-            segVC.controllers = @[vc1,vc2];
-            segVC.title = @"信用报告";
-            [self.navigationController pushViewController:segVC animated:YES];
+//            UIViewController *vc2 = [[CTMediator sharedInstance]CreditReport_aViewController:@"2"];
+//            segVC.controllers = @[vc1,vc2];
+//            segVC.title = @"信用报告";
+            vc1.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc1 animated:YES];
             break;
         }
         case 3:

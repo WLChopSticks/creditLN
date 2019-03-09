@@ -39,6 +39,8 @@
 	<string>{host}/credit-webservice-app/restwebservice/app/dataNewQuery/getNewData/{type}/{page}/{pagesize}</string>
 	<key>getRollNewData</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/dataNewQuery/getRollNewData/{type}/{page}/{pagesize}</string>
+	<key>getCreditreporting</key>
+	<string>{host}/credit-webservice-app/restwebservice/app/dataNewQuery/getCreditreporting/{type}/{page}/{pagesize}</string>
 	<key>getPersonNumDetail</key>
 	<string>{host}/credit-webservice-app/restwebservice/app/datapersonnum/getPersonNumDetail/{name}/{idcard}</string>
 	<key>getChartsData</key>
