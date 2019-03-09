@@ -77,7 +77,7 @@
 
 - (void)queryNewsData
 {
-    [WLApiManager queryNewsAndPolyciWithDataType:self.newsType page:1 pageSize:@"50" success:^(id  _Nullable response) {
+    [WLApiManager queryScrollNewsData:self.newsType success:^(id  _Nullable response) {
         self.responseDict = response;
         self.dataArray = [self constructNewsCellContentDict:response];
         [self.newsCollection reloadData];
@@ -94,7 +94,7 @@
     for (NSDictionary *detailNews in news)
     {
         NSMutableDictionary * constructingDict = [NSMutableDictionary dictionary];
-        NSString *picString = [WLCommonTool getValue:detailNews Key:@"pic" default:@""];
+        NSString *picString = [WLCommonTool getValue:detailNews Key:@"newpicd" default:@""];
         if (picString.length > 0)
         {
             picString = [WLCommonTool replaceImageSrcURL:picString withHost:@"http://www.xyln.net"];
@@ -232,7 +232,7 @@
 
 - (void)queryPolicyData
 {
-    [WLApiManager queryNewsAndPolyciWithDataType:self.policyType page:1 pageSize:@"10" success:^(id  _Nullable response) {
+    [WLApiManager queryNewsAndPolyciWithDataType:self.policyType page:1 pageSize:nil success:^(id  _Nullable response) {
         NSDictionary *result = (NSDictionary *)response;
         self.responseDict = result;
         self.dataArray = [self constructCellContentDict:result];
@@ -241,6 +241,7 @@
     } failure:^(NSError *error) {
         
     }];
+
 }
 
 - (NSArray *)constructCellContentDict: (NSDictionary *)model

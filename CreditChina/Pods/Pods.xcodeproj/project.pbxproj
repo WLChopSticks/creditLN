@@ -469,6 +469,8 @@
 		9A95785D2763292D83BC41AFE030E4CA /* WLFocusPeopleResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CB1459CF41266B4880B55CBDF37825 /* WLFocusPeopleResultCell.m */; };
 		9B343883F082BF15DB5B07B293A1750A /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 118CFA4F0FA4D005C98F693B110B7808 /* AFHTTPSessionManager.m */; };
 		9B799EDA34A6D628B909A2F9E8A64BB3 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E28AC33B07BEA80F158F2C233884229 /* UIView+SDExtension.m */; };
+		9BBAF82C223366B100C7A57B /* WLQRCodeController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBAF82A223366B100C7A57B /* WLQRCodeController.h */; };
+		9BBAF82D223366B100C7A57B /* WLQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBAF82B223366B100C7A57B /* WLQRCodeController.m */; };
 		9BBDC5C0223118870011B875 /* WLBaseCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBDC5BE223118870011B875 /* WLBaseCollectionViewCell.h */; };
 		9BBDC5C1223118870011B875 /* WLBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBDC5BF223118870011B875 /* WLBaseCollectionViewCell.m */; };
 		9BBDC5C522311C970011B875 /* WLLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BBDC5C322311C970011B875 /* WLLabelCell.h */; };
@@ -1529,6 +1531,8 @@
 		9AAA8D6AA285B254DED7AA1D5EE2B140 /* MJPropertyType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJPropertyType.h; path = MJExtension/MJPropertyType.h; sourceTree = "<group>"; };
 		9ADBD7F525FBAF1F2334446466E6370C /* GGRenderProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GGRenderProtocol.h; sourceTree = "<group>"; };
 		9B2C8646E811DA84EE345C918DA4AB25 /* UIView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCache.h"; path = "SDWebImage/UIView+WebCache.h"; sourceTree = "<group>"; };
+		9BBAF82A223366B100C7A57B /* WLQRCodeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLQRCodeController.h; sourceTree = "<group>"; };
+		9BBAF82B223366B100C7A57B /* WLQRCodeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLQRCodeController.m; sourceTree = "<group>"; };
 		9BBDC5BE223118870011B875 /* WLBaseCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLBaseCollectionViewCell.h; sourceTree = "<group>"; };
 		9BBDC5BF223118870011B875 /* WLBaseCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLBaseCollectionViewCell.m; sourceTree = "<group>"; };
 		9BBDC5C322311C970011B875 /* WLLabelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLLabelCell.h; sourceTree = "<group>"; };
@@ -3277,6 +3281,8 @@
 				FE1018B05CDEDDF5E964ACC1DC00E5CD /* WLLegalPeopleDetailBaseInfoController.m */,
 				7E971D0707587B75F0BFDDC718BD531B /* WLLegalPeopleDetailController.h */,
 				891A5810E8A735FBD37B299A1D5CC2D9 /* WLLegalPeopleDetailController.m */,
+				9BBAF82A223366B100C7A57B /* WLQRCodeController.h */,
+				9BBAF82B223366B100C7A57B /* WLQRCodeController.m */,
 				C4FF9F8BB0E07465656C4847E7C82F94 /* WLLegalPeopleDetailDisplayController.h */,
 				9E41BE53DA55FE8036C05454A74A101F /* WLLegalPeopleDetailDisplayController.m */,
 				511FF653CC3CD6AB1FF3D4EC6CB0734D /* WLLegalPeopleSearchResultCell.h */,
@@ -4332,6 +4338,7 @@
 				50FA7FB55AB0B6EE328F078F83953B88 /* UIImageView+AFNetworking.h in Headers */,
 				1514DD47DD0EFE7D6ABFC27EE743D12C /* UIKit+AFNetworking.h in Headers */,
 				E7A29FD264197E966B2F75F2F7844D48 /* UIProgressView+AFNetworking.h in Headers */,
+				9BBAF82C223366B100C7A57B /* WLQRCodeController.h in Headers */,
 				EC2E9780DD5B6574F32FB0E097459CFC /* UIRefreshControl+AFNetworking.h in Headers */,
 				4ADE9BBFD6AC48AF95EB8446D4684F27 /* UIWebView+AFNetworking.h in Headers */,
 			);
@@ -5445,6 +5452,7 @@
 				0C06F38E2739F2221ED383FBCC31E0B0 /* AFImageDownloader.m in Sources */,
 				1240B44D07E5C748DE29CE790FF09102 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4931C07E07520F809488D789C5EB2712 /* AFNetworking-dummy.m in Sources */,
+				9BBAF82D223366B100C7A57B /* WLQRCodeController.m in Sources */,
 				D308822ED3D6ACB439BF8EC0A519D4B1 /* AFNetworkReachabilityManager.m in Sources */,
 				A5C7D257AAFB512208845FAD808E6073 /* AFSecurityPolicy.m in Sources */,
 				D441DEEB7BC6F19A4BD742AFBEBF12C8 /* AFURLRequestSerialization.m in Sources */,
