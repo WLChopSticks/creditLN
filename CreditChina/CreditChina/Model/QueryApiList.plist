@@ -71,5 +71,9 @@
 	<string>{host1}/gzjk/insertPl.action</string>
 	<key>getNewsRemarks</key>
 	<string>{host1}/gzjk/querypl.action</string>
+	<key>getAddedCollect</key>
+	<string>{host1}/gzjk/insertGz.action</string>
+	<key>getCollectData</key>
+	<string>{host1}/gzjk/queryGz.action</string>
 </dict>
 </plist>

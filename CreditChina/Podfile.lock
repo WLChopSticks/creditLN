@@ -35,6 +35,7 @@ PODS:
   - SDWebImage/GIF (4.4.4):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - SGQRCode (3.0.1)
   - WHToast (0.0.2)
   - WLControls (0.1.0):
     - FLAnimatedImage
@@ -56,6 +57,7 @@ PODS:
     - Masonry
     - MJExtension
     - ProgressHUD
+    - SGQRCode
     - WHToast
   - WLPublicity (0.1.0)
   - WLPublicity_Category (0.1.0):
@@ -91,6 +93,7 @@ SPEC REPOS:
     - ProgressHUD
     - SDCycleScrollView
     - SDWebImage
+    - SGQRCode
     - WHToast
 
 EXTERNAL SOURCES:
@@ -125,13 +128,14 @@ SPEC CHECKSUMS:
   ProgressHUD: 54b4c2fa202bf3da7dddc1c698ae4e6376333bd9
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: c00ec18ab25d10e5ffac109b0f78d1b4341c9691
+  SGQRCode: bf02d60e18d6660a9d75ff1c8b9b467f064f054e
   WHToast: b5b1c6c2a178b2e848e7416fd25ca6b25c7babf8
   WLControls: 215e828e7ae124fce7f521e37846fb03b179234b
   WLLogin: 7b1bb7b179900734110f6ae08277643c2daaee31
   WLLogin_Category: 337c48a0f0b013cd67b27e6641be08fd3c7f2451
   WLNews: 0a8841b9259ab220978a3ce6594cf2092a5ac088
   WLNews_Category: f78e0a9125a553bc6217d9c708dca60e69aa33db
-  WLPlatform: dbb031d811259bdd26ef89051a07ca591372e915
+  WLPlatform: 8d14b48229950d288632c84f9e9764e1e13aa96a
   WLPublicity: 07c94f15742de025d6cf31c5006c81c159ccdd36
   WLPublicity_Category: 70c12b47d2b16bad8ea2668b29136a2e46cb412c
 

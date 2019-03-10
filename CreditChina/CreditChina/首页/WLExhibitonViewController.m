@@ -181,10 +181,19 @@
     searchField.attributedPlaceholder = placeholder;
     UIView *leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 30, 20)];
     UIImageView *searchLeftImageView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, 20, 20)];
+    //scanQRCode
     searchLeftImageView.image = [UIImage imageNamed:@"search"];
     [leftView addSubview:searchLeftImageView];
     searchField.leftViewMode = UITextFieldViewModeAlways;
     searchField.leftView = leftView;
+    UIView *rightView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 30, 20)];
+    UIButton *scanQRBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [scanQRBtn setImage:[UIImage imageNamed:@"scanQRCode"] forState:UIControlStateNormal];
+    [scanQRBtn addTarget:self action:@selector(scanQRCodeBtnDidClicking:) forControlEvents:UIControlEventTouchUpInside];
+    [rightView addSubview:scanQRBtn];
+    searchField.rightView = rightView;
+    searchField.rightViewMode = UITextFieldViewModeAlways;
+    
     searchField.delegate = self;
     [containerView addSubview:searchField];
     
@@ -204,6 +213,22 @@
     
     
     
+}
+
+- (void)scanQRCodeBtnDidClicking: (UIButton *)sender
+{
+    NSLog(@"123");
+    WLScanBitCodeViewController *vc = [[WLScanBitCodeViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [vc setScanQRCodecompletion:^(NSString *result) {
+//        NSLog(result);
+        NSString *validString = [result componentsSeparatedByString:@"//"].lastObject;
+        NSDictionary *para = [NSDictionary dictionaryWithObjectsAndKeys:@"210106000038768",@"usercode",validString,@"creditcode", nil];
+        [self.navigationController popViewControllerAnimated:NO];
+        UIViewController *vc1 = [[CTMediator sharedInstance]LegalPeopleDetail_aViewController:para];
+        [self.navigationController pushViewController:vc1 animated:YES];
+    }];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
